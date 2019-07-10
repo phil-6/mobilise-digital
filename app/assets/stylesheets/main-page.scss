@@ -1,0 +1,78 @@
+@import "variables";
+#fullpage .section{
+  padding: 0 !important;
+}
+h2 {
+  font-family: $heading-font;
+  font-weight: 600;
+  font-size: 60px;
+}
+h3 {
+  font-family: $heading-font;
+  font-weight: 300;
+  font-size: 25px;
+}
+.section.header {
+  .brand {
+    background-color: $brandprimary;
+    color: white;
+    img {
+      min-width: 300px;
+      padding-top: 150px;
+    }
+    h1 {
+      font-size: 260px;
+      padding-top: 150px;
+      letter-spacing: -0.35em;
+      margin-left: -0.15em;
+    }
+    .brand-0 {
+      font-family: $brand-font;
+    }
+    .brand-1 {
+      font-family: $brand-font-1;
+      letter-spacing: 0.2em;
+    }
+    .brand-4 {
+      font-family: $brand-font-4;
+    }
+  }
+
+  .welcome{
+    color: white;
+    background: $gray-gradient;
+    h2 {
+      padding-top: 100px;
+    }
+    h4 {
+      font-family: $heading-font;
+      font-weight: 100;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+    .buttons {
+      padding-top: 100px;
+    }
+    .btn {
+      color: var(--white);
+      margin-bottom: 20px;
+      box-shadow: 6px 4px 8px 0px rgba(0,0,0,0.4);
+    }
+    .btn:hover{
+      color: var(--ink-light);
+      box-shadow: none;
+      transition: all 0.2s;
+    }
+    h5 {
+      padding-top: 200px;
+    }
+    i {
+      color: white;
+    }
+  }
+}
+
+.full-height {
+  height: 100vh;
+  padding: 0;
+}
