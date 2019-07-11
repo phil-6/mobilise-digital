@@ -30,7 +30,7 @@ h3 {
 .section.header {
   .brand {
     background-color: $brandprimary;
-    color: white;
+    color: $whiteink;
     z-index: 2;
     img {
       //min-width: 300px;
@@ -48,7 +48,7 @@ h3 {
   }
 
   .welcome{
-    color: white;
+    color: $whiteink;
     background: $gray-gradient;
     img {
       height: 6rem;

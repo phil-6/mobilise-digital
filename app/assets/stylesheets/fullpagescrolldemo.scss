@@ -1,4 +1,4 @@
-
+@import "variables";
 /* Make images responsive*/
 .col-md-6 img {
     max-width: 40%;
@@ -23,7 +23,7 @@
     color: white;
 }
 .background-black{
-    background-color: black;
+    background-color: $ink;
     color: white;
 }
 .background-tomato{
@@ -32,10 +32,12 @@
 }
 .background-orange{
     background-color: orange;
+    background: $orange-gradient;
     color: white;
 }
 .background-purple{
     background-color: rebeccapurple;
+    background: $purple-gradient;
     color: white;
 }
 .background-cyan{
