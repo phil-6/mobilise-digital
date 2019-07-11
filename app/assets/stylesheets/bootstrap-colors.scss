@@ -5,3 +5,12 @@ $theme-colors: (
         "secondary": $brandsecondary,
         "dark": $ink
 );
+
+.btn-primary {
+  background-color: $brandprimary;
+  border-color: $brandprimary
+}
+.btn-primary:hover{
+  background-color: $brandprimary-darker;
+  border-color: $brandprimary-darker;
+}
