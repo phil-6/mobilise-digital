@@ -23,7 +23,7 @@ h3 {
     h1 {
       font-size: 260px;
       padding-top: 150px;
-      letter-spacing: -0.35em;
+      letter-spacing: -0.15em;
       margin-left: -0.15em;
     }
     .brand-0 {
@@ -32,6 +32,10 @@ h3 {
     .brand-1 {
       font-family: $brand-font-1;
       letter-spacing: 0.2em;
+    }
+    .brand-2 {
+      font-family: $heading-font;
+      letter-spacing: 0;
     }
     .brand-4 {
       font-family: $brand-font-4;
