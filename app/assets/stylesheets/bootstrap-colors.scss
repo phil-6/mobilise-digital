@@ -7,10 +7,19 @@ $theme-colors: (
 );
 
 .btn-primary {
-  background-color: $brandprimary;
-  border-color: $brandprimary
-}
+   background-color: $brandprimary;
+   border-color: $brandprimary
+ }
 .btn-primary:hover{
   background-color: $brandprimary-darker;
   border-color: $brandprimary-darker;
+}
+
+.btn-primary {
+  background-color: $brandsecondary;
+  border-color: $brandsecondary
+}
+.btn-primary:hover{
+  background-color: $brandsecondary-darker;
+  border-color: $brandsecondary-darker;
 }
