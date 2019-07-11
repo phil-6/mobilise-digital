@@ -4,12 +4,12 @@ $brand-font: "Audiowide";
 $brand-font-1: "Iceland";
 $brand-font-4: "Wallpoet";
 
-$brandprimary: #1f419b;
-$brandprimary-darker: #0b2361;
-$brandhighlight: #13a5c3;
+$blue:#1f419b;
+$blue-darker:#0b2361;
+$blue-highlight:#13a5c3;
 
-$brandsecondary: #F28123;
-$brandsecondary-darker: #D34E24;
+$orange:#F28123;
+$orange-darker:#D34E24;
 
 $purple: #7261A3;
 $purple-medium: #712F79;
@@ -20,6 +20,13 @@ $ink: #000011;
 $ink2: #070D20;
 $black: #000000;
 $gray: #85929E;
+
+$brandprimary: $blue;
+$brandprimary-darker: $blue-darker;
+$brandhighlight: $blue-highlight;
+
+$brandsecondary: $orange;
+$brandsecondary-darker: $orange-darker;
 
 $purple-gradient: linear-gradient(to top left, $purple, $purple-medium, $purple-darker);
 $blue-gradient: linear-gradient(to top left, $brandhighlight, $brandprimary, $brandprimary-darker);
