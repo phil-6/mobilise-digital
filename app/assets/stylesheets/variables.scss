@@ -17,10 +17,12 @@ $purple-darker: #4A0D67;
 
 $whiteink: #EEEEFF;
 $ink: #000011;
-//$ink: #070D20;
+$ink2: #070D20;
+$black: #000000;
 $gray: #85929E;
 
 $purple-gradient: linear-gradient(to top left, $purple, $purple-medium, $purple-darker);
 $blue-gradient: linear-gradient(to top left, $brandhighlight, $brandprimary, $brandprimary-darker);
 $orange-gradient: linear-gradient(to top left, $brandsecondary, $brandsecondary-darker);
 $gray-gradient: linear-gradient(to top left, #485563, #29323c);
+$black-gradient: linear-gradient(to top left, $ink2, $ink, $black);
