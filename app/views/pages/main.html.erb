@@ -14,7 +14,14 @@
         <h4><strong>TO BE UPDATED</strong> Here at Mobilise Digital, we want to cut all the agency rubbish out of contractating. Our Core values are transparency, we'll give you all the information you've always wanted about the contacts you're working on.</h4>
         <h4>Pellentesque efficitur sed nisl vel ornare. Vestibulum placerat dolor et felis venenatis, et laoreet urna pretium. Etiam vel velit quis nisi fringilla maximus. Fusce eu eros at nunc placerat efficitur nec in erat. Quisque dictum leo at volutpat pulvinar. Fusce tempus orci in est finibus placerat. Nunc id luctus enim, id consequat ipsum. Cras tincidunt augue tortor, quis fringilla ex sagittis vitae.</h4>
         <div class="buttons">
-          <a href="login" class="btn btn-primary">Login</a> <a href="register" class="btn btn-warning">Register</a>
+          <% if user_signed_in? %>
+            Logged in as <strong><%= current_user.email %></strong>.
+            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-primary' %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-danger'  %>
+          <% else %>
+            <%= link_to "Login", new_user_session_path, :class => 'btn btn-primary'  %>
+            <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-secondary'  %>
+        <% end %>
         </div>
         <h3 class="brand-1">Scroll down to find out more</h3>
         <a href="#isItForUs"><i class="fas fa-angle-down fa-9x"></i></a>
@@ -37,7 +44,7 @@
       </div>
     </div>
   </div>
-  <div class="section background-tomato">
+  <div class="section background-purple">
     <div class="text-center">
       <div class="row text-center">
         <div class="col-md-6 d-sm-none d-md-block">Image Here</div>
@@ -73,7 +80,7 @@
       </div>
     </div>
   </div>
-  <div class="section background-purple">
+  <div class="section background-tomato">
     <div class="text-center">
       <div class="row text-center">
         <div class="col-md-6 d-sm-none d-md-block">Image Here</div>
