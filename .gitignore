@@ -28,3 +28,6 @@
 
 # Ignore intellij artifacts
 /.idea/*
+
+# Ignore application configuration
+/config/application.yml

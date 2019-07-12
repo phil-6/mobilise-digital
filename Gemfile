@@ -36,7 +36,14 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# User authentication and management handled by devise
 gem 'devise'
+
+# Environment Variable Management
+gem 'figaro'
+
+# AWS SDK
+# gem 'aws-sdk', '~> 3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
