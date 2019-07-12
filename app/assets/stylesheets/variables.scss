@@ -1,6 +1,12 @@
+@font-face {  font-family: 'Neris-Light';  src: font-url('39C0AD_0_0.eot');  src: font-url('39C0AD_0_0.eot?#iefix') format('embedded-opentype'), font-url('39C0AD_0_0.woff2') format('woff2'), font-url('39C0AD_0_0.woff') format('woff'), font-url('39C0AD_0_0.ttf') format('truetype');  }
+@font-face {  font-family: 'Neris-SemiBold';  src: font-url('39C0AD_1_0.eot');  src: font-url('39C0AD_1_0.eot?#iefix') format('embedded-opentype'), font-url('39C0AD_1_0.woff2') format('woff2'), font-url('39C0AD_1_0.woff') format('woff'), font-url('39C0AD_1_0.ttf') format('truetype');  }
+@font-face {  font-family: 'Neris-Thin';  src: font-url('39C0AD_2_0.eot');  src: font-url('39C0AD_2_0.eot?#iefix') format('embedded-opentype'), font-url('39C0AD_2_0.woff2') format('woff2'), font-url('39C0AD_2_0.woff') format('woff'), font-url('39C0AD_2_0.ttf') format('truetype');  }
+@font-face {  font-family: 'Neris-ThinItalic';  src: font-url('39C0AD_3_0.eot');  src: font-url('39C0AD_3_0.eot?#iefix') format('embedded-opentype'), font-url('39C0AD_3_0.woff2') format('woff2'), font-url('39C0AD_3_0.woff') format('woff'), font-url('39C0AD_3_0.ttf') format('truetype');  }
+@font-face {  font-family: 'Neris-Black';  src: font-url('39C0AD_4_0.eot');  src: font-url('39C0AD_4_0.eot?#iefix') format('embedded-opentype'), font-url('39C0AD_4_0.woff2') format('woff2'), font-url('39C0AD_4_0.woff') format('woff'), font-url('39C0AD_4_0.ttf') format('truetype');  }
+
 $font: "Raleway", sans-serif;
-$heading-font: "Montserrat Alternates", sans-serif;
-$brand-font: "Audiowide";
+$heading-font: "Neris-Black", sans-serif;
+$brand-font: "Neris-Black";
 $brand-font-1: "Iceland";
 $brand-font-4: "Wallpoet";
 

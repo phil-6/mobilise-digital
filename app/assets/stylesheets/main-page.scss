@@ -11,7 +11,7 @@
   font-family: $brand-font-1;
 }
 .brand-2 {
-  font-family: $heading-font;
+  font-family: $brand-font;
   letter-spacing: 0;
 }
 .brand-4 {
@@ -54,6 +54,7 @@ h3 {
       //margin-top: 60px;
     }
     h2 {
+      font-family: $brand-font;
       //padding-top: 100px;
     }
     h3 {
