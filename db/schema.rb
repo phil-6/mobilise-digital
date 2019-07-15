@@ -30,6 +30,23 @@ ActiveRecord::Schema.define(version: 1) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.integer "contact_phone"
+    t.boolean "admin", default: false
+    t.integer "passport_number"
+    t.integer "driving_licence"
+    t.string "address_company"
+    t.string "address_1"
+    t.string "address_2"
+    t.string "address_town"
+    t.string "address_county"
+    t.string "address_postcode"
+    t.string "emergency_name"
+    t.string "emergency_relationship"
+    t.string "emergency_number"
+    t.string "emergency_email"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
