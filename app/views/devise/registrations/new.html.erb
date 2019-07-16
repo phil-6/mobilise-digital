@@ -34,11 +34,9 @@
           <%= f.label :email %>
         </div>
 
+<!--        <%# if @minimum_password_length %><em>(<%#= @minimum_password_length %> characters minimum)</em><%# end %>-->
         <div class="form-group floating-label">
-          <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br/>
-          <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: " Password", :required => true %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: " Password (6 characters minimum)", :required => true %>
           <%= f.label :password %>
         </div>
 
