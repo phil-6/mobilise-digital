@@ -132,3 +132,17 @@
     margin-bottom: 6px;
     background-color: rgba(245, 198, 203, 0.6);
   }
+
+  .confirmation {
+    color: $whiteink;
+    background: $gray-gradient;
+    padding-top: 5rem;
+    img {
+      height: 8rem;
+    }
+    h4 {
+      font-family: $font;
+      font-weight: 100;
+      font-size: 0.8rem;
+    }
+  }

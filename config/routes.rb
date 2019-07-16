@@ -6,8 +6,12 @@ Rails.application.routes.draw do
              path_names: {sign_in: 'login', sign_out: 'logout'},
              controllers: {
                  registrations: 'users/registrations',
-                 sessions: 'users/sessions'
+                 sessions: 'users/sessions',
+                 confirmations: 'users/confirmations'
              }
+  devise_scope :user do
+    get '/confirmation/pending', to:  'users/confirmations#pending'
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -5,9 +5,11 @@ class PagesController < ApplicationController
     render template: "pages/main"
   end
 
-  def about
-    render template: "pages/_about"
-  end
+  # def about
+  #   render template: "pages/_about"
+  # end
+
+
 
   # def how_to
   #   render template: "pages/_how_to"

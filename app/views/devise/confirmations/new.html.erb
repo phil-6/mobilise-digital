@@ -1,16 +1,29 @@
-<h2>Resend confirmation instructions</h2>
+<div class="section header">
+  <div class="row full-height">
+    <%= render partial: 'layouts/brand_half_page' %>
+    <div class="col-lg-6 md-form text-center">
+      <h2>Resend confirmation instructions</h2>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: {method: :post}) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+        <div class="form-group floating-label">
+          <div class="field">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'form-control', placeholder: 'Email', :required => true %>
+            <%= f.label :email %>
+          </div>
+        </div>
+
+        <div class="actions form-group">
+          <%= f.submit "Resend confirmation instructions", class: 'btn btn-secondary' %>
+        </div>
+      <% end %>
+
+      <hr/>
+      <div class="other-actions">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+
   </div>
-
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
