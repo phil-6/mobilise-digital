@@ -38,6 +38,7 @@ h3 {
       height: 6rem;
     }
     h2 {
+      padding-top: 15px;
       font-family: $brand-font;
     }
     h4 {
@@ -94,6 +95,9 @@ h3 {
       img {
         height: 12.5rem;
         margin-top: 50px;
+      }
+      h2 {
+        padding-top: 160px;
       }
       h4 {
         font-size: 1.1rem;

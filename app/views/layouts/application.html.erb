@@ -42,14 +42,15 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900|Iceland|Wallpoet&display=swap" rel="stylesheet">
 
 
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
   <!-- Full Page Scrolling -->
-  <script type="text/javascript" src="assets/fullpage.js"></script>
+<!--  <script type="text/javascript" src="assets/fullpage.js"></script>-->
+  <%#= javascript_include_tag "fullpage" %>
 
 </head>
 

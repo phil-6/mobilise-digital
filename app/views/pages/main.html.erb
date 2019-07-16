@@ -9,19 +9,19 @@
 
       </div>
       <div class="col-lg-6 welcome text-center">
-        <img src="assets/man-on-rocket.png">
-        <h2>welcome</h2>
+<!--        <img src="assets/man-on-rocket.png">-->
+        <h2>Welcome <% if user_signed_in? %>Back <%= current_user.first_name %><% end %></h2>
         <h4><strong>TO BE UPDATED</strong> Here at Mobilise Digital, we want to cut all the agency rubbish out of contractating. Our Core values are transparency, we'll give you all the information you've always wanted about the contacts you're working on.</h4>
         <h4>Pellentesque efficitur sed nisl vel ornare. Vestibulum placerat dolor et felis venenatis, et laoreet urna pretium. Etiam vel velit quis nisi fringilla maximus. Fusce eu eros at nunc placerat efficitur nec in erat. Quisque dictum leo at volutpat pulvinar. Fusce tempus orci in est finibus placerat. Nunc id luctus enim, id consequat ipsum. Cras tincidunt augue tortor, quis fringilla ex sagittis vitae.</h4>
         <div class="buttons">
           <% if user_signed_in? %>
             Logged in as <strong><%= current_user.email %></strong>.
             <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-primary' %>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-danger'  %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-danger' %>
           <% else %>
-            <%= link_to "Login", new_user_session_path, :class => 'btn btn-primary'  %>
-            <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-secondary'  %>
-        <% end %>
+            <%= link_to "Login", new_user_session_path, :class => 'btn btn-primary' %>
+            <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-secondary' %>
+          <% end %>
         </div>
         <h3 class="brand-1">Scroll down to find out more</h3>
         <a href="#isItForUs"><i class="fas fa-angle-down fa-9x"></i></a>
@@ -118,4 +118,5 @@
   </div>
 </div>
 
-<script src="assets/fullpagescrolldemo-options.js"></script>
+<script src="/assets/fullpagescrolldemo-options"></script>
+<%#= javascript_include_tag "fullpagescrolldemo-options" %>

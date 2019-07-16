@@ -61,4 +61,35 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super(resource)
     '/confirmation/pending'
   end
+
+  private
+
+  def sign_up_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+  end
+
+  def account_update_params
+    params.require(:user).permit(:first_name,
+                                 :last_name,
+                                 :email,
+                                 :password,
+                                 :password_confirmation,
+                                 :current_password,
+                                 :contact_phone,
+                                 :passport_number,
+                                 :driving_licence,
+                                 :address_company,
+                                 :address_1,
+                                 :address_2,
+                                 :address_town,
+                                 :address_county,
+                                 :address_postcode,
+                                 :emergency_name,
+                                 :emergency_relationship,
+                                 :emergency_number,
+                                 :emergency_email,
+                                 :verified,
+                                 :keywords
+    )
+  end
 end
