@@ -54,6 +54,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :emergency_number
       t.string :emergency_email
 
+      t.boolean :verified,                  default: false
+      t.boolean :uploaded_cv,               default: false
+      t.boolean :uploaded_self_assessment,  default: false
+      t.string :keywords
+
       t.datetime :deleted_at
       t.timestamps null: false
     end
