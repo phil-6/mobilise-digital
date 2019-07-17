@@ -12,10 +12,10 @@
             <% else %>
               <span class="nav-data">Open Jobs: </span>
               <span class="nav-data">Open Applications: <%= User.count() %></span>
-              <span class="nav-data">Profile %:  </span>
-            <% end %>
+              <span class="nav-data">Profile %: <%= current_user.profile_completion %> </span>
             <%= link_to 'Jobs',"#", :class => 'nav-link jobs ' %>
             <%= link_to 'Profile', edit_user_registration_path, :class => 'nav-link edit-profile' %>
+            <% end %>
             <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link logout' %>
           </div>
         <% end %>
