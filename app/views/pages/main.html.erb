@@ -11,7 +11,7 @@
               <span class="nav-link">|</span>
             <% else %>
               <span class="nav-data">Open Jobs: </span>
-              <span class="nav-data">Open Applications: </span>
+              <span class="nav-data">Open Applications: <%= User.count() %></span>
               <span class="nav-data">Profile %:  </span>
             <% end %>
             <%= link_to 'Jobs',"#", :class => 'nav-link jobs ' %>
