@@ -33,6 +33,37 @@ h3 {
   .brand {
     background-color: $brandprimary;
     color: $whiteink;
+    .main-page-nav {
+      padding: 0.6rem;
+      width: 100%;
+      margin: 0;
+      background: $orange-gradient;
+      .nav-link{
+        text-decoration: none;
+        color:$whiteink;
+        font-weight: 700;
+      }
+      .nav-data {
+        font-weight: 200;
+        padding: 0.5rem;
+        display:none;
+      }
+      .admin {
+        color: $ink;
+      }
+      .admin:hover {
+        color:$whiteink;
+      }
+      .jobs:hover {
+        color: $purple;
+      }
+      .edit-profile:hover{
+        color: $brandprimary;
+      }
+      .logout:hover {
+        color: $ink2;
+      }
+    }
   }
   .welcome{
     color: $whiteink;
@@ -98,30 +129,8 @@ h3 {
         padding: 0.6rem;
         width: 100%;
         margin: 0;
-        background: $orange-gradient;
-        .nav-link{
-          text-decoration: none;
-          color:$whiteink;
-          font-weight: 700;
-        }
         .nav-data {
-          font-weight: 200;
-          padding: 0.5rem;
-        }
-        .admin {
-          color: $ink;
-        }
-        .admin:hover {
-          color:$whiteink;
-        }
-        .jobs:hover {
-          color: $purple;
-        }
-        .edit-profile:hover{
-          color: $brandprimary;
-        }
-        .logout:hover {
-          color: $ink2;
+          display: block;
         }
       }
     }

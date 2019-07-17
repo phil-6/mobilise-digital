@@ -5,9 +5,9 @@
 <!--        <img src="assets/md-logo-white-cropped.png">-->
         <% if user_signed_in? %>
           <div class="row main-page-nav justify-content-end float-right">
-            <% if not current_user.admin? %>
+            <% if current_user.admin? %>
               <%= link_to 'Edit Users', "#", :class => 'nav-link admin' %>
-              <%= link_to "Edit Jobs","#" , :class => 'nav-link admin' %>
+              <%= link_to "Edit Jobs", "#" , :class => 'nav-link admin' %>
               <span class="nav-link">|</span>
             <% else %>
               <span class="nav-data">Open Jobs: </span>
