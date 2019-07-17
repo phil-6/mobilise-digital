@@ -48,8 +48,11 @@ ActiveRecord::Schema.define(version: 1) do
     t.string "emergency_email"
     t.boolean "verified", default: false
     t.boolean "uploaded_cv", default: false
+    t.string "cv_url"
     t.boolean "uploaded_self_assessment", default: false
+    t.string "sa_url"
     t.string "keywords"
+    t.integer "profile_completion"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
