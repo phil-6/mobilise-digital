@@ -12,7 +12,6 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require cable
 //= require fullpage
-//= stub fullpagescrolldemo-options
+
