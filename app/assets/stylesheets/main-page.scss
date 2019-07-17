@@ -104,12 +104,24 @@ h3 {
           color:$whiteink;
           font-weight: 700;
         }
-        .logout:hover {
-          color: $ink2;
-
+        .nav-data {
+          font-weight: 200;
+          padding: 0.5rem;
+        }
+        .admin {
+          color: $ink;
+        }
+        .admin:hover {
+          color:$whiteink;
+        }
+        .jobs:hover {
+          color: $purple;
         }
         .edit-profile:hover{
           color: $brandprimary;
+        }
+        .logout:hover {
+          color: $ink2;
         }
       }
     }
