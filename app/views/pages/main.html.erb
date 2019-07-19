@@ -4,19 +4,8 @@
       <div class="col-lg-6 brand text-center">
 <!--        <img src="assets/md-logo-white-cropped.png">-->
         <% if user_signed_in? %>
-          <div class="row main-page-nav justify-content-end float-right">
-            <% if current_user.admin? %>
-              <%= link_to 'Edit Users', "#", :class => 'nav-link admin' %>
-              <%= link_to "Edit Jobs", "#" , :class => 'nav-link admin' %>
-              <span class="nav-link">|</span>
-            <% else %>
-              <span class="nav-data">Open Jobs: </span>
-              <span class="nav-data">Open Applications: <%= User.count() %></span>
-              <span class="nav-data">Profile %: <%= current_user.profile_completion %> </span>
-            <%= link_to 'Jobs',"#", :class => 'nav-link jobs ' %>
-            <%= link_to 'Profile', edit_user_registration_path, :class => 'nav-link edit-profile' %>
-            <% end %>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link logout' %>
+          <div class="row main-page-nav global-nav justify-content-end float-right">
+            <%= render partial: 'layouts/nav' %>
           </div>
         <% end %>
         <h1 class="brand-4">MD</h1>
