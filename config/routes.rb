@@ -10,8 +10,9 @@ Rails.application.routes.draw do
                  confirmations: 'users/confirmations'
              }
   devise_scope :user do
-    get '/confirmation/pending', to:  'users/confirmations#pending'
+    get '/confirmation/pending',  to: 'users/confirmations#pending'
   end
 
+  get '/dashboard',               to: 'pages#dashboard'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
