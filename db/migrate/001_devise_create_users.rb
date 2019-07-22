@@ -35,12 +35,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # Customisation
       t.string :first_name,  null: false, default: ""
       t.string :last_name,   null: false, default: ""
-      t.integer :contact_phone
+      t.string :contact_phone
 
       t.boolean :admin,       default: false
 
-      t.integer :passport_number
-      t.integer :driving_licence
+      t.string :passport_number
+      t.string :driving_licence
 
       t.string :address_company
       t.string :address_1

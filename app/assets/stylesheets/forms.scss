@@ -13,7 +13,9 @@
       padding-left: 0;
     }
   }
-
+  .user-profile .md-form{
+    margin-top: 0;
+  }
   .md-form {
     label {
       font-size:  12.5px;
@@ -29,6 +31,7 @@
     margin: auto;
     margin-top: 56px;
     padding: 10px;
+
 
     //background-color: $purpletransparent;
     form {

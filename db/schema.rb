@@ -32,10 +32,10 @@ ActiveRecord::Schema.define(version: 1) do
     t.string "unconfirmed_email"
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
-    t.integer "contact_phone"
+    t.string "contact_phone"
     t.boolean "admin", default: false
-    t.integer "passport_number"
-    t.integer "driving_licence"
+    t.string "passport_number"
+    t.string "driving_licence"
     t.string "address_company"
     t.string "address_1"
     t.string "address_2"
