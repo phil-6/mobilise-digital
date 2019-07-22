@@ -20,9 +20,31 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+    fields_array = [
+        current_user.email.blank?,
+        current_user.first_name.blank?,
+        current_user.last_name.blank?,
+        current_user.contact_phone.blank?,
+        current_user.passport_number.blank?,
+        current_user.driving_licence.blank?,
+        current_user.address_company.blank?,
+        current_user.address_1.blank?,
+        current_user.address_2.blank?,
+        current_user.address_town.blank?,
+        current_user.address_county.blank?,
+        current_user.address_postcode.blank?,
+        current_user.emergency_name.blank?,
+        current_user.emergency_relationship.blank?,
+        current_user.emergency_number.blank?,
+        current_user.emergency_email.blank?,
+        current_user.uploaded_cv.blank?,
+        current_user.uploaded_self_assessment.blank?
+    ]
+    current_user.profile_completion = (((fields_array.count(false)).to_f/(fields_array.count).to_f).round(2)) * 100
+    current_user.save
+  end
 
   # DELETE /resource
   # def destroy
