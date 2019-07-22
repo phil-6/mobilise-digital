@@ -10,8 +10,16 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
-        <div id="update-basic" class="form-section">
-          <h3>Basic Details</h3>
+        <h3>
+          <a data-toggle="collapse"
+             href="#update-basic"
+             aria-expanded="false"
+             aria-controls="collapseExample"
+             class="collapsed">
+            Basic Details <i class="fas fa-chevron-up"></i><i class="fas fa-chevron-down"></i>
+          </a>
+        </h3>
+        <div id="update-basic" class="form-section collapse">
           <div class="row p-0">
             <div class="col">
               <div class="form-group floating-label">
@@ -43,72 +51,96 @@
 
         </div>
 
-        <div id="update-personal" class="form-section">
-          <h3>Personal Details</h3>
+        <h3>
+          <a data-toggle="collapse"
+             href="#update-personal"
+             aria-expanded="false"
+             aria-controls="collapseExample"
+             class="collapsed">
+            Personal Details <i class="fas fa-chevron-up"></i><i class="fas fa-chevron-down"></i>
+          </a>
+        </h3>
+        <div id="update-personal" class="form-section collapse">
           <div class="row p-0">
             <div class="col">
               <div class="form-group floating-label">
-                <%= f.text_field :passport_number, autofocus: true, class: "form-control", placeholder: " Passport number"%>
+                <%= f.text_field :passport_number, autofocus: true, class: "form-control", placeholder: " Passport number" %>
                 <%= f.label :passport_number %>
               </div>
             </div>
             <div class="col">
               <div class="form-group floating-label">
-                <%= f.text_field :driving_licence, class: "form-control", placeholder: " Driving licence number"%>
+                <%= f.text_field :driving_licence, class: "form-control", placeholder: " Driving licence number" %>
                 <%= f.label :driving_licence, 'Driving licence number' %>
               </div>
             </div>
           </div>
 
           <div class="form-group floating-label">
-            <%= f.text_field :address_company, autofocus: true, class: "form-control", placeholder: " Company name"%>
+            <%= f.text_field :address_company, autofocus: true, class: "form-control", placeholder: " Company name" %>
             <%= f.label :address_company, 'Company name' %>
           </div>
           <div class="form-group floating-label">
-            <%= f.text_field :address_1, autofocus: true, class: "form-control", placeholder: " Street address"%>
+            <%= f.text_field :address_1, autofocus: true, class: "form-control", placeholder: " Street address" %>
             <%= f.label :address_1, 'Street address' %>
           </div>
           <div class="form-group floating-label">
-            <%= f.text_field :address_2, autofocus: true, class: "form-control", placeholder: " Address line 2"%>
+            <%= f.text_field :address_2, autofocus: true, class: "form-control", placeholder: " Address line 2" %>
             <%= f.label :address_2, 'Address line 2' %>
           </div>
           <div class="form-group floating-label">
-            <%= f.text_field :address_town, autofocus: true, class: "form-control", placeholder: " Town / City"%>
+            <%= f.text_field :address_town, autofocus: true, class: "form-control", placeholder: " Town / City" %>
             <%= f.label :address_town, 'Town / City' %>
           </div>
           <div class="form-group floating-label">
-            <%= f.text_field :address_county, autofocus: true, class: "form-control", placeholder: " County"%>
+            <%= f.text_field :address_county, autofocus: true, class: "form-control", placeholder: " County" %>
             <%= f.label :address_county, 'County' %>
           </div>
           <div class="form-group floating-label">
-            <%= f.text_field :address_postcode, autofocus: true, class: "form-control", placeholder: " Post Code"%>
+            <%= f.text_field :address_postcode, autofocus: true, class: "form-control", placeholder: " Post Code" %>
             <%= f.label :address_postcode, 'Post Code' %>
           </div>
 
         </div>
 
-        <div id="update-emergency" class="form-section">
-          <h3>Emergency Contact Details</h3>
+        <h3>
+          <a data-toggle="collapse"
+             href="#update-emergency"
+             aria-expanded="false"
+             aria-controls="collapseExample"
+             class="collapsed">
+            Emergency Contact Details <i class="fas fa-chevron-up"></i><i class="fas fa-chevron-down"></i>
+          </a>
+        </h3>
+        <div id="update-emergency" class="form-section collapse">
           <div class="form-group floating-label">
-            <%= f.text_field :emergency_name, autofocus: true, class: "form-control", placeholder: " Name"%>
+            <%= f.text_field :emergency_name, autofocus: true, class: "form-control", placeholder: " Name" %>
             <%= f.label :emergency_name, 'Name' %>
           </div>
           <div class="form-group floating-label">
-            <%= f.text_field :emergency_relationship, autofocus: true, class: "form-control", placeholder: " Relationship to you"%>
+            <%= f.text_field :emergency_relationship, autofocus: true, class: "form-control", placeholder: " Relationship to you" %>
             <%= f.label :emergency_relationship, 'Relationship to you' %>
           </div>
           <div class="form-group floating-label">
-            <%= f.telephone_field :emergency_number, autofocus: true, class: "form-control", placeholder: " Contact number"%>
+            <%= f.telephone_field :emergency_number, autofocus: true, class: "form-control", placeholder: " Contact number" %>
             <%= f.label :emergency_number, 'Contact number' %>
           </div>
           <div class="form-group floating-label">
-            <%= f.email_field :emergency_email, autofocus: true, class: "form-control", placeholder: " Contact email"%>
+            <%= f.email_field :emergency_email, autofocus: true, class: "form-control", placeholder: " Contact email" %>
             <%= f.label :emergency_email, 'Contact email' %>
           </div>
         </div>
 
-        <div id="update-password" class="form-section">
-          <h3>Update Password</h3>
+        <h3>
+          <a data-toggle="collapse"
+             href="#update-password"
+             aria-expanded="false"
+             aria-controls="collapseExample"
+             class="collapsed">
+            Update Password <i class="fas fa-chevron-up"></i><i class="fas fa-chevron-down"></i>
+          </a>
+        </h3>
+        <div id="update-password" class="form-section collapse">
           <div class="form-group floating-label">
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: " Password (6 characters minimum)" %>
             <%= f.label :password %>
@@ -116,7 +148,7 @@
           <div class="form-caption"><i>(leave blank if you don't want to change it)</i></div>
 
           <div class="form-group floating-label">
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: " Password again"%>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: " Password again" %>
             <%= f.label :password_confirmation %>
           </div>
         </div>
@@ -126,7 +158,7 @@
           <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
           <%= f.label :current_password %>
         </div>
-        <div class="form-caption"> <i>(we need your current password to confirm your changes)</i> </div>
+        <div class="form-caption"><i>(we need your current password to confirm your changes)</i></div>
 
         <div class="actions form-group">
           <%= f.submit "Update", class: "btn btn-secondary" %>
@@ -134,15 +166,40 @@
       <% end %>
 
 
-      <div id="update-cancel" class="">
+      <div id="update-cancel" class=" collapse">
         <h3>Cancel my account</h3>
 
         <div class="actions form-group">
-        <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: {confirm: "Are you sure?"}, method: :delete, class: "btn btn-danger" %></p>
+          <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: {confirm: "Are you sure?"}, method: :delete, class: "btn btn-danger" %></p>
         </div>
       </div>
     </div>
     <div class="col-lg-6 md-form text-center">
+      <!--<h4><a data-toggle="collapse"
+             href="#update-basic"
+             aria-expanded="false"
+             aria-controls="collapseExample">
+        Basic Details</a></h4>
+      <h4><a data-toggle="collapse"
+             href="#update-personal"
+             aria-expanded="false"
+             aria-controls="collapseExample">
+        Personal Details</a></h4>
+      <h4><a data-toggle="collapse"
+             href="#update-emergency"
+             aria-expanded="false"
+             aria-controls="collapseExample">
+        Emergency Contact Details</a></h4>
+      <h4><a
+             href="#update-password"
+             >
+        Update Password</a></h4>
+      <h4><a data-toggle="collapse"
+             href="#update-cancel"
+             aria-expanded="false"
+             aria-controls="collapseExample">
+        Cancel Account</a></h4>
+-->
     </div>
   </div>
 </div>

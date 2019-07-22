@@ -15,6 +15,26 @@
   }
   .user-profile .md-form{
     margin-top: 0;
+    a {
+      text-decoration: none;
+      color: $ink;
+    }
+    a:hover {
+      color: $ink2;
+    }
+    i.fa-chevron-down {
+      display:none;
+    }
+    i.fa-chevron-up {
+      display:inline-block;
+    }
+    .collapsed i.fa-chevron-down {
+      display:inline-block;
+    }
+    .collapsed i.fa-chevron-up {
+      display:none;
+    }
+
   }
   .md-form {
     label {
@@ -31,6 +51,8 @@
     margin: auto;
     margin-top: 56px;
     padding: 10px;
+
+
 
 
     //background-color: $purpletransparent;
