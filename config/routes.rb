@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   get '/dashboard',               to: 'pages#dashboard'
 
   get '/admin/users',             to: 'admin#users'
+  get '/admin/users/:id',         to: 'admin#edit_user'
+
+
 end

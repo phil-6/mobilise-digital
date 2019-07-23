@@ -1,0 +1,18 @@
+<div id="fullpage" >
+  <div class="section header">
+    <div class="row global-nav justify-content-end">
+      <%= render partial: 'layouts/nav' %>
+    </div>
+    <div class="row admin-content full-height">
+      <div class="col">
+
+        <div class="brand text-center">
+          <h2>Manage <%= @user.first_name %> <%= @user.last_name %></h2>
+          <h3>User Details</h3>
+          <p><%= @user.email %></p>
+          <p><%= @user.contact_phone %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
