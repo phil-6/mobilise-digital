@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#main'
 
   devise_for :users, path: '',
@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   end
 
   get '/dashboard',               to: 'pages#dashboard'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get '/admin/users',             to: 'admin#users'
 end

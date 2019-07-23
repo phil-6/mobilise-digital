@@ -1,6 +1,6 @@
 
   <% if current_user.admin? %>
-    <%= link_to 'Manage Users', "#", :class => 'nav-link admin' %>
+    <%= link_to 'Manage Users', "/admin/users", :class => 'nav-link admin' %>
     <%= link_to "Manage Jobs", "#" , :class => 'nav-link admin' %>
     <span class="nav-link">|</span>
   <% else %>
