@@ -3,7 +3,7 @@ class AdminController < ApplicationController
   before_action :authorize_admin
 
   def users
-    render template: "pages/admin/users"
+    render template: "admin/users"
   end
 
   def authorize_admin
