@@ -6,7 +6,7 @@
   <% else %>
     <span class="nav-data">Open Jobs: </span>
     <span class="nav-data">Open Applications: <%= User.count() %></span>
-    <span class="nav-data mr-auto">Profile %: <%= current_user.profile_completion %> </span>
+    <span class="nav-data mr-auto">Profile: <%= current_user.profile_completion %>% </span>
     <%= link_to 'Jobs',"#", :class => 'nav-link jobs ' %>
     <%= link_to 'Dashboard',"/dashboard", :class => 'nav-link jobs ' %>
     <%#= link_to 'Profile', edit_user_registration_path, :class => 'nav-link edit-profile' %>
