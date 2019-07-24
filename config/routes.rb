@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#main'
 
-  devise_for :users, path: '',
+  devise_for :users,  path: '',
              path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile'},
              controllers: {
                  registrations: 'users/registrations',
@@ -15,8 +15,12 @@ Rails.application.routes.draw do
 
   get '/dashboard',               to: 'pages#dashboard'
 
-  get '/admin/users',             to: 'admin#users'
-  get '/admin/users/:id',         to: 'admin#edit_user'
+  namespace :admin do
+    resources :users
+  end
+
+  # get '/admin/users',             to: 'admin#users'
+  # get '/admin/users/:id',         to: 'admin#edit_user'
 
 
 end
