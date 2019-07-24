@@ -1,11 +1,32 @@
 @import "variables";
 .admin-content {
-  width: 100%;
-  margin:0;
-  .col{
+  .row{
+    width: 100%;
+    margin: 0;
+  }
+  .col, .row{
     padding: 0;
   }
   p{
     margin:0;
   }
+  .user-info-table {
+    background: $gray-gradient;
+    border-radius: 10px;
+    padding: 5px 15px;
+    table {
+      color: $whiteink;
+
+    }
+  }
+  table {
+    em {
+      font-weight: 100;
+    }
+  }
+}
+.brand-background {
+  background: $blue-gradient ;
+  color: $whiteink;
+  width: 100%;
 }

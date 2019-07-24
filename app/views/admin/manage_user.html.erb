@@ -1,152 +1,317 @@
-<div id="fullpage" >
-  <div class="section header">
-    <div class="row global-nav justify-content-end">
+<div id="fullpage">
+
+  <div class="section global-nav">
+    <div class="row justify-content-end">
       <%= render partial: 'layouts/nav' %>
     </div>
-    <div class="row admin-content full-height">
-      <div class="col">
+  </div>
 
-        <div class="brand text-center">
-          <h2>Manage <%= @user.first_name %> <%= @user.last_name %></h2>
-          <h3>User Details</h3>
-          <p><%= @user.email %></p>
-          <p><%= @user.contact_phone %></p>
+  <div class="admin-content brand-background text-center">
+    <section class="row container-fluid">
+      <div class="col">
+        <h2>User Details</h2>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-md-6">
+          <h3><em><%= @user.first_name %> <%= @user.last_name %></em></h3>
+
+          <div class="user-info-table">
+            <h4>Key Info</h4>
+            <table class="table table-sm ">
+
+              <tr>
+                <th scope="row">Member Since:</th>
+                <td><%= @user.created_at %></td>
+              </tr>
+              <tr>
+                <th scope="row">Last Login:</th>
+                <td><%= @user.last_sign_in_at %></td>
+              </tr>
+              <tr>
+                <th scope="row">Sign In Count:</th>
+                <td><%= @user.sign_in_count %></td>
+              </tr>
+              <tr>
+                <th scope="row">Profile Completion:</th>
+                <td><%= @user.profile_completion %>
+                  <% if @user.profile_completion? %>%
+                  <% else %>0%
+                  <% end %></td>
+              </tr>
+              <tr>
+                <th scope="row">CV:</th>
+                <td>
+                  <% if @user.uploaded_cv %><i class="fas fa-check"></i>
+                  <% else %><i class="fas fa-times"></i>
+                  <% end %></td>
+              </tr>
+              <tr>
+                <th scope="row">S-A:</th>
+                <td>
+                  <% if @user.uploaded_self_assessment %><i class="fas fa-check"></i>
+                  <% else %><i class="fas fa-times"></i>
+                  <% end %></td>
+              </tr>
+              <tr>
+                <th scope="row">Verified:</th>
+                <td>
+                  <% if @user.verified %><i class="fas fa-check"></i>
+                  <% else %><i class="fas fa-times"></i>
+                  <% end %></td>
+              </tr>
+              <tr>
+                <th scope="row">Keywords</th>
+                <td><%= @user.keywords %></td>
+              </tr>
+              <tr>
+                <th scope="row">Admin</th>
+                <td>
+                  <% if @user.admin %><i class="fas fa-check"></i>
+                  <% else %><i class="fas fa-times"></i>
+                  <% end %></td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
 
-      <div class="user-profile">
-      <div class="col md-form text-center">
-        <h2>Profile</h2>
+      <div class="row">
+        <div class="col">
+          <h4> Contact Info</h4>
+          <table class="table table-light table-hover table-sm">
+            <tr>
+              <th scope="row">Name:</th>
+              <td><%= @user.first_name %> <%= @user.last_name %></td>
+            </tr>
+            <tr>
+              <th scope="row">Email:</th>
+              <td><%= @user.email %></td>
+            </tr>
+            <tr>
+              <th scope="row">Phone:</th>
+              <td>
+                <% if @user.contact_phone? %> <%= @user.contact_phone %>
+                <% else %><em>No Contact Number Provided</em>
+                <% end %> </td>
+            </tr>
+            <tr>
+              <th scope="row">Passport:</th>
+              <td>
+                <% if @user.passport_number? %> <%= @user.passport_number %>
+                <% else %><em>No Passport Number</em>
+                <% end %> </td>
+            </tr>
+            <tr>
+              <th scope="row">Driving Licence:</th>
+              <td>
+                <% if @user.driving_licence? %> <%= @user.driving_licence %>
+                <% else %><em>No Driving Licence</em>
+                <% end %> </td>
+            </tr>
+            <tr>
+              <th scope="row">Company:</th>
+              <td>
+                <% if @user.address_company? %> <%= @user.address_company %>
+                <% else %><em>No Company Provided</em>
+                <% end %> </td>
+            </tr>
+            <tr>
+              <th scope="row">Address:</th>
+              <td>
+                <% if @user.address_1? %> <%= @user.address_1 %>
+                <% else %><em>No Address Provided</em>
+                <% end %> </td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td><%= @user.address_2 %></td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td>
+                <% if @user.address_town? %> <%= @user.address_town %>
+                <% else %><em>No Town Provided</em>
+                <% end %> </td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td>
+                <% if @user.address_county? %> <%= @user.address_county %>
+                <% else %><em>No County Provided</em>
+                <% end %> </td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td>
+                <% if @user.address_postcode? %> <%= @user.address_postcode %>
+                <% else %><em>No Post Code Provided</em>
+                <% end %> </td>
+            </tr>
+            <tr>
+              <th scope="row">Emergency:</th>
+              <td>
+                <% if @user.emergency_name? %> <%= @user.emergency_name %>
+                <% else %><em>No Emergency Contact Name</em>
+                <% end %> </td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td>
+                <% if @user.emergency_relationship? %> <%= @user.emergency_relationship %>
+                <% else %><em>No Emergency Relationship</em>
+                <% end %> </td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td>
+                <% if @user.emergency_number? %> <%= @user.emergency_number %>
+                <% else %><em>No Emergency Contact Number</em>
+                <% end %> </td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td>
+                <% if @user.emergency_email? %> <%= @user.emergency_email %>
+                <% else %><em>No Emergency Email</em>
+                <% end %> </td>
+            </tr>
+          </table>
 
-        <%= form_for(@user ,url: admin_user_path, html: {method: :put})  do |f| %>
-          <%= render "devise/shared/error_messages", resource: @user %>
-
-          <h3>
-            <a data-toggle="collapse"
-               href="#update-basic"
-               aria-expanded="false"
-               aria-controls="collapseExample"
-               class="collapsed">
-              Basic Details <i class="fas fa-chevron-up"></i><i class="fas fa-chevron-down"></i>
-            </a>
-          </h3>
-          <div id="update-basic" class="form-section collapse">
-            <div class="row p-0">
-              <div class="col">
-                <div class="form-group floating-label">
-                  <%= f.text_field :first_name, autofocus: true, class: "form-control", placeholder: " First name", :required => true %>
-                  <%= f.label :first_name %>
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-group floating-label">
-                  <%= f.text_field :last_name, class: "form-control", placeholder: " Last name", :required => true %>
-                  <%= f.label :last_name %>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group floating-label">
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: " Email" %>
-              <%= f.label :email %>
-            </div>
-
-            <div class="form-group floating-label">
-              <%= f.text_field :contact_phone, autofocus: true, autocomplete: "tel", class: "form-control", placeholder: " Phone Number" %>
-              <%= f.label :contact_phone %>
-            </div>
-
-
-
-          </div>
-
-          <h3>
-            <a data-toggle="collapse"
-               href="#update-personal"
-               aria-expanded="false"
-               aria-controls="collapseExample"
-               class="collapsed">
-              Personal Details <i class="fas fa-chevron-up"></i><i class="fas fa-chevron-down"></i>
-            </a>
-          </h3>
-          <div id="update-personal" class="form-section collapse">
-            <div class="row p-0">
-              <div class="col">
-                <div class="form-group floating-label">
-                  <%= f.text_field :passport_number, autofocus: true, class: "form-control", placeholder: " Passport number" %>
-                  <%= f.label :passport_number %>
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-group floating-label">
-                  <%= f.text_field :driving_licence, class: "form-control", placeholder: " Driving licence number" %>
-                  <%= f.label :driving_licence, 'Driving licence number' %>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group floating-label">
-              <%= f.text_field :address_company, autofocus: true, class: "form-control", placeholder: " Company name" %>
-              <%= f.label :address_company, 'Company name' %>
-            </div>
-            <div class="form-group floating-label">
-              <%= f.text_field :address_1, autofocus: true, class: "form-control", placeholder: " Street address" %>
-              <%= f.label :address_1, 'Street address' %>
-            </div>
-            <div class="form-group floating-label">
-              <%= f.text_field :address_2, autofocus: true, class: "form-control", placeholder: " Address line 2" %>
-              <%= f.label :address_2, 'Address line 2' %>
-            </div>
-            <div class="form-group floating-label">
-              <%= f.text_field :address_town, autofocus: true, class: "form-control", placeholder: " Town / City" %>
-              <%= f.label :address_town, 'Town / City' %>
-            </div>
-            <div class="form-group floating-label">
-              <%= f.text_field :address_county, autofocus: true, class: "form-control", placeholder: " County" %>
-              <%= f.label :address_county, 'County' %>
-            </div>
-            <div class="form-group floating-label">
-              <%= f.text_field :address_postcode, autofocus: true, class: "form-control", placeholder: " Post Code" %>
-              <%= f.label :address_postcode, 'Post Code' %>
-            </div>
-
-          </div>
-
-          <h3>
-            <a data-toggle="collapse"
-               href="#update-emergency"
-               aria-expanded="false"
-               aria-controls="collapseExample"
-               class="collapsed">
-              Emergency Contact Details <i class="fas fa-chevron-up"></i><i class="fas fa-chevron-down"></i>
-            </a>
-          </h3>
-          <div id="update-emergency" class="form-section collapse">
-            <div class="form-group floating-label">
-              <%= f.text_field :emergency_name, autofocus: true, class: "form-control", placeholder: " Name" %>
-              <%= f.label :emergency_name, 'Name' %>
-            </div>
-            <div class="form-group floating-label">
-              <%= f.text_field :emergency_relationship, autofocus: true, class: "form-control", placeholder: " Relationship to you" %>
-              <%= f.label :emergency_relationship, 'Relationship to you' %>
-            </div>
-            <div class="form-group floating-label">
-              <%= f.telephone_field :emergency_number, autofocus: true, class: "form-control", placeholder: " Contact number" %>
-              <%= f.label :emergency_number, 'Contact number' %>
-            </div>
-            <div class="form-group floating-label">
-              <%= f.email_field :emergency_email, autofocus: true, class: "form-control", placeholder: " Contact email" %>
-              <%= f.label :emergency_email, 'Contact email' %>
-            </div>
-          </div>
-
-
-          <div class="actions form-group">
-            <%= f.submit "Update", class: "btn btn-secondary" %>
-          </div>
-        <% end %>
+        </div>
+        <div class="col">
+          <h4>Jobs</h4>
+        </div>
       </div>
-      </div>
-    </div>
+    </section>
+
+    <section class="row">
+      <div class="col user-profile">
+        <h2>Edit User</h2>
+          <div class="md-form">
+            <%= form_for(@user, url: admin_user_path, html: {method: :put}) do |f| %>
+              <%= render "devise/shared/error_messages", resource: @user %>
+              <h3>
+                <a data-toggle="collapse"
+                   href="#update-basic"
+                   aria-expanded="false"
+                   aria-controls="collapseExample"
+                   class="collapsed">
+                  Basic Details <i class="fas fa-chevron-up"></i><i class="fas fa-chevron-down"></i>
+                </a>
+              </h3>
+              <div id="update-basic" class="form-section collapse">
+                <div class="row p-0">
+                  <div class="col">
+                    <div class="form-group floating-label">
+                      <%= f.text_field :first_name, autofocus: true, class: "form-control", placeholder: " First name", :required => true %>
+                      <%= f.label :first_name %>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group floating-label">
+                      <%= f.text_field :last_name, class: "form-control", placeholder: " Last name", :required => true %>
+                      <%= f.label :last_name %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group floating-label">
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: " Email" %>
+                  <%= f.label :email %>
+                </div>
+
+                <div class="form-group floating-label">
+                  <%= f.text_field :contact_phone, autofocus: true, autocomplete: "tel", class: "form-control", placeholder: " Phone Number" %>
+                  <%= f.label :contact_phone %>
+                </div>
+              </div>
+
+              <h3>
+                <a data-toggle="collapse"
+                   href="#update-personal"
+                   aria-expanded="false"
+                   aria-controls="collapseExample"
+                   class="collapsed">
+                  Personal Details <i class="fas fa-chevron-up"></i><i class="fas fa-chevron-down"></i>
+                </a>
+              </h3>
+              <div id="update-personal" class="form-section collapse">
+                <div class="row p-0">
+                  <div class="col">
+                    <div class="form-group floating-label">
+                      <%= f.text_field :passport_number, autofocus: true, class: "form-control", placeholder: " Passport number" %>
+                      <%= f.label :passport_number %>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group floating-label">
+                      <%= f.text_field :driving_licence, class: "form-control", placeholder: " Driving licence number" %>
+                      <%= f.label :driving_licence, 'Driving licence number' %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group floating-label">
+                  <%= f.text_field :address_company, autofocus: true, class: "form-control", placeholder: " Company name" %>
+                  <%= f.label :address_company, 'Company name' %>
+                </div>
+                <div class="form-group floating-label">
+                  <%= f.text_field :address_1, autofocus: true, class: "form-control", placeholder: " Street address" %>
+                  <%= f.label :address_1, 'Street address' %>
+                </div>
+                <div class="form-group floating-label">
+                  <%= f.text_field :address_2, autofocus: true, class: "form-control", placeholder: " Address line 2" %>
+                  <%= f.label :address_2, 'Address line 2' %>
+                </div>
+                <div class="form-group floating-label">
+                  <%= f.text_field :address_town, autofocus: true, class: "form-control", placeholder: " Town / City" %>
+                  <%= f.label :address_town, 'Town / City' %>
+                </div>
+                <div class="form-group floating-label">
+                  <%= f.text_field :address_county, autofocus: true, class: "form-control", placeholder: " County" %>
+                  <%= f.label :address_county, 'County' %>
+                </div>
+                <div class="form-group floating-label">
+                  <%= f.text_field :address_postcode, autofocus: true, class: "form-control", placeholder: " Post Code" %>
+                  <%= f.label :address_postcode, 'Post Code' %>
+                </div>
+
+              </div>
+
+              <h3>
+                <a data-toggle="collapse"
+                   href="#update-emergency"
+                   aria-expanded="false"
+                   aria-controls="collapseExample"
+                   class="collapsed">
+                  Emergency Contact Details <i class="fas fa-chevron-up"></i><i class="fas fa-chevron-down"></i>
+                </a>
+              </h3>
+              <div id="update-emergency" class="form-section collapse">
+                <div class="form-group floating-label">
+                  <%= f.text_field :emergency_name, autofocus: true, class: "form-control", placeholder: " Name" %>
+                  <%= f.label :emergency_name, 'Name' %>
+                </div>
+                <div class="form-group floating-label">
+                  <%= f.text_field :emergency_relationship, autofocus: true, class: "form-control", placeholder: " Relationship to you" %>
+                  <%= f.label :emergency_relationship, 'Relationship to you' %>
+                </div>
+                <div class="form-group floating-label">
+                  <%= f.telephone_field :emergency_number, autofocus: true, class: "form-control", placeholder: " Contact number" %>
+                  <%= f.label :emergency_number, 'Contact number' %>
+                </div>
+                <div class="form-group floating-label">
+                  <%= f.email_field :emergency_email, autofocus: true, class: "form-control", placeholder: " Contact email" %>
+                  <%= f.label :emergency_email, 'Contact email' %>
+                </div>
+              </div>
+              <div class="actions form-group">
+                <%= f.submit "Update", class: "btn btn-secondary" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+    </section>
+
   </div>
 </div>

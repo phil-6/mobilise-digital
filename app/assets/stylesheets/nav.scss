@@ -1,40 +1,51 @@
 @import "variables";
-.global-nav{
+
+.global-nav {
+  .row {
     padding: 0.6rem;
     width: 100%;
     margin: 0;
     background: $purple-gradient;
-.nav-link{
+  }
+
+  .nav-link {
     text-decoration: none;
-    color:$whiteink;
+    color: $whiteink;
     font-weight: 700;
-}
-.nav-data {
+  }
+
+  .nav-data {
     font-weight: 200;
     padding: 0.5rem;
-    display:none;
-    color:$whiteink;
-}
-.admin {
+    display: none;
+    color: $whiteink;
+  }
+
+  .admin {
     color: $ink;
-}
-.admin:hover {
-    color:$whiteink;
-}
-.jobs:hover {
+  }
+
+  .admin:hover {
+    color: $whiteink;
+  }
+
+  .jobs:hover {
     color: $purple;
-}
-.edit-profile:hover{
+  }
+
+  .edit-profile:hover {
     color: $brandprimary;
-}
-.logout:hover {
+  }
+
+  .logout:hover {
     color: $ink2;
+  }
 }
-}
+
 @media (min-width: 992px) {
-    .global-nav {
-        .nav-data {
-            display: block;
-        }
+  .global-nav {
+    .nav-data {
+      display: block;
     }
+  }
 }
