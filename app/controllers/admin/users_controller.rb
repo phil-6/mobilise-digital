@@ -52,6 +52,7 @@ class Admin::UsersController < ApplicationController
                                  :emergency_number,
                                  :emergency_email,
                                  :verified,
+                                 :admin,
                                  :keywords
     )
   end
