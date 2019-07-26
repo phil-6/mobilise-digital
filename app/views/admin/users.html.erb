@@ -47,7 +47,7 @@
               <% else %><i class="fas fa-times text-danger"></i>
               <% end %></td>
             <td><%= user.sign_in_count %></td>
-            <td><%= user.last_sign_in_at %></td>
+            <td><%= user&.last_sign_in_at&.strftime("%d/%m/%Y") %></td>
             <td><a href="/admin/users/<%= user.id %>"><i class="fas fa-pen"></i></a></td>
           </tr>
         <% end %>
