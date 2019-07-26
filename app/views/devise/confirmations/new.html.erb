@@ -2,6 +2,7 @@
   <div class="row full-height">
     <%= render partial: 'layouts/brand_half_page' %>
     <div class="col-lg-6 md-form text-center">
+      <%= render partial: 'layouts/alerts' %>
       <h2>Resend confirmation instructions</h2>
 
       <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: {method: :post}) do |f| %>
