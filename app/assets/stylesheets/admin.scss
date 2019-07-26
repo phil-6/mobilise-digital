@@ -1,8 +1,10 @@
 @import "variables";
 .admin-content {
   .row{
-    width: 100%;
     margin: 0;
+    .full-width{
+      width: 100%;
+    }
   }
   .col, .row{
     padding: 0;

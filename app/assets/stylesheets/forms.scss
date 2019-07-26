@@ -15,6 +15,17 @@
   }
   .user-profile .md-form{
     margin-top: 0;
+    .row {
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+    .col {
+      padding-right: 15px;
+      padding-left: 15px;
+      //position: relative;
+      //width: 100%;
+    }
+
     a {
       text-decoration: none;
       color: $ink;
@@ -51,9 +62,6 @@
     margin: auto;
     margin-top: 56px;
     padding: 10px;
-
-
-
 
     //background-color: $purpletransparent;
     form {
@@ -145,9 +153,20 @@
         .form-caption {
           //margin-top: -16px;
         }
+      } //.floating-label
+      .checkbox-lg {
+        input.form-check-input{
+          //transform: scale(2);
+          //width: 40px;
+          //height: 40px;
+        }
+        .form-check-label{
+          font-size: 1.2rem;
+          color:$whiteink;
+        }
       }
-    }
-  }
+    } //form
+  } //.md-form
 
 
 

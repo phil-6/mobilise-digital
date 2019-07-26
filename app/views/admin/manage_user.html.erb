@@ -7,11 +7,11 @@
   </div>
 
   <div class="admin-content brand-background text-center">
-    <section class="row container-fluid">
+    <section class="row full-width container-fluid">
       <div class="col">
         <h2>User Details</h2>
       </div>
-      <div class="row justify-content-md-center">
+      <div class="row full-width justify-content-md-center">
         <div class="col-md-6">
           <h3><em><%= @user.first_name %> <%= @user.last_name %></em></h3>
 
@@ -75,7 +75,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row full-width">
         <div class="col">
           <h4> Contact Info</h4>
           <table class="table table-light table-hover table-sm">
@@ -209,15 +209,15 @@
                   <%= f.label :keywords %>
                 </div>
 
-                <div class="form-group row">
-                  <div class="form-check">
+                <div class="form-group row justify-content-center">
+                  <div class="form-check checkbox-lg">
                     <%= f.check_box :verified, class: "form-check-input" %>
                     <%= f.label :verified, "Verified", class: "form-check-label" %>
                   </div>
                 </div>
 
-                <div class="form-group row">
-                  <div class="form-check">
+                <div class="form-group row justify-content-center">
+                  <div class="form-check checkbox-lg">
                     <%= f.check_box :admin, class: "form-check-input" %>
                     <%= f.label :admin, "Admin", class: "form-check-label" %>
                   </div>
@@ -272,7 +272,7 @@
               </a>
             </h3>
             <div id="update-personal" class="form-section collapse">
-              <div class="row p-0">
+              <div class="row p-0 ">
                 <div class="col">
                   <div class="form-group floating-label">
                     <%= f.text_field :passport_number, autofocus: true, class: "form-control", placeholder: " Passport number" %>
