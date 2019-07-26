@@ -84,6 +84,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     '/confirmation/pending'
   end
 
+  # The path used after update.
+  def after_update_path_for(resource)
+    super (resource)
+    '/profile'
+  end
+
   private
 
   def sign_up_params

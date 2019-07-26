@@ -1,13 +1,16 @@
-<div class="alerts text-center">
-  <p class="notice">
-    <% if flash[:notice] %>
+<% if flash[:notice] %>
+  <div class="alerts text-center">
+    <p class="notice">
       <%= flash[:notice] %>
-    <% end %>
-  </p>
-  <p class="alert text-danger">
-    <% if flash[:alert] %>
-      <%= flash[:alert] %>
-    <% end %>
-  </p>
+    </p>
+  </div>
+<% end %>
 
-</div>
+
+<% if flash[:alert] %>
+  <div class="alerts text-center">
+    <p class="alert text-danger">
+      <%= flash[:alert] %>
+    </p>
+  </div>
+<% end %>
