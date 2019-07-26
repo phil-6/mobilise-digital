@@ -14,8 +14,12 @@ class Admin::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    if @user.update(account_update_params)
+      flash[:notice] = 'User Updated Successfully'
+    else
+      flash[:alert] = 'Something Broke'
+    end
     redirect_to :admin_user
-    flash[:notice] = 'User Updated Successfully'
   end
 
   private
