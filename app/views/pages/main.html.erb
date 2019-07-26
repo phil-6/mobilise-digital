@@ -4,8 +4,10 @@
       <div class="col-lg-6 brand text-center">
 <!--        <img src="assets/md-logo-white-cropped.png">-->
         <% if user_signed_in? %>
-          <div class="row main-page-nav global-nav justify-content-end float-right">
-            <%= render partial: 'layouts/nav' %>
+          <div class="main-page-nav global-nav">
+            <div class="row justify-content-end float-right">
+              <%= render partial: 'layouts/nav' %>
+            </div>
           </div>
         <% end %>
         <h1 class="brand-4">MD</h1>
