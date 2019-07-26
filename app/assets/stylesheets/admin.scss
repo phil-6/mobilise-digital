@@ -22,11 +22,16 @@
     }
   }
   table {
+    margin-bottom: 0;
     em {
       font-weight: 100;
     }
     a {
       color: $whiteink;
+
+    }
+    a:hover .fa-pen {
+      color: $orange;
     }
   }
 }

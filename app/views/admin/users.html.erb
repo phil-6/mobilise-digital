@@ -35,16 +35,16 @@
             <td><%= user.last_name %></td>
             <td><a href="mailto:<%= user.email %>"><i class="fas fa-envelope"></i></a></td>
             <td>
-              <% if user.confirmed_at? %><i class="fas fa-check"></i>
-              <% else %><i class="fas fa-times"></i>
+              <% if user.confirmed_at? %><i class="fas fa-check text-success"></i>
+              <% else %><i class="fas fa-times text-danger"></i>
               <% end %></td>
             <td><%= user.profile_completion %>
               <% if user.profile_completion? %>%
-              <% else %>0%
+              <% else %><span class="text-danger">0%</span>
               <% end %></td>
             <td>
-              <% if user.verified %><i class="fas fa-check"></i>
-              <% else %><i class="fas fa-times"></i>
+              <% if user.verified %><i class="fas fa-check text-success"></i>
+              <% else %><i class="fas fa-times text-danger"></i>
               <% end %></td>
             <td><%= user.sign_in_count %></td>
             <td><%= user.last_sign_in_at %></td>
