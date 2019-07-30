@@ -9,15 +9,28 @@
 require 'faker'
 
 User.create(
-        email: 'testadmin@purupleriver.dev',
+        email: 'testadmin@purpleriver.dev',
         first_name: 'Admin',
         last_name: 'Reynolds',
         password: 'admintest',
         admin: 'true'
 )
+User.create(
+        email: 'testnoadmin@purpleriver.dev',
+        first_name: 'NoAdmin',
+        last_name: 'Reynolds',
+        password: 'noadmintest'
+)
+User.create(
+        email: 'andrew.carpenter@mobilise.cloud',
+        first_name: 'Andrew',
+        last_name: 'Carpenter',
+        password: 'andrewstestpassword',
+        admin: 'true'
+)
 100.times do
   User.create(
-       email: Faker::Internet.unique.free_email,
+       email: Faker::Internet.unique.safe_email,
        first_name: Faker::Name.first_name,
        last_name: Faker::Name.last_name,
        password: 'test123mob',
@@ -26,5 +39,24 @@ User.create(
        address_2: Faker::Address.community,
        address_town: Faker::Address.city,
        address_county: Faker::Address.state
+  )
+end
+
+50.times do
+  Job.create(
+         title: Faker::Job.title,
+         description: Faker::Hacker.say_something_smart,
+         published_date: Faker::Time.between(20.days.ago, Date.today),
+         latest_start_date: Faker::Time.forward(20),
+         contract_length: '3  Months',
+         day_rate: Faker::Number.between(50, 2000),
+         working_arrangements: Faker::Job.employment_type,
+         address_company: Faker::Company.name,
+         address_1: Faker::Address.street_address,
+         address_2: Faker::Address.community,
+         address_town: Faker::Address.city,
+         address_county: Faker::Address.state,
+         team: Faker::Commerce.department,
+         requirements: Faker::Quote.yoda
   )
 end
