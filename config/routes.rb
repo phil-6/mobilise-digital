@@ -17,7 +17,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
+    resources :jobs
   end
+
+  resources :jobs
+
 
   # get '/admin/users',             to: 'admin#users'
   # get '/admin/users/:id',         to: 'admin#edit_user'

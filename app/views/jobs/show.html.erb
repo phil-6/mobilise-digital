@@ -1,0 +1,58 @@
+<div id="fullpage">
+
+  <div class="section global-nav">
+    <div class="row justify-content-end">
+      <%= render partial: 'layouts/nav' %>
+    </div>
+  </div>
+
+  <div class="admin-content brand-background text-center">
+    <section class="row full-width container-fluid">
+      <div class="col">
+        <%= render partial: 'layouts/alerts' %>
+        <h2>Job Details</h2>
+      </div>
+      <div class="row full-width justify-content-md-center">
+        <div class="col-md-6">
+          <h3><em><%= @job.title %></em></h3>
+
+          <div class="user-info-table">
+            <h4>Key Info</h4>
+            <table class="table table-sm ">
+
+
+              <tr>
+                <th scope="row">Created Date:</th>
+                <td><%= @job.created_at %></td>
+              </tr>
+              <tr>
+                <th scope="row">Published Date:</th>
+                <td><%= @job.published_date %></td>
+              </tr>
+              <tr>
+                <th scope="row">Contract Length:</th>
+                <td><%= @job.contract_length %></td>
+              </tr>
+              <tr>
+                <th scope="row">Day Rate:</th>
+                <td>£<%= @job.day_rate %></td>
+              </tr>
+              <tr>
+                <th scope="row">Company:</th>
+                <td><%= @job.address_company %></td>
+              </tr>
+              <tr>
+                <th scope="row">Loation:</th>
+                <td><%= @job.address_town %>, <%= @job.address_county %></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="row full-width">
+
+      </div>
+    </section>
+  </div>
+</div>
