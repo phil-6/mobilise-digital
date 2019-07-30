@@ -3,17 +3,10 @@
     <%= render partial: 'layouts/brand_half_page' %>
     <div class="col-lg-6 md-form text-center">
       <%= render partial: 'layouts/alerts' %>
+
       <h2>Log in</h2>
 
-
-
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-        <p class="text-danger">
-          <% if flash[:alert] %>
-            <%= flash[:alert] %>
-          <% end %>
-        </p>
 
         <div class="form-group floating-label">
           <div class="field">
