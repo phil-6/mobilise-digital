@@ -62,10 +62,82 @@
           <%= form_for(@job, url: admin_job_path, html: {method: :put}) do |f| %>
             <%= render "devise/shared/error_messages", resource: @job %>
 
-              <div class="form-group floating-label">
-                <%= f.text_field :title, placeholder: " Title", class: "form-control" %>
-                <%= f.label :title %>
-              </div>
+            <h4><em>Job Details</em></h4>
+            <div class="form-group floating-label">
+              <%= f.text_field :title, placeholder: " Title", class: "form-control" %>
+              <%= f.label :title %>
+            </div>
+
+            <div class="form-group floating-label">
+              <%= f.text_area :description, placeholder: " Description", class: "form-control" %>
+              <%= f.label :description %>
+            </div>
+
+            <div class="form-group floating-label">
+              <%= f.date_field :published_date, placeholder: " Published Date", class: "form-control" %>
+              <%= f.label :published_date %>
+            </div>
+
+            <div class="form-group floating-label">
+              <%= f.date_field :latest_start_date, placeholder: " Latest Start Date", class: "form-control" %>
+              <%= f.label :latest_start_date %>
+            </div>
+
+            <div class="form-group floating-label">
+              <%= f.date_field :award_date, placeholder: " Award Date", class: "form-control" %>
+              <%= f.label :award_date %>
+            </div>
+
+            <div class="form-group floating-label">
+              <%= f.text_field :contract_length, placeholder: " Contract Length", class: "form-control" %>
+              <%= f.label :contract_length %>
+            </div>
+
+            <div class="form-group floating-label">
+              <%= f.number_field :day_rate, unit: '£', placeholder: " Day Rate", class: "form-control" %>
+              <%= f.label :day_rate %>
+            </div>
+
+            <div class="form-group floating-label">
+              <%= f.text_area :working_arrangements, placeholder: " Working Arrangements", class: "form-control" %>
+              <%= f.label :working_arrangements %>
+            </div>
+
+            <div class="form-group floating-label">
+              <%= f.text_area :team, placeholder: " Team", class: "form-control" %>
+              <%= f.label :team %>
+            </div>
+
+            <div class="form-group floating-label">
+              <%= f.text_area :requirements, placeholder: " Requirements", class: "form-control" %>
+              <%= f.label :requirements %>
+            </div>
+
+            <h4><em>Job Address</em></h4>
+            <div class="form-group floating-label">
+              <%= f.text_field :address_company, class: "form-control", placeholder: " Company name" %>
+              <%= f.label :address_company, 'Company name' %>
+            </div>
+            <div class="form-group floating-label">
+              <%= f.text_field :address_1, class: "form-control", placeholder: " Street address" %>
+              <%= f.label :address_1, 'Street address' %>
+            </div>
+            <div class="form-group floating-label">
+              <%= f.text_field :address_2, class: "form-control", placeholder: " Address line 2" %>
+              <%= f.label :address_2, 'Address line 2' %>
+            </div>
+            <div class="form-group floating-label">
+              <%= f.text_field :address_town, class: "form-control", placeholder: " Town / City" %>
+              <%= f.label :address_town, 'Town / City' %>
+            </div>
+            <div class="form-group floating-label">
+              <%= f.text_field :address_county, class: "form-control", placeholder: " County" %>
+              <%= f.label :address_county, 'County' %>
+            </div>
+            <div class="form-group floating-label">
+              <%= f.text_field :address_postcode, class: "form-control", placeholder: " Post Code" %>
+              <%= f.label :address_postcode, 'Post Code' %>
+            </div>
 
 
             <div class="actions form-group">

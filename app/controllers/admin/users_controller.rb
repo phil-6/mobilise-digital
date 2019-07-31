@@ -13,7 +13,6 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(account_update_params)
       flash[:notice] = 'User Updated Successfully'
     else

@@ -24,6 +24,15 @@ class Admin::JobsController < ApplicationController
     end
   end
 
+  def update
+    if @job.update(job_params)
+      flash[:notice] = 'Job Updated Successfully'
+    else
+      flash[:alert] = 'Something Broke'
+    end
+    redirect_to :admin_job
+  end
+
   private
 
   def set_job
