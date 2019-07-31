@@ -1,1 +1,48 @@
-jobs index
+<div>
+
+  <div class="section global-nav">
+    <div class="row justify-content-end">
+      <%= render partial: 'layouts/nav' %>
+    </div>
+  </div>
+
+  <section class="brand-background text-center">
+    <%= render partial: 'layouts/alerts' %>
+    <div class="row">
+      <div class="col">
+        <h2>All Open Jobs</h2>
+
+      </div>
+      <div class="card-deck">
+        <% Job.all.order(:updated_at).each do |job| %>
+          <% if not job.open? %>
+            <div class="card job-card">
+              <div class="card-header"></div>
+              <div class="card-body">
+                <h3 class="card-title"><%= job.title %></h3>
+                <p class="card-text"><%= job.description %></p>
+                <hr />
+                <div class="key-info text-left">
+                  <p><strong>Company: </strong><%= job.address_company %></p>
+                  <p><strong>Location: </strong><%= job.address_town %>, <%= job.address_county %></p>
+                  <p><strong>Duration: </strong><%= job.contract_length %></p>
+                  <p><strong>Day Rate: </strong>£<%= job.day_rate %></p>
+                  <p><strong>Requirements: </strong><%= job.requirements.truncate(160) %></p>
+                  <p><strong>Published Date: </strong><%= job.published_date %></p>
+                </div>
+              </div>
+              <div class="card-footer">
+                <%= link_to "More Info",  job_path(job), :class => 'btn btn-secondary' %>
+                <%= link_to "Apply Now",  job_path(job), :class => 'btn btn-success' %>
+                <p><small class="text-muted">Last updated <%= time_ago_in_words(job.updated_at) %></p></small>
+              </div>
+            </div> <!--End Card-->
+            <% end  %>
+        <% end %>
+      </div> <!--End Deck-->
+
+
+    </div> <!--End Row-->
+  </section> <!--End Section-->
+
+</div>

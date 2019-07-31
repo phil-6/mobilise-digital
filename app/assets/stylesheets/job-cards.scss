@@ -1,0 +1,23 @@
+@import "variables";
+
+.job-card {
+  min-width: 300px;
+  margin: 15px;
+  border: 0;
+  border-radius: 25px;
+  background: $black-gradient;
+
+  .card-body {
+
+  }
+
+  .card-footer {
+    background-color: $ink2;
+    color: $whiteink;
+    border-radius: 25px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
