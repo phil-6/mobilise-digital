@@ -57,6 +57,7 @@ end
          address_town: Faker::Address.city,
          address_county: Faker::Address.state,
          team: Faker::Commerce.department,
-         requirements: Faker::Quote.yoda
+         requirements: Faker::Quote.yoda,
+         open: true
   )
 end
