@@ -60,7 +60,8 @@ class Admin::JobsController < ApplicationController
                                 :address_county,
                                 :address_postcode,
                                 :team,
-                                :requirements)
+                                :requirements,
+                                :open)
   end
 
 end
