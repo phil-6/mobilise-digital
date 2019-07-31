@@ -1,13 +1,13 @@
 
   <% if current_user.admin? %>
     <%= link_to 'Manage Users', "/admin/users", :class => 'nav-link admin' %>
-    <%= link_to "Manage Jobs", "#" , :class => 'nav-link admin' %>
+    <%= link_to "Manage Jobs", "/admin/jobs" , :class => 'nav-link admin' %>
     <span class="nav-link">|</span>
   <% else %>
     <span class="nav-data">Open Jobs: </span>
     <span class="nav-data">Open Applications: <%= User.count() %></span>
     <span class="nav-data mr-auto">Profile: <%= current_user.profile_completion %>% </span>
-    <%= link_to 'Jobs',"#", :class => 'nav-link jobs ' %>
+    <%= link_to 'Jobs',"/jobs", :class => 'nav-link jobs ' %>
     <%= link_to 'Dashboard',"/dashboard", :class => 'nav-link jobs ' %>
     <%#= link_to 'Profile', edit_user_registration_path, :class => 'nav-link edit-profile' %>
   <% end %>
