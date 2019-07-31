@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 2) do
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.datetime "published_date"
-    t.datetime "latest_start_date"
-    t.datetime "award_date"
+    t.date "published_date"
+    t.date "latest_start_date"
+    t.date "award_date"
     t.string "contract_length"
     t.integer "day_rate"
     t.text "working_arrangements"

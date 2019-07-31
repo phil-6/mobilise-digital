@@ -3,9 +3,9 @@ class CreateJobs < ActiveRecord::Migration[5.2]
     create_table :jobs do |t|
       t.string :title
       t.text :description
-      t.datetime :published_date
-      t.datetime :latest_start_date
-      t.datetime :award_date
+      t.date :published_date
+      t.date :latest_start_date
+      t.date :award_date
       t.string :contract_length
       t.integer :day_rate
       t.text :working_arrangements
