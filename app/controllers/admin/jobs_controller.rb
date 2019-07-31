@@ -18,7 +18,7 @@ class Admin::JobsController < ApplicationController
 
   def create
     if @job = Job.create!(job_params)
-      redirect_to @job
+      redirect_to :admin_jobs
     else
       render 'new'
     end
