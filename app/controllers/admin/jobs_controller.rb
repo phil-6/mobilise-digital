@@ -1,10 +1,6 @@
 class Admin::JobsController < ApplicationController
   before_action :authorize_admin
-  before_action :set_job, except: [:index, :new, :create]
-
-  def index
-    render template: "admin/jobs"
-  end
+  before_action :set_job, except: [:new, :create]
 
   def show
     @job
@@ -18,7 +14,7 @@ class Admin::JobsController < ApplicationController
 
   def create
     if @job = Job.create!(job_params)
-      redirect_to :admin_jobs
+      redirect_to :jobs
     else
       render 'new'
     end
