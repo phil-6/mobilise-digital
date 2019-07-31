@@ -17,6 +17,7 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       t.string :address_postcode
       t.text :team
       t.text :requirements
+      t.boolean :open,  default: false
 
       t.timestamps
     end

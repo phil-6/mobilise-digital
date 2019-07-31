@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2) do
     t.string "address_postcode"
     t.text "team"
     t.text "requirements"
+    t.boolean "open", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
