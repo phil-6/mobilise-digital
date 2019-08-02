@@ -15,5 +15,6 @@
 //= require cable
 //= require fullpage
 //= require Chart.min
+//= require chart-settings
 
 

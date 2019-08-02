@@ -12,7 +12,10 @@
           <h2>Welcome <%= current_user.first_name %></h2>
           <%= link_to "Update Profile", edit_user_registration_path, :class => 'btn btn-secondary' %>
           <%= link_to "View Jobs", "/jobs" , :class => 'btn btn-secondary' %>
+
+          <canvas id="profileCompletionPie" width="400" height="400"></canvas>
         </div>
+
         <div class="col-lg-6">
           World
         </div>
