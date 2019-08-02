@@ -30,6 +30,14 @@
                 <td><%= @job.published_date %></td>
               </tr>
               <tr>
+                <th scope="row">Latest Start Date:</th>
+                <td><%= @job.latest_start_date %></td>
+              </tr>
+              <tr>
+                <th scope="row">Award Date:</th>
+                <td><%= @job.award_date %></td>
+              </tr>
+              <tr>
                 <th scope="row">Contract Length:</th>
                 <td><%= @job.contract_length %></td>
               </tr>
@@ -42,7 +50,7 @@
                 <td><%= @job.address_company %></td>
               </tr>
               <tr>
-                <th scope="row">Loation:</th>
+                <th scope="row">Location:</th>
                 <td><%= @job.address_town %>, <%= @job.address_county %></td>
               </tr>
             </table>
@@ -50,8 +58,33 @@
         </div>
       </div>
 
-      <div class="row full-width">
+      <div class="row full-width my-4">
+        <div class="col-md-3">
+          <h3>Description</h3>
+          <%= @job.description %>
+        </div>
+        <div class="col-md-3">
+          <h3>Requirements</h3>
+          <%= @job.requirements %>
+        </div>
+        <div class="col-md-3">
+          <h3>Further Details</h3>
+          <p><strong>Working Arrangements: </strong><%= @job.working_arrangements %></p>
+          <p><strong>Team: </strong><%= @job.team %></p>
 
+        </div>
+        <div class="col-md-3">
+          <h3>Full Address</h3>
+          <div class="">
+            <p><%= @job.address_company %></p>
+            <p><%= @job.address_1 %></p>
+            <p><%= @job.address_2 %></p>
+            <p><%= @job.address_town %></p>
+            <p><%= @job.address_county %></p>
+            <p><%= @job.address_postcode %></p>
+          </div>
+
+        </div>
       </div>
     </section>
 
