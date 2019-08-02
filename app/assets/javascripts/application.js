@@ -14,4 +14,6 @@
 //= require activestorage
 //= require cable
 //= require fullpage
+//= require Chart.min
+
 
