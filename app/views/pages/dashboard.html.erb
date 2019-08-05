@@ -23,3 +23,9 @@
     </div>
   </div>
 </div>
+
+<!-- Custom JS -->
+<%= javascript_tag do %>
+  window.profile_completion = "<%= current_user.profile_completion %>";
+<% end %>
+<%= javascript_include_tag 'chart-dashboard-settings' %>
