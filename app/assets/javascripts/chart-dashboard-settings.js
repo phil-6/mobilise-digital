@@ -40,7 +40,6 @@ var chartColors = {
 
 function buildCharts() {
     // getData();
-    console.log( profile_completion);
 
     var ctx_dc0 = document.getElementById('profileCompletionPie').getContext('2d');
     var completion_dc0 = ctx_dc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
