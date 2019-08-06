@@ -11,15 +11,7 @@
   //Mobilise Digital heading font
   font-family: $brand-font-1;
 }
-.brand-2 {
-  //Mobilise Cloud logo font
-  font-family: $brand-font;
-  letter-spacing: 0;
-}
-.brand-4 {
-  //Mobilise Digitial monogram font
-  font-family: $brand-font-4;
-}
+
 h2 {
   font-family: $heading-font;
   font-weight: 600;
@@ -76,7 +68,7 @@ h3 {
     font-size: 60px;
   }
   h3 {
-    font-size: 25px;
+    font-size: 36px;
   }
   .section.header {
     .brand {
@@ -86,13 +78,14 @@ h3 {
         padding-top: 150px;
       }
       h1 {
-        font-size: 260px;
+        font-size: 100px;
         padding-top: 150px;
-        letter-spacing: -0.15em;
-        margin-left: -0.15em;
+        //letter-spacing: -0.15em;
+        //margin-left: -0.15em;
       }
-      .brand-1 {
-        letter-spacing: 0.2em;
+      h2 {
+        font-size: 36px;
+        letter-spacing: 0.25em;
       }
 
     }
