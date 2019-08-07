@@ -5,7 +5,7 @@
         <%= render partial: 'layouts/nav' %>
       </div>
     </div>
-    <div class="row full-height">
+    <div class="row full-height full-width">
       <%= render partial: 'layouts/alerts' %>
 
         <div class="col-lg-6 brand text-center">
@@ -18,8 +18,8 @@
           </div>
         </div>
 
-        <div class="col-lg-6">
-          <h3>Recent Jobs</h3>
+        <div class="col-lg-6 pr-0">
+          <h3 class="text-center">Recent Jobs</h3>
           <div class="card-deck">
             <% @jobs.each do |job| %>
                 <div class="card job-card">
@@ -32,8 +32,6 @@
                       <p><strong>Company: </strong><%= job.address_company %></p>
                       <p><strong>Location: </strong><%= job.address_town %>, <%= job.address_county %></p>
                       <p><strong>Duration: </strong><%= job.contract_length %></p>
-                      <p><strong>Day Rate: </strong>£<%= job.day_rate %></p>
-                      <p><strong>Requirements: </strong><%= job.requirements.truncate(160) %></p>
                       <p><strong>Published Date: </strong><%= job.published_date %></p>
                     </div>
                   </div>
