@@ -9,7 +9,7 @@
       <%= render partial: 'layouts/alerts' %>
 
         <div class="col-lg-6 brand text-center">
-          <h3>Welcome <%= current_user.first_name %></h3>
+          <h3 class="column-title">Welcome <%= current_user.first_name %></h3>
           <%= link_to "Update Profile", edit_user_registration_path, :class => 'btn btn-secondary' %>
           <%= link_to "View Jobs", "/jobs" , :class => 'btn btn-secondary' %>
 
@@ -19,7 +19,7 @@
         </div>
 
         <div class="col-lg-6 pr-0">
-          <h3 class="text-center">Recent Jobs</h3>
+          <h3 class="text-center column-title">Recent Jobs</h3>
           <div class="card-deck">
             <% @jobs.each do |job| %>
                 <div class="card job-card">
@@ -35,7 +35,7 @@
                       <p><strong>Published Date: </strong><%= job.published_date %></p>
                     </div>
                   </div>
-                  <div class="card-footer">
+                  <div class="card-footer text-center">
                     <%= link_to "More Info",  job_path(job), :class => 'btn btn-secondary' %>
                     <%= link_to "Apply Now",  job_path(job), :class => 'btn btn-success' %>
                     <p><small class="text-muted">Last updated <%= time_ago_in_words(job.updated_at) %></p></small>
