@@ -5,5 +5,8 @@ class PagesController < ApplicationController
     render template: "pages/main"
   end
 
+  def dashboard
+    @jobs = Job.all.order(:updated_at).where(:open => false).first(6)
+  end
 
 end
