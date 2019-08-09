@@ -8,7 +8,7 @@
 
 require 'faker'
 
-job_keywords = ["aws, azure, gcp, devops, k8s, python, ruby, ansible, terraform"]
+job_keywords = ["aws", "azure", "gcp", "devops", "k8s", "python", "ruby", "ansible", "terraform"]
 
 User.create(
         email: 'testadmin@purpleriver.dev',
@@ -41,7 +41,7 @@ User.create(
        address_2: Faker::Address.community,
        address_town: Faker::Address.city,
        address_county: Faker::Address.state,
-       keywords: job_keywords.shuffle[0..2],
+       keywords: job_keywords.sample(3),
        profile_completion: rand(100)
   )
 end
@@ -62,7 +62,7 @@ end
          address_county: Faker::Address.state,
          team: Faker::Commerce.department,
          requirements: Faker::Quote.yoda,
-         keywords: job_keywords.shuffle[0..2],
+         keywords: job_keywords.sample(3),
          open: true
   )
 end
