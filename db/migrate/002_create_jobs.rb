@@ -18,7 +18,7 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       t.text :team
       t.text :requirements
       t.boolean :open,  default: false
-
+      t.string :keywords
       t.timestamps
     end
   end

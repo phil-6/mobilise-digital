@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2) do
     t.text "team"
     t.text "requirements"
     t.boolean "open", default: false
+    t.string "keywords"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
