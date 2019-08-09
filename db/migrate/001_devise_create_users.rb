@@ -59,7 +59,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :cv_url
       t.boolean :uploaded_self_assessment,  default: false
       t.string :sa_url
-      t.string :keywords
+      t.string :keywords, array: true
       t.integer :profile_completion
 
       t.datetime :deleted_at

@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2) do
     t.text "team"
     t.text "requirements"
     t.boolean "open", default: false
-    t.string "keywords"
+    t.string "keywords", array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2) do
     t.string "cv_url"
     t.boolean "uploaded_self_assessment", default: false
     t.string "sa_url"
-    t.string "keywords"
+    t.string "keywords", array: true
     t.integer "profile_completion"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false

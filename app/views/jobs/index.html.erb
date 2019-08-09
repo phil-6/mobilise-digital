@@ -16,7 +16,7 @@
       <div class="card-deck">
         <% Job.all.order(:updated_at).each do |job| %>
           <% if job.open? %>
-            <div class="card job-card ">
+            <div class="card job-card <%= job.keywords.sort.join(" ") %>">
               <div class="card-header"></div>
               <div class="card-body">
                 <h3 class="card-title"><%= job.title %></h3>
