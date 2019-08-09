@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @jobs = Job.all.order(:updated_at).where(:open => false).first(6)
+    @jobs = Job.all.order(:updated_at).where(:open => true).first(6)
   end
 
 end

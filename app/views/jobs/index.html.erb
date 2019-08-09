@@ -15,7 +15,7 @@
       </div>
       <div class="card-deck">
         <% Job.all.order(:updated_at).each do |job| %>
-          <% if not job.open? %>
+          <% if job.open? %>
             <div class="card job-card">
               <div class="card-header"></div>
               <div class="card-body">
