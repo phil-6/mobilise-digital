@@ -1,0 +1,8 @@
+job application index
+
+<% @job_applications.each do |application| %>
+  <%= Job.find(application.job_id).title %>
+  <%= application.job.title %>
+  <%= application.cover %>
+  --
+<% end %>
