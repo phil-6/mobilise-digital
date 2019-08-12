@@ -1,12 +1,42 @@
 @import "variables";
 
+
+/*$aws:null;
+$azure:null;
+$gcp:null;
+$devops:null;
+$k8s:null;
+$python:null;
+$ruby:null;
+$ansible:null;
+$terraform:null;
+
+.aws {$aws: orange;}
+.azure {$azure: blue;}
+.gcp {$gcp: green;}
+.devops {$devops: black;}
+.k8s {$k8s: skyblue;}
+.python {$python: lightgreen;}
+.ruby {$ruby:red;}
+.ansbile {$ansible:pink;}
+.terraform {$terraform:gray;}
+
+
+$card-gradient: linear-gradient(to top left, $aws, $azure, $gcp, $devops, $k8s, $python, $ruby, $ansible, $terraform );*/
+
+
+
 .job-card {
   min-width: 300px;
   margin: 15px;
   border: 0;
   border-radius: 25px;
-  background: $black-gradient;
+  background: $black-gradient-2;
   color: $whiteink;
+
+  .card-header {
+    border:0;
+  }
 
   .card-body {
     .card-title {
@@ -15,7 +45,8 @@
   }
 
   .card-footer {
-    background-color: $ink2;
+    //background-color: $ink2;
+    border:0;
     color: $whiteink;
     border-radius: 25px;
   }
