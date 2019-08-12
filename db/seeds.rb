@@ -74,3 +74,11 @@ end
                  cover: Faker::Movie.quote
   )
 end
+
+15.times do
+  JobApplication.create(
+                    user_id: 2,
+                    job_id: rand(150),
+                    cover: Faker::Movie.quote
+  )
+end
