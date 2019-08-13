@@ -1,8 +1,41 @@
-job application index
+<div>
 
-<% @job_applications.each do |application| %>
-  <%= Job.find(application.job_id).title %>
-  <%= application.job.title %>
-  <%= application.cover %>
-  --
-<% end %>
+  <div class="section global-nav">
+    <div class="row justify-content-end">
+      <%= render partial: 'layouts/nav' %>
+    </div>
+  </div>
+
+  <section class="brand-background text-center">
+    <%= render partial: 'layouts/alerts' %>
+    <div class="row">
+      <div class="col">
+          <h2>Your Job Applications</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card-deck">
+          <% @job_applications.order(:updated_at).each do |application| %>
+            <div class="card job-card ">
+              <div class="card-body">
+                <h3 class="card-title"> <%= application.job.title %></h3>
+                <p class="card-text"><%= application.status %></p>
+                <hr />
+                <div class="key-info text-left">
+                  <p><strong>Your Cover: </strong><%= application.cover %></p>
+                  <p><strong>Created Date: </strong><%= application.created_at %></p>
+                  <p><strong>Status: </strong><%= application.status %></p>
+                  <p><strong>Status Reason: </strong><%= application.status_reason %></p>
+                  <p><strong>Last Updated: </strong><%= time_ago_in_words(application.updated_at) %></p>
+                </div>
+              </div>
+              <div class="card-footer">
+                <%= link_to "View Job",  job_path(application.job), :class => 'btn btn-secondary' %>
+              </div>
+            </div> <!--End Card-->
+          <% end %>
+        </div> <!--End Deck-->
+      </div> <!--End Row-->
+      </section> <!--End Section-->
+
+    </div>
