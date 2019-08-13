@@ -8,12 +8,12 @@
 
   <section class="brand-background text-center">
     <%= render partial: 'layouts/alerts' %>
-    <div class="row">
+    <div class="row pb-0">
       <div class="col">
         <h2>All Open Jobs</h2>
       </div>
     </div>
-    <div class="row">
+    <div class="row pt-0">
       <div class="card-deck">
         <% Job.all.order(:updated_at).each do |job| %>
           <% if job.open? %>
