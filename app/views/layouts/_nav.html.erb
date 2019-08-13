@@ -11,8 +11,7 @@
         <% end %>
       </span>
     <% end %>
-    <span class="nav-data">Open Jobs: <%= Job.where(open: true).count %></span>
-    <span class="nav-data mr-auto">Job Applications: <%= JobApplication.where(:user_id => current_user.id).count() %></span>
+    <span class="nav-data mr-auto">Live Jobs: <%= Job.where(open: true).count %></span>
     <%= link_to 'Jobs',"/jobs", :class => 'nav-link jobs ' %>
     <%= link_to 'Dashboard',"/dashboard", :class => 'nav-link jobs ' %>
     <%#= link_to 'Profile', edit_user_registration_path, :class => 'nav-link edit-profile' %>
