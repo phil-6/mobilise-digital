@@ -1,3 +1,95 @@
-new job application
-<%= params[:job_id] %>
-<%= current_user.id %>
+<div id="fullpage">
+
+  <div class="section global-nav">
+    <div class="row justify-content-end">
+      <%= render partial: 'layouts/nav' %>
+    </div>
+  </div>
+
+  <div class="brand-background text-center">
+
+    <section>
+      <div class="row">
+        <div class="col job-application">
+          <h2>New Job Application</h2>
+          <% if current_user.profile_completion != 100 %>
+            <div class="pt-3">
+              <h6 class="alert alert-danger"><strong><em>Please complete your profile
+                <% if !current_user.uploaded_cv? %>and upload your cv
+                <% end %>
+                <% if !current_user.uploaded_self_assessment? %>and upload your self-assessment
+                <% end %>before applying for any jobs.
+              </em></strong></h6>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row py-0">
+        <div class="col-md-6">
+          <h3 class="pt-3">Job Details</h3>
+          <h6><strong><em>Job Title</em></strong></h6>
+          <h4> <%= @job.title %> </h4>
+          <h6><strong><em>Job Description</em></strong></h6>
+          <p> <%= @job.description %> </p>
+          <h6><strong><em>Job Requirements</em></strong></h6>
+          <p> <%= @job.requirements %> </p>
+          <%= link_to "Full Job Details", job_path(@job), :class => 'btn btn-sm btn-info' %>
+        </div>
+
+        <div class="col-md-6">
+          <h3 class="pt-3">Your Details</h3>
+          <p>Your profile details will be attached to the application.</p>
+          <h6><strong><em>Name</em></strong></h6>
+          <p> <%= current_user.first_name %> <%= current_user.last_name %> </p>
+          <h6><strong><em>Uploaded Self Assessment &nbsp;&nbsp;</em>
+            <% if current_user.uploaded_self_assessment? %><i class="text-success fas fa-check"></i>
+            <% else %> <i class="text-danger fas fa-times"></i>
+            <% end %>
+          </strong></h6>
+          <h6><strong><em>Uploaded CV &nbsp;&nbsp;</em>
+            <% if current_user.uploaded_cv? %><i class="text-success fas fa-check"></i>
+            <% else %> <i class="text-danger fas fa-times"></i>
+            <% end %>
+          </strong></h6>
+          <h6><strong><em>Profile Completion &nbsp;&nbsp;</em><%= current_user.profile_completion %>
+            <% if current_user.profile_completion? %>%
+            <% else %><span class="text-danger">0%</span>
+            <% end %>
+          </strong></h6>
+          <%= link_to "Update Profile", edit_user_registration_path, :class => 'btn btn-sm btn-info' %>
+        </div>
+      </div>
+        <div class="md-form application-form row">
+
+          <%= form_for(:job_application, url: job_job_applications_path, html: {method: :post}) do |f| %>
+            <%= render "devise/shared/error_messages", resource: @job_application %>
+            <h3 class="pt-3">Job Cover Paragraph</h3>
+            <p>Please tell us in 100 words or less why you are applying for this job.</p>
+            <div class="form-group floating-label">
+              <%= f.text_area :cover, placeholder: " Cover Paragraph", class: "form-control" %>
+              <%= f.label :cover %>
+            </div>
+            <% if current_user.profile_completion != 100 %>
+              <div class="pt-3">
+                <h6 class="alert alert-danger"><strong><em>Please complete your profile
+                  <% if !current_user.uploaded_cv? %>and upload your cv
+                  <% end %>
+                  <% if !current_user.uploaded_self_assessment? %>and upload your self-assessment
+                  <% end %>before applying for any jobs.
+                </em></strong></h6>
+              </div>
+
+
+            <% else %>
+              <div class="actions form-group">
+                <%= f.submit "Submit Application", class: "btn btn-secondary" %>
+              </div>
+            <% end %>
+
+          <% end %>
+
+        </div>
+    </section>
+  </div>
+</div>

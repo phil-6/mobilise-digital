@@ -168,7 +168,11 @@
     } //form
   } //.md-form
 
-
+// Override
+.md-form.application-form.row {
+  max-width: 800px;
+  margin-top: 0;
+}
 
   .other-actions {
     .btn {
