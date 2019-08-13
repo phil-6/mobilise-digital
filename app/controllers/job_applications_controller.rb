@@ -2,22 +2,33 @@ class JobApplicationsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_job, only: :create
 
+
+  # GET /applications or /job/:job_id/applications
   def index
-    @job_applications = JobApplication.where(:user_id => current_user.id)
+    if params[:job_id]
+      @job_applications = JobApplication.where(:user_id => current_user.id, :job_id => params[:job_id])
+      if @job_applications.empty?
+        redirect_to '/jobs/' + params[:job_id] + '/applications/new'
+        flash[:alert] = 'You have not applied for this job yet'
+      end
+    else
+      @job_applications = JobApplication.where(:user_id => current_user.id)
+    end
   end
 
+  # GET /job/:job_id/applications/new
   def new
     if JobApplication.exists?(user_id: current_user.id, job_id: params[:job_id])
-      flash[:error] = 'You have already applied for this job'
-      redirect_to @job
+      flash[:alert] = 'You have already applied for this job'
+      redirect_to '/jobs/' + params[:job_id]
     end
     @job_application = JobApplication.new
   end
 
   # POST /job/:job_id/applications
   def create
-    if current_user.job_applications.create!(rating_params)
-      redirect_to @job
+    if current_user.job_applications.create!(job_params)
+      redirect_to '/jobs/' + params[:job_id]
     else
       render 'edit'
     end
