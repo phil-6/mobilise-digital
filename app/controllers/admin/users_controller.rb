@@ -1,5 +1,4 @@
 class Admin::UsersController < ApplicationController
-
   before_action :authorize_admin
   before_action :set_user, except: :index
 
@@ -27,7 +26,7 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def authorize_admin
+  def self.authorize_admin
     redirect_to(root_path) unless current_user && current_user.admin?
   end
 
