@@ -22,6 +22,7 @@
           <th scope="col">Confirmed</th>
           <th scope="col">Profile Completion</th>
           <th scope="col">Verified</th>
+          <th scope="col">Keywords</th>
           <th scope="col">Sign Ins</th>
           <th scope="col">Last Sign In</th>
           <th scope="col">Manage</th>
@@ -46,6 +47,7 @@
               <% if user.verified %><i class="fas fa-check text-success"></i>
               <% else %><i class="fas fa-times text-danger"></i>
               <% end %></td>
+            <td><%= user.keywords&.join(', ') %></td>
             <td><%= user.sign_in_count %></td>
             <td>
               <% if user.last_sign_in_at? %>

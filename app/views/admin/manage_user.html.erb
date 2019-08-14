@@ -62,7 +62,7 @@
               </tr>
               <tr>
                 <th scope="row">Keywords</th>
-                <td><%= @user.keywords %></td>
+                <td><%= @user.keywords&.join(', ') %></td>
               </tr>
               <tr>
                 <th scope="row">Admin</th>

@@ -20,7 +20,7 @@
           <h6><strong><em>Job Title</em></strong></h6>
           <h4> <%= @application.job.title %> </h4>
           <h6><strong><em>Job Keywords</em></strong></h6>
-          <p> <%= @application.job.keywords.join(', ') %> </p>
+          <p> <%= @application.job.keywords&.join(', ') %> </p>
           <h6><strong><em>Job Description</em></strong></h6>
           <p> <%= @application.job.description %> </p>
           <h6><strong><em>Job Requirements</em></strong></h6>
@@ -33,7 +33,7 @@
           <h6><strong><em>Name</em></strong></h6>
           <h4> <%= @application.user.first_name %> <%= @application.user.last_name %> </h4>
           <h6><strong><em>User Keywords</em></strong></h6>
-          <p> <%= @application.user.keywords.join(', ') %> </p>
+          <p> <%= @application.user.keywords&.join(', ') %> </p>
           <h6><strong><em>Uploaded Self Assessment &nbsp;&nbsp;</em>
             <% if @application.user.uploaded_self_assessment? %><i class="text-success fas fa-check"></i>
             <% else %> <i class="text-danger fas fa-times"></i>
@@ -61,7 +61,7 @@
           <h6><strong><em>Matched Keywords</em></strong></h6>
           <p>
             <% if (@application.user.keywords & @application.job.keywords).present? %>
-              <%= (@application.user.keywords & @application.job.keywords).join(', ') %>
+              <%= (@application.user.keywords & @application.job.keywords)&.join(', ') %>
             <% else %>
               <strong class="alert-danger">No Keyword Matches</strong>
             <% end %>

@@ -42,7 +42,7 @@
             <td><%= ja.job.title %></td>
             <td>
               <% if (ja.user.keywords & ja.job.keywords).present? %>
-                <%= (ja.user.keywords & ja.job.keywords).join(', ') %>
+                <%= (ja.user.keywords & ja.job.keywords)&.join(', ') %>
               <% else %>
               <strong class="text-danger">No Keyword Matches</strong>
               <% end %>
