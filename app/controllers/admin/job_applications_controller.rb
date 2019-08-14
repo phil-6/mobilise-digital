@@ -8,7 +8,7 @@ class Admin::JobApplicationsController < ApplicationController
 
   def show
     @application
-    render template: "admin/manage_application"
+    render template: "admin/manage_job_application"
   end
 
   def update
@@ -22,7 +22,7 @@ class Admin::JobApplicationsController < ApplicationController
 
   private
 
-  def set_appication
+  def set_application
     @application = JobApplication.find(params[:id])
   end
 

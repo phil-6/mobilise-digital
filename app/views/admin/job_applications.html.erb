@@ -33,7 +33,7 @@
         <tbody>
         <% JobApplication.all.order(:id).each do |ja| %>
           <tr>
-            <th scope="row"><%= a.id %></th>
+            <th scope="row"><%= ja.id %></th>
             <td><%= ja.user_id %></td>
             <td><%= ja.user.first_name %> <%= ja.user.last_name %></td>
             <td><a href="mailto:<%= ja.user.email %>"><i class="fas fa-envelope"></i></a></td>
@@ -43,7 +43,7 @@
             <td><%= ja.user.keywords & ja.job.keywords %></td>
             <td><%= ja.status %></td>
             <td><%= ja.status_reason %></td>
-            <td><a href="/admin/job_applications/<%= ja.id %>"><i class="fas fa-pen"></i></a></td>
+            <td><a href="/admin/applications/<%= ja.id %>"><i class="fas fa-pen"></i></a></td>
           </tr>
         <% end %>
         </tbody>
