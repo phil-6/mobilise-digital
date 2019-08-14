@@ -18,7 +18,6 @@ class Admin::JobApplicationsController < ApplicationController
       flash[:alert] = 'Something Broke'
     end
     redirect_to :admin_job_application
-    end
   end
 
   private
@@ -27,7 +26,7 @@ class Admin::JobApplicationsController < ApplicationController
     @application = JobApplication.find(params[:id])
   end
 
-  def self.authorize_admin
+  def authorize_admin
     redirect_to(root_path) unless current_user && current_user.admin?
   end
 
@@ -36,5 +35,4 @@ class Admin::JobApplicationsController < ApplicationController
     params.require(:job).permit(:status,
                                 :status_reason)
   end
-
 end
