@@ -11,6 +11,7 @@
     <section>
       <div class="row">
         <div class="col job-application">
+          <%= render partial: 'layouts/alerts' %>
           <h2>New Job Application</h2>
           <% if current_user.profile_completion != 100 %>
             <div class="pt-3">
