@@ -40,7 +40,13 @@
 
             <td><%= ja.job_id %></td>
             <td><%= ja.job.title %></td>
-            <td><%= ja.user.keywords & ja.job.keywords %></td>
+            <td>
+              <% if (ja.user.keywords & ja.job.keywords).present? %>
+                <%= (ja.user.keywords & ja.job.keywords).join(', ') %>
+              <% else %>
+              <strong class="text-danger">No Keyword Matches</strong>
+              <% end %>
+            </td>
             <td><%= ja.status %></td>
             <td><%= ja.status_reason %></td>
             <td><a href="/admin/applications/<%= ja.id %>"><i class="fas fa-pen"></i></a></td>
