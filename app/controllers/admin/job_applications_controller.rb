@@ -32,7 +32,6 @@ class Admin::JobApplicationsController < ApplicationController
 
   def job_application_params
     # whitelist params
-    params.require(:job).permit(:status,
-                                :status_reason)
+    params.require(:job_application).permit(:status, :status_reason)
   end
 end
