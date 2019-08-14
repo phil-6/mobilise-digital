@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :jobs
-    resources :applications
+    resources :job_applications
   end
 
   resources :jobs do
