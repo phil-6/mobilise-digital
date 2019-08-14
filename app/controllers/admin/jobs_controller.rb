@@ -39,7 +39,7 @@ class Admin::JobsController < ApplicationController
     @job = Job.find(params[:id])
   end
 
-  def self.authorize_admin
+  def authorize_admin
     redirect_to(root_path) unless current_user && current_user.admin?
   end
 
