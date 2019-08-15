@@ -1,7 +1,6 @@
 class JobApplicationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_job, only: :create
-
+  before_action :set_job, only: [:new, :create]
 
   # GET /applications or /jobs/:job_id/applications
   def index
@@ -18,7 +17,6 @@ class JobApplicationsController < ApplicationController
 
   # GET /job/:job_id/applications/new
   def new
-    @job = Job.find(params[:job_id])
     if JobApplication.exists?(user_id: current_user.id, job_id: params[:job_id])
       flash[:alert] = 'You have already applied for this job'
       redirect_to '/jobs/' + params[:job_id]
@@ -28,6 +26,7 @@ class JobApplicationsController < ApplicationController
 
   # POST /job/:job_id/applications
   def create
+
     if current_user.job_applications.create!(job_application_params)
       redirect_to '/jobs/' + params[:job_id]
     else
@@ -42,12 +41,10 @@ class JobApplicationsController < ApplicationController
       @job = Job.find(params[:job_id])
   end
 
-  def job_params
+  def job_application_params
     # whitelist params
-    params.require(:job).permit(:user_id,
-                                :job_id,
-                                :cover)
+    params.require(:job_application).permit(:job_id,
+                                            :cover)
   end
-
 
 end

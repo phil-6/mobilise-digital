@@ -83,6 +83,9 @@
               </em></strong></h6>
             </div>
           <% else %>
+
+            <%= f.hidden_field :job_id, value: @job.id %>
+
             <div class="actions form-group">
               <%= f.submit "Submit Application", class: "btn btn-secondary" %>
             </div>
