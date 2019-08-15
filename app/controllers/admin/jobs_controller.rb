@@ -45,7 +45,7 @@ class Admin::JobsController < ApplicationController
 
   def job_params
     # whitelist params
-    params.require(:job).permit(:name,
+    params.require(:job).permit(:title,
                                 :description,
                                 :published_date,
                                 :latest_start_date,
