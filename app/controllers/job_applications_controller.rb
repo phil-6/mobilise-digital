@@ -3,7 +3,7 @@ class JobApplicationsController < ApplicationController
   before_action :set_job, only: :create
 
 
-  # GET /applications or /job/:job_id/applications
+  # GET /applications or /jobs/:job_id/applications
   def index
     if params[:job_id]
       @job_applications = JobApplication.where(:user_id => current_user.id, :job_id => params[:job_id])
