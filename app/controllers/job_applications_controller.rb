@@ -19,7 +19,7 @@ class JobApplicationsController < ApplicationController
   def new
     if JobApplication.exists?(user_id: current_user.id, job_id: params[:job_id])
       flash[:alert] = 'You have already applied for this job'
-      redirect_to '/jobs/' + params[:job_id]
+      redirect_to '/jobs/' + params[:job_id] + '/applications'
     end
     @job_application = JobApplication.new
   end
@@ -28,7 +28,7 @@ class JobApplicationsController < ApplicationController
   def create
 
     if current_user.job_applications.create!(job_application_params)
-      redirect_to '/jobs/' + params[:job_id]
+      redirect_to '/jobs/' + params[:job_id] + '/applications'
     else
       render 'edit'
     end
