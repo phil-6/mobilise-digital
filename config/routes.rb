@@ -15,11 +15,13 @@ Rails.application.routes.draw do
 
   get '/dashboard',               to: 'pages#dashboard'
   get '/applications',            to: 'job_applications#index'
+  get '/admin/applications',      to: 'admin/job_applications#index'
 
   namespace :admin do
     resources :users
-    resources :jobs
-    resources :job_applications , :path => 'applications'
+    resources :jobs do
+      resources :job_applications , :path => 'applications'
+    end
   end
 
   resources :jobs do
