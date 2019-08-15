@@ -39,9 +39,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.boolean :admin,       default: false
 
-      t.string :passport_number
-      t.string :driving_licence
-
       t.string :address_company
       t.string :address_1
       t.string :address_2
@@ -55,11 +52,16 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :emergency_email
 
       t.boolean :verified,                  default: false
-      t.boolean :uploaded_cv,               default: false
+      t.boolean :cv_uploaded,               default: false
+      t.datetime :cv_uploaded_date
       t.string :cv_url
-      t.boolean :uploaded_self_assessment,  default: false
+      t.boolean :sa_uploaded,  default: false
+      t.datetime :sa_uploaded_date
       t.string :sa_url
+
       t.string :keywords, array: true
+      t.string :secondary_keywords
+
       t.integer :profile_completion
 
       t.datetime :deleted_at

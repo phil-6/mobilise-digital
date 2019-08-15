@@ -7,8 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
-
-job_keywords = ["aws", "azure", "gcp", "devops", "k8s", "python", "ruby", "ansible", "terraform"]
+keywords = %w(agile_coach business_analyst communications_manager content_designer cyber_security data_architect data_engineer data_scientist delivery_manager designer developer performance_analyst portfolio_manager product_manager programme_manager quality_assurance service_manager technical_architect user_researcher web_operations_engineer)
 
 User.create(
         email: 'testadmin@purpleriver.dev',
@@ -21,7 +20,8 @@ User.create(
         email: 'testnoadmin@purpleriver.dev',
         first_name: 'NoAdmin',
         last_name: 'Reynolds',
-        password: 'noadmintest'
+        password: 'noadmintest',
+        keywords: keywords
 )
 User.create(
         email: 'andrew.carpenter@mobilise.cloud',
@@ -41,7 +41,7 @@ User.create(
        address_2: Faker::Address.community,
        address_town: Faker::Address.city,
        address_county: Faker::Address.state,
-       keywords: job_keywords.sample(3),
+       keywords: keywords.sample(3),
        profile_completion: rand(100)
   )
 end
@@ -62,7 +62,7 @@ end
          address_county: Faker::Address.state,
          team: Faker::Commerce.department,
          requirements: Faker::Quote.yoda,
-         keywords: job_keywords.sample(3),
+         keywords: keywords.sample(3),
          open: true
   )
 end

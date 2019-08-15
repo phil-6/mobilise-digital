@@ -4,7 +4,7 @@ class CreateJobApplications < ActiveRecord::Migration[5.2]
       t.belongs_to :user
       t.belongs_to :job
       t.text :cover
-      t.string :status
+      t.string :status,       default: 'open'
       t.text :status_reason
       t.timestamps
     end
