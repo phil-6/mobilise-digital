@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :jobs do
       resources :job_applications , :path => 'applications'
     end
+    resources :job_applications , :path => 'applications'
   end
 
   resources :jobs do
