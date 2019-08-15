@@ -31,7 +31,7 @@
         </tr>
         </thead>
         <tbody>
-        <% JobApplication.all.order(:id).each do |ja| %>
+        <% @job_applications.order(:id).each do |ja| %>
           <tr>
             <th scope="row"><%= ja.id %></th>
             <td><%= ja.user_id %></td>

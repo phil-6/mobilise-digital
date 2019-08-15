@@ -2,8 +2,20 @@ class Admin::JobApplicationsController < ApplicationController
   before_action :authorize_admin
   before_action :set_application, except: [:index, :new, :create]
 
+  # GET /admin/applications or /admin/jobs/:job_id/applications
   def index
-    render template: "admin/job_applications"
+    if params[:job_id]
+      @job_applications = JobApplication.where(:job_id => params[:job_id])
+      if @job_applications.empty?
+        redirect_to '/admin/job_applications/'
+        flash[:alert] = 'No one has applied for this job yet'
+      else
+        render template: "/admin/job_applications/"
+      end
+    else
+      @job_applications = JobApplication.all
+      render template: "/admin/job_applications/"
+    end
   end
 
   def show
