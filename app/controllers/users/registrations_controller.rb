@@ -27,8 +27,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
         current_user.first_name.blank?,
         current_user.last_name.blank?,
         current_user.contact_phone.blank?,
-        current_user.passport_number.blank?,
-        current_user.driving_licence.blank?,
         current_user.address_company.blank?,
         current_user.address_1.blank?,
         current_user.address_2.blank?,
@@ -39,8 +37,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
         current_user.emergency_relationship.blank?,
         current_user.emergency_number.blank?,
         current_user.emergency_email.blank?,
-        current_user.uploaded_cv.blank?,
-        current_user.uploaded_self_assessment.blank?
+        current_user.cv_uploaded.blank?,
+        current_user.sa_uploaded.blank?
     ]
     current_user.profile_completion = (((fields_array.count(false)).to_f/(fields_array.count).to_f).round(2)) * 100
     current_user.save
@@ -104,8 +102,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                  :password_confirmation,
                                  :current_password,
                                  :contact_phone,
-                                 :passport_number,
-                                 :driving_licence,
                                  :address_company,
                                  :address_1,
                                  :address_2,

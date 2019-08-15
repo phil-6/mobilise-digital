@@ -38,8 +38,6 @@ class Admin::UsersController < ApplicationController
                                  :password_confirmation,
                                  :current_password,
                                  :contact_phone,
-                                 :passport_number,
-                                 :driving_licence,
                                  :address_company,
                                  :address_1,
                                  :address_2,

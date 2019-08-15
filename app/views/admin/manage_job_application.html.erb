@@ -34,13 +34,15 @@
           <h4> <%= @application.user.first_name %> <%= @application.user.last_name %> </h4>
           <h6><strong><em>User Keywords</em></strong></h6>
           <p> <%= @application.user.keywords&.join(', ') %> </p>
+          <h6><strong><em>Secondary Keywords</em></strong></h6>
+          <p> <%= @application.user.secondary_keywords %> </p>
           <h6><strong><em>Uploaded Self Assessment &nbsp;&nbsp;</em>
-            <% if @application.user.uploaded_self_assessment? %><i class="text-success fas fa-check"></i>
+            <% if @application.user.sa_uploaded? %><i class="text-success fas fa-check"></i>
             <% else %> <i class="text-danger fas fa-times"></i>
             <% end %>
           </strong></h6>
           <h6><strong><em>Uploaded CV &nbsp;&nbsp;</em>
-            <% if @application.user.uploaded_cv? %><i class="text-success fas fa-check"></i>
+            <% if @application.user.cv_uploaded? %><i class="text-success fas fa-check"></i>
             <% else %> <i class="text-danger fas fa-times"></i>
             <% end %>
           </strong></h6>

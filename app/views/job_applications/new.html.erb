@@ -16,9 +16,9 @@
           <% if current_user.profile_completion != 100 %>
             <div class="pt-3">
               <h6 class="alert alert-danger"><strong><em>Please complete your profile
-                <% if !current_user.uploaded_cv? %>and upload your cv
+                <% if !current_user.cv_uploaded? %>and upload your cv
                 <% end %>
-                <% if !current_user.uploaded_self_assessment? %>and upload your self-assessment
+                <% if !current_user.sa_uploaded? %>and upload your self-assessment
                 <% end %>before applying for any jobs.
               </em></strong></h6>
             </div>
@@ -44,12 +44,12 @@
           <h6><strong><em>Name</em></strong></h6>
           <p> <%= current_user.first_name %> <%= current_user.last_name %> </p>
           <h6><strong><em>Uploaded Self Assessment &nbsp;&nbsp;</em>
-            <% if current_user.uploaded_self_assessment? %><i class="text-success fas fa-check"></i>
+            <% if current_user.sa_uploaded? %><i class="text-success fas fa-check"></i>
             <% else %> <i class="text-danger fas fa-times"></i>
             <% end %>
           </strong></h6>
           <h6><strong><em>Uploaded CV &nbsp;&nbsp;</em>
-            <% if current_user.uploaded_cv? %><i class="text-success fas fa-check"></i>
+            <% if current_user.cv_uploaded? %><i class="text-success fas fa-check"></i>
             <% else %> <i class="text-danger fas fa-times"></i>
             <% end %>
           </strong></h6>
@@ -74,9 +74,9 @@
             <% if current_user.profile_completion != 100 %>
               <div class="pt-3">
                 <h6 class="alert alert-danger"><strong><em>Please complete your profile
-                  <% if !current_user.uploaded_cv? %>and upload your cv
+                  <% if !current_user.cv_uploaded? %>and upload your cv
                   <% end %>
-                  <% if !current_user.uploaded_self_assessment? %>and upload your self-assessment
+                  <% if !current_user.sa_uploaded? %>and upload your self-assessment
                   <% end %>before applying for any jobs.
                 </em></strong></h6>
               </div>

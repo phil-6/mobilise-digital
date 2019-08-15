@@ -42,14 +42,14 @@
               <tr>
                 <th scope="row">CV:</th>
                 <td>
-                  <% if @user.uploaded_cv %><i class="fas fa-check"></i>
+                  <% if @user.cv_uploaded %><i class="fas fa-check"></i>
                   <% else %><i class="fas fa-times"></i>
                   <% end %></td>
               </tr>
               <tr>
                 <th scope="row">S-A:</th>
                 <td>
-                  <% if @user.uploaded_self_assessment %><i class="fas fa-check"></i>
+                  <% if @user.sa_uploaded %><i class="fas fa-check"></i>
                   <% else %><i class="fas fa-times"></i>
                   <% end %></td>
               </tr>
@@ -63,6 +63,10 @@
               <tr>
                 <th scope="row">Keywords</th>
                 <td><%= @user.keywords&.join(', ') %></td>
+              </tr>
+              <tr>
+                <th scope="row">Keywords</th>
+                <td><%= @user.secondary_keywords %></td>
               </tr>
               <tr>
                 <th scope="row">Admin</th>
@@ -93,20 +97,6 @@
               <td>
                 <% if @user.contact_phone? %> <%= @user.contact_phone %>
                 <% else %><em>No Contact Number Provided</em>
-                <% end %> </td>
-            </tr>
-            <tr>
-              <th scope="row">Passport:</th>
-              <td>
-                <% if @user.passport_number? %> <%= @user.passport_number %>
-                <% else %><em>No Passport Number</em>
-                <% end %> </td>
-            </tr>
-            <tr>
-              <th scope="row">Driving Licence:</th>
-              <td>
-                <% if @user.driving_licence? %> <%= @user.driving_licence %>
-                <% else %><em>No Driving Licence</em>
                 <% end %> </td>
             </tr>
             <tr>
@@ -210,6 +200,11 @@
                   <%= f.label :keywords %>
                 </div>
 
+              <div class="form-group floating-label">
+                <%= f.text_field :secondary_keywords, placeholder: " Secondary Keywords", class: "form-control" %>
+                <%= f.label :secondary_keywords %>
+              </div>
+
                 <div class="form-group row justify-content-center">
                   <div class="form-check checkbox-lg">
                     <%= f.check_box :verified, class: "form-check-input" %>
@@ -273,20 +268,6 @@
               </a>
             </h3>
             <div id="update-personal" class="form-section collapse">
-              <div class="row p-0 ">
-                <div class="col">
-                  <div class="form-group floating-label">
-                    <%= f.text_field :passport_number, class: "form-control", placeholder: " Passport number" %>
-                    <%= f.label :passport_number %>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="form-group floating-label">
-                    <%= f.text_field :driving_licence, class: "form-control", placeholder: " Driving licence number" %>
-                    <%= f.label :driving_licence, 'Driving licence number' %>
-                  </div>
-                </div>
-              </div>
 
               <div class="form-group floating-label">
                 <%= f.text_field :address_company, class: "form-control", placeholder: " Company name" %>
