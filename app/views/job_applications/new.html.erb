@@ -61,36 +61,37 @@
           <%= link_to "Update Profile", edit_user_registration_path, :class => 'btn btn-sm btn-info' %>
         </div>
       </div>
-        <div class="md-form application-form row">
 
-          <%= form_for(:job_application, url: job_job_applications_path, html: {method: :post}) do |f| %>
-            <%= render "devise/shared/error_messages", resource: @job_application %>
-            <h3 class="pt-3">Job Cover Paragraph</h3>
-            <p>Please tell us in 100 words or less why you are applying for this job.</p>
-            <div class="form-group floating-label">
-              <%= f.text_area :cover, placeholder: " Cover Paragraph", class: "form-control" %>
-              <%= f.label :cover %>
+
+      <div class="md-form application-form row">
+        <%= form_for(:job_application, url: job_job_applications_path, html: {method: :post}) do |f| %>
+
+          <%= render "devise/shared/error_messages", resource: @job_application %>
+          <h3 class="pt-3">Job Cover Paragraph</h3>
+          <p>Please tell us in 100 words or less why you are applying for this job.</p>
+          <div class="form-group floating-label">
+            <%= f.text_area :cover, placeholder: " Cover Paragraph", class: "form-control" %>
+            <%= f.label :cover %>
+          </div>
+          <% if current_user.profile_completion != 100 %>
+            <div class="pt-3">
+              <h6 class="alert alert-danger"><strong><em>Please complete your profile
+                <% if !current_user.cv_uploaded? %>and upload your cv
+                <% end %>
+                <% if !current_user.sa_uploaded? %>and upload your self-assessment
+                <% end %>before applying for any jobs.
+              </em></strong></h6>
             </div>
-            <% if current_user.profile_completion != 100 %>
-              <div class="pt-3">
-                <h6 class="alert alert-danger"><strong><em>Please complete your profile
-                  <% if !current_user.cv_uploaded? %>and upload your cv
-                  <% end %>
-                  <% if !current_user.sa_uploaded? %>and upload your self-assessment
-                  <% end %>before applying for any jobs.
-                </em></strong></h6>
-              </div>
-
-
-            <% else %>
-              <div class="actions form-group">
-                <%= f.submit "Submit Application", class: "btn btn-secondary" %>
-              </div>
-            <% end %>
-
+          <% else %>
+            <div class="actions form-group">
+              <%= f.submit "Submit Application", class: "btn btn-secondary" %>
+            </div>
           <% end %>
 
-        </div>
+        <% end %>
+      </div>
+
+
     </section>
   </div>
 </div>
