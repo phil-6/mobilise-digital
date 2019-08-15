@@ -10,17 +10,36 @@
     <%= render partial: 'layouts/alerts' %>
     <div class="row pb-0">
       <div class="col">
+        <% if @job_applications.count == 1 %>
+          <h3>Your Application for <%= @job_applications.first.job.title %></h3>
+        <% else %>
           <h2>Your Job Applications</h2>
-        </div>
+        <% end %>
+      </div>
     </div>
     <div class="row pt-0">
+      <% if @job_applications.count == 1 %>
+        <div class="col detail-section text-center full-height">
+          <h5><strong><em>Application Cover</em></strong></h5>
+          <h4> <%= @job_applications.first.cover %> </h4>
+          <h5><strong><em>Application Status</em></strong></h5>
+          <h4> <%= @job_applications.first.status %> </h4>
+          <h5><strong><em>Status Reason</em></strong></h5>
+          <h4> <%= @job_applications.first.status_reason ? @job_applications.first.status_reason : 'No status updates yet, please check again later' %> </h4>
+          <h5><strong><em>Created at</em></strong></h5>
+          <h4> <%= @job_applications.first.created_at %> </h4>
+          <h5><strong><em>Last Updated</em></strong></h5>
+          <h4> <%= time_ago_in_words(@job_applications.first.updated_at) %> </h4>
+        </div>
+
+      <% else %>
         <div class="card-deck">
           <% @job_applications.order(:updated_at).each do |application| %>
-            <div class="card job-card ">
+            <div class="card job-card">
               <div class="card-body">
                 <h3 class="card-title"> <%= application.job.title %></h3>
                 <p class="card-text"><%= application.status %></p>
-                <hr />
+                <hr/>
                 <div class="key-info text-left">
                   <p><strong>Your Cover: </strong><%= application.cover %></p>
                   <p><strong>Created Date: </strong><%= application.created_at %></p>
@@ -30,12 +49,13 @@
                 </div>
               </div>
               <div class="card-footer">
-                <%= link_to "View Job",  job_path(application.job), :class => 'btn btn-secondary' %>
+                <%= link_to "View Job", job_path(application.job), :class => 'btn btn-secondary' %>
               </div>
             </div> <!--End Card-->
           <% end %>
         </div> <!--End Deck-->
-      </div> <!--End Row-->
-      </section> <!--End Section-->
+      <% end %>
+    </div> <!--End Row-->
+  </section> <!--End Section-->
 
-    </div>
+</div>
