@@ -12,6 +12,11 @@
         <%= render partial: 'layouts/alerts' %>
         <h2>Job Details</h2>
 
+        <% if JobApplication.where(:user_id => current_user.id, :job_id => @job).exists? %>
+          <%= link_to "View your application",  job_job_application_path(@job), :class => 'btn btn-success' %>
+        <% else %>
+          <%= link_to "Apply Now",  new_job_job_application_path(@job), :class => 'btn btn-secondary' %>
+        <% end %>
 
       </div>
       <div class="row full-width justify-content-md-center">
