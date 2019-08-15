@@ -7,7 +7,7 @@ class Admin::JobApplicationsController < ApplicationController
     if params[:job_id]
       @job_applications = JobApplication.where(:job_id => params[:job_id])
       if @job_applications.empty?
-        redirect_to '/admin/job_applications/'
+        redirect_to '/admin/applications/'
         flash[:alert] = 'No one has applied for this job yet'
       else
         render template: "/admin/job_applications/"
