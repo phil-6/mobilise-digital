@@ -11,6 +11,16 @@ body {
 .full-width {
   width: 100vw;
 }
+.half-width{
+  width: 50vw;
+}
+
+.white-grad {
+  background: $blue-gradient-2-r;
+}
+.blue-grad-2 {
+  background: $blue-gradient-2;
+}
 h3.column-title{
   padding-top: 1rem;
 }

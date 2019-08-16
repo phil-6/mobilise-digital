@@ -54,19 +54,19 @@ function buildCharts() {
                     100-profile_completion
                 ],
                 backgroundColor: [
-                    completion_dc0,
+                    completion_dc0
                 ],
                 borderColor: [
                     chartColors.transparent,
                     chartColors.transparent
                 ],
                 hoverBackgroundColor: [
-                    completion_dc0,
+                    completion_dc0
                 ],
                 hoverBorderColor: [
                     chartColors.transparent_white,
                     chartColors.transparent_white
-                ],
+                ]
             }],
             labels: [
                 'Completion'
@@ -75,18 +75,22 @@ function buildCharts() {
         options: {
             responsive: true,
             legend: {
-                display: true,
-                position: 'bottom'
+                display: false,
+                position: 'bottom',
+                labels: {
+                    fontColor: chartColors.light.text
+                }
             },
             title: {
                 display: true,
-                text: 'Completion'
+                text: 'Profile Completion',
+                fontColor: chartColors.light.text
             },
             animation: {
                 animateScale: true,
                 animateRotate: true
             },
-            aspectRatio: 1,
+            aspectRatio: 1
 
         }
     });

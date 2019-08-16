@@ -6,7 +6,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @jobs = Job.all.order(:updated_at).where(:open => true).first(6)
+    @user = current_user
+    @jobs = Job.all.order(:updated_at).where((@user.keywords & [:keywords]).count >= 2 , :open => true).first(6)
+    @job_applications = JobApplication.order(:updated_at).where(:user_id => current_user.id).first(6)
   end
-
 end
