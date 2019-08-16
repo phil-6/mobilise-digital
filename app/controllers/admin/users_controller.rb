@@ -8,6 +8,7 @@ class Admin::UsersController < ApplicationController
 
   def show
     @user
+    @job_applications  = JobApplication.where(:user_id => @user.id)
     render template: "admin/manage_user"
   end
 
