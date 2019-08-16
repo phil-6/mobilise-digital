@@ -71,11 +71,15 @@
           <h6><strong><em>Application Status</em></strong></h6>
           <p><%= @application.status %></p>
           <h6><strong><em>Application Status Reason</em></strong></h6>
-          <p><%= @application.status_reason %></p>
+          <p><%= @application.status_reason ? @application.status_reason : 'No status updates yet' %></p>
+          <h6><strong><em>Created At</em></strong></h6>
+          <p><%= @application.created_at %></p>
+          <h6><strong><em>Last Updated</em></strong></h6>
+          <p><%= time_ago_in_words(@application.updated_at) %></p>
         </div>
       </div>
 
-      <div class="row full-width">
+      <div class="row full-width pt-3">
         <div class="col">
           <div class="md-form mt-0">
             <h3>Manage Application</h3>
