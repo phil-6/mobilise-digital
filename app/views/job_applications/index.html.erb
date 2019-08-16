@@ -44,7 +44,7 @@
                   <p><strong>Your Cover: </strong><%= application.cover %></p>
                   <p><strong>Created Date: </strong><%= application.created_at %></p>
                   <p><strong>Status: </strong><%= application.status %></p>
-                  <p><strong>Status Reason: </strong><%= application.status_reason %></p>
+                  <p><strong>Status Reason: </strong><%= @job_applications.first.status_reason ? @job_applications.first.status_reason : 'No status updates yet, please check again later' %></p>
                   <p><strong>Last Updated: </strong><%= time_ago_in_words(application.updated_at) %></p>
                 </div>
               </div>
