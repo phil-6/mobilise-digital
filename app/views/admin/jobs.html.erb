@@ -33,8 +33,8 @@
         <tbody>
         <% Job.all.order(:id).each do |job| %>
           <tr>
-            <th scope="row"><%= job.id %></th>
-            <td><%= job.title %></td>
+            <th scope="row"><a href="/admin/jobs/<%= job.id %>"><%= job.id %></a></th>
+            <td><a href="/admin/jobs/<%= job.id %>"><%= job.title %></a></td>
             <td><%= job.keywords&.join(', ') %></td>
             <td><%= job.address_company %></td>
             <td><%= job.published_date %></td>
