@@ -49,8 +49,8 @@
         <% @job_applications.order(:id).each do |ja| %>
           <tr>
             <th scope="row"><%= ja.id %></th>
-            <td><%= ja.user_id %></td>
-            <td><%= ja.user.first_name %> <%= ja.user.last_name %></td>
+            <td><a href="/admin/users/<%= ja.user_id %>"><%= ja.user_id %></a></td>
+            <td><a href="/admin/users/<%= ja.user_id %>"><%= ja.user.first_name %> <%= ja.user.last_name %> </a></td>
             <td><a href="mailto:<%= ja.user.email %>"><i class="fas fa-envelope"></i></a></td>
 
             <td><%= ja.job_id %></td>
