@@ -8,6 +8,7 @@ class Admin::JobsController < ApplicationController
 
   def show
     @job
+    @job_applications = JobApplication.where(:job_id => params[:id])
     render template: "admin/manage_job"
   end
 
