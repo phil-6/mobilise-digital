@@ -31,7 +31,7 @@
         <tbody>
         <% User.all.order(:id).each do |user| %>
           <tr>
-            <th scope="row"><%= user.id %></th>
+            <th scope="row"><a href="/admin/users/<%= user.id %>"><%= user.id %></a></th>
             <td><%= user.first_name %></td>
             <td><%= user.last_name %></td>
             <td><a href="mailto:<%= user.email %>"><i class="fas fa-envelope"></i></a></td>
