@@ -53,8 +53,8 @@
             <td><a href="/admin/users/<%= ja.user_id %>"><%= ja.user.first_name %> <%= ja.user.last_name %> </a></td>
             <td><a href="mailto:<%= ja.user.email %>"><i class="fas fa-envelope"></i></a></td>
 
-            <td><a href="/admin/users/<%= ja.job_id %>"><%= ja.job_id %></a></td>
-            <td><a href="/admin/users/<%= ja.job_id %>"><%= ja.job.title %></a></td>
+            <td><a href="/admin/jobs/<%= ja.job_id %>"><%= ja.job_id %></a></td>
+            <td><a href="/admin/jobs/<%= ja.job_id %>"><%= ja.job.title %></a></td>
             <td>
               <% if (ja.user.keywords & ja.job.keywords).present? %>
                 <%= (ja.user.keywords & ja.job.keywords)&.join(', ') %>
