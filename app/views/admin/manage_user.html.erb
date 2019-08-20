@@ -186,19 +186,19 @@
             <tbody>
             <% @job_applications.order(:id).each do |ja| %>
               <tr>
-                <th scope="row"><%= ja.id %></th>
+                <th scope="row"><a href="/admin/applications/<%= ja.id %>"><%= ja.id %></a></th>
 
                 <td><a href="/admin/jobs/<%= ja.job_id %>"><%= ja.job_id %></a></td>
                 <td><a href="/admin/jobs/<%= ja.job_id %>"><%= ja.job.title %></td>
                 <td>
                   <% if (ja.user.keywords & ja.job.keywords).present? %>
-                    <%= (ja.user.keywords & ja.job.keywords)&.join(', ') %>
+                    <%= (ja.user.keywords & ja.job.keywords)&.join(', ')&.truncate(30) %>
                   <% else %>
                     <strong class="text-danger">No Keyword Matches</strong>
                   <% end %>
                 </td>
                 <td><%= ja.status %></td>
-                <td><%= ja.status_reason %></td>
+                <td><%= ja.status_reason&.truncate(20) %></td>
                 <td><a href="/admin/applications/<%= ja.id %>"><i class="fas fa-pen"></i></a></td>
               </tr>
             <% end %>
