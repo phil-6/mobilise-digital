@@ -12,6 +12,7 @@
       <div class="col">
         <% if @job_applications.count == 1 %>
           <h3>Your Application for <%= @job_applications.first.job.title %></h3>
+          <%= link_to "View Job", job_path(@job_applications.first.job), :class => 'btn btn-secondary' %>
         <% else %>
           <h2>Your Job Applications</h2>
         <% end %>
@@ -19,7 +20,7 @@
     </div>
     <div class="row pt-0">
       <% if @job_applications.count == 1 %>
-        <div class="col detail-section text-center full-height">
+        <div class="col detail-section text-center full-height pt-3">
           <h5><strong><em>Application Cover</em></strong></h5>
           <h4> <%= @job_applications.first.cover %> </h4>
           <h5><strong><em>Application Status</em></strong></h5>
@@ -50,6 +51,7 @@
               </div>
               <div class="card-footer">
                 <%= link_to "View Job", job_path(application.job), :class => 'btn btn-secondary' %>
+                <%= link_to "View Application", job_job_applications_path(application.job), :class => 'btn btn-info' %>
               </div>
             </div> <!--End Card-->
           <% end %>
