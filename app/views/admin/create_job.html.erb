@@ -29,6 +29,11 @@
             </div>
 
             <div class="form-group floating-label">
+              <%= f.text_field :keywords, placeholder: " Keywords", class: "form-control" %>
+              <%= f.label :keywords %>
+            </div>
+
+            <div class="form-group floating-label">
               <%= f.text_area :description, placeholder: " Description", class: "form-control", :required => true  %>
               <%= f.label :description %>
             </div>
