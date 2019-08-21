@@ -20,8 +20,10 @@ class Admin::JobsController < ApplicationController
   def create
     if @job = Job.create!(job_params)
       redirect_to :admin_jobs
+      flash[:notice] = 'Job Created Successfully'
     else
       render 'new'
+      flash[:alert] = 'Something Broke'
     end
   end
 
