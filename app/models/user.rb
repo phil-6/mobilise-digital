@@ -16,7 +16,7 @@ class User < ApplicationRecord
   def validate_keywords
     keywords.each do |keyword|
       unless VALID_KEYWORDS.include? keyword
-        errors.add(:keywords, "#{keyword} is not a valid keyword")
+        errors.add(:keywords, "'#{keyword}' is not a valid keyword")
       end
     end
   end

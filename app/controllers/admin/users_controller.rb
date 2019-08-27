@@ -17,7 +17,7 @@ class Admin::UsersController < ApplicationController
     if @user.save
       flash[:notice] = 'User Updated Successfully'
     else
-      flash[:alert] = 'Something Broke'
+      flash[:alert] = ('Something went wrong: ' + @user.errors.full_messages.to_sentence)
     end
     redirect_to :admin_user
   end

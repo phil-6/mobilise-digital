@@ -25,7 +25,7 @@ class Admin::JobsController < ApplicationController
       flash[:notice] = 'Job Created Successfully'
     else
       render template: "admin/create_job"
-      flash[:alert] = 'Something Broke'
+      flash[:alert] = ('Something went wrong: ' + @job.errors.full_messages.to_sentence)
     end
   end
 
