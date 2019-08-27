@@ -30,10 +30,12 @@ class Admin::JobsController < ApplicationController
   end
 
   def update
-    if @job.update(job_params)
+    attributes = job_params.clone
+    attributes[:keywords] = job_params[:keywords].split
+    if @job.update_attributes(attributes)
       flash[:notice] = 'Job Updated Successfully'
     else
-      flash[:alert] = 'Something Broke'
+      flash[:alert] = ('Something went wrong: ' + @job.errors.full_messages.to_sentence)
     end
     redirect_to :admin_job
   end

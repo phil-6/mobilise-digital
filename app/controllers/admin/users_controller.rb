@@ -13,8 +13,9 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-    @user.keywords = account_update_params[:keywords].split
-    if @user.save
+    attributes = account_update_params.clone
+    attributes[:keywords] = account_update_params[:keywords].split
+    if @user.update_attributes(attributes)
       flash[:notice] = 'User Updated Successfully'
     else
       flash[:alert] = ('Something went wrong: ' + @user.errors.full_messages.to_sentence)
