@@ -29,37 +29,37 @@
             </div>
 
             <div class="form-group floating-label">
-              <%= f.text_field :keywords, placeholder: " Keywords", class: "form-control" %>
+              <%= f.text_field :keywords, multiple: true, name: "job[keywords]", placeholder: " Keywords", class: "form-control" %>
               <%= f.label :keywords %>
             </div>
 
             <div class="form-group floating-label">
-              <%= f.text_area :description, placeholder: " Description", class: "form-control", :required => true  %>
+              <%= f.text_area :description, placeholder: " Description", class: "form-control", :required => true %>
               <%= f.label :description %>
             </div>
 
             <div class="form-group floating-label">
-              <%= f.date_field :published_date, placeholder: " Published Date", class: "form-control" %>
+              <%= f.date_field :published_date, placeholder: " Published Date", class: "form-control", :required => true %>
               <%= f.label :published_date %>
             </div>
 
             <div class="form-group floating-label">
-              <%= f.date_field :latest_start_date, placeholder: " Latest Start Date", class: "form-control" %>
+              <%= f.date_field :latest_start_date, placeholder: " Latest Start Date", class: "form-control", :required => true %>
               <%= f.label :latest_start_date %>
             </div>
 
             <div class="form-group floating-label">
-              <%= f.date_field :award_date, placeholder: " Award Date", class: "form-control" %>
+              <%= f.date_field :award_date, placeholder: " Award Date", class: "form-control", :required => true %>
               <%= f.label :award_date %>
             </div>
 
             <div class="form-group floating-label">
-              <%= f.text_field :contract_length, placeholder: " Contract Length", class: "form-control" %>
+              <%= f.text_field :contract_length, placeholder: " Contract Length", class: "form-control", :required => true %>
               <%= f.label :contract_length %>
             </div>
 
             <div class="form-group floating-label">
-              <%= f.number_field :day_rate, unit: '£', placeholder: " Day Rate", class: "form-control" %>
+              <%= f.number_field :day_rate, unit: '£', placeholder: " Day Rate", class: "form-control", :required => true %>
               <%= f.label :day_rate %>
             </div>
 
