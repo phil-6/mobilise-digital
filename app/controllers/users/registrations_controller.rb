@@ -112,8 +112,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                  :emergency_relationship,
                                  :emergency_number,
                                  :emergency_email,
-                                 :verified,
-                                 :keywords
-    )
+                                 :verified)
   end
 end
