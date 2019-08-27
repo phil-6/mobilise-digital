@@ -13,7 +13,8 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-    if @user.update(account_update_params)
+    @user.keywords = account_update_params[:keywords].split
+    if @user.save
       flash[:notice] = 'User Updated Successfully'
     else
       flash[:alert] = 'Something Broke'
@@ -51,7 +52,7 @@ class Admin::UsersController < ApplicationController
                                  :emergency_email,
                                  :verified,
                                  :admin,
-                                 :keywords
-    )
+                                 :keywords,
+                                 :secondary_keywords)
   end
 end
