@@ -18,11 +18,13 @@ class Admin::JobsController < ApplicationController
   end
 
   def create
-    if @job = Job.create!(job_params)
+    @job = Job.new(job_params)
+    @job.keywords = job_params[:keywords].split
+    if @job.save
       redirect_to :admin_jobs
       flash[:notice] = 'Job Created Successfully'
     else
-      render 'new'
+      render template: "admin/create_job"
       flash[:alert] = 'Something Broke'
     end
   end
@@ -64,7 +66,8 @@ class Admin::JobsController < ApplicationController
                                 :address_postcode,
                                 :team,
                                 :requirements,
-                                :open)
+                                :open,
+                                :keywords)
   end
 
 end
