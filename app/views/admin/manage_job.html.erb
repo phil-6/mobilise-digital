@@ -150,19 +150,23 @@
               <%= f.label :description %>
             </div>
 
-            <div class="form-group floating-label">
-              <%= f.date_field :published_date, placeholder: " Published Date", class: "form-control" %>
-              <%= f.label :published_date %>
-            </div>
+            <div class="row">
 
-            <div class="form-group floating-label">
-              <%= f.date_field :latest_start_date, placeholder: " Latest Start Date", class: "form-control" %>
-              <%= f.label :latest_start_date %>
-            </div>
+              <div class="form-group floating-label col-md-4">
+                <%= f.date_field :published_date, placeholder: " Published Date", class: "form-control", :required => true %>
+                <%= f.label :published_date, class: "pl-3"%>
+              </div>
 
-            <div class="form-group floating-label">
-              <%= f.date_field :award_date, placeholder: " Award Date", class: "form-control" %>
-              <%= f.label :award_date %>
+              <div class="form-group floating-label col-md-4 pl-0">
+                <%= f.date_field :latest_start_date, placeholder: " Latest Start Date", class: "form-control", :required => true %>
+                <%= f.label :latest_start_date %>
+              </div>
+
+              <div class="form-group floating-label col-md-4 pl-0">
+                <%= f.date_field :award_date, placeholder: " Award Date", class: "form-control", :required => true %>
+                <%= f.label :award_date %>
+              </div>
+
             </div>
 
             <div class="form-group floating-label">
