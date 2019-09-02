@@ -91,4 +91,23 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Send emails when in prod env
+  config.action_mailer.perform_deliveries = true
+
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => mobilise-digital.herokuapp.com }
+  config.action_mailer.smtp_settings = {
+      user_name:      ENV["AWS_SMTP_USERNAME"],
+      password:       ENV["AWS_SMTP_PASSWORD"],
+      domain:         'mobilise.digital',
+      address:        'email-smtp.eu-west-1.amazonaws.com',
+      port:            '587',
+      authentication: :login,
+      enable_starttls_auto: true
+  }
 end
