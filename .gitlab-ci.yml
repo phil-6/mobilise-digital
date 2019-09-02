@@ -1,0 +1,26 @@
+image: docker:19.03.1
+
+services:
+  - docker:19.03.0-dind
+
+stages:
+  - build
+
+variables:
+  DOCKER_DRIVER: overlay2
+  REGISTRY_BASE_PATH: $REGISTRY_URL/mobilise-digital
+  REGISTRY_URL: harbor.mgmt.mobilise.cloud
+  REPOSITORY_NAME: mobilise-digital/mobilise-digital
+  IMAGE_NAME: $REGISTRY_URL/$REPOSITORY_NAME
+
+before_script:
+  - docker login -u $HARBOR_USER -p $HARBOR_PASSWORD $REGISTRY_URL
+
+build:
+  stage: build
+  tags:
+    - docker
+  script:
+    - docker build -t $REGISTRY_BASE_PATH/mobilise-digital:latest .
+    - docker push $REGISTRY_BASE_PATH/mobilise-digital:latest
+
