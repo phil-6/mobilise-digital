@@ -53,6 +53,8 @@ class Admin::UsersController < ApplicationController
                                  :emergency_email,
                                  :verified,
                                  :admin,
+                                 :sa_uploaded,
+                                 :cv_uploaded,
                                  :keywords,
                                  :secondary_keywords)
   end
