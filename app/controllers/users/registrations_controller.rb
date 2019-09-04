@@ -116,10 +116,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                  :emergency_relationship,
                                  :emergency_number,
                                  :emergency_email,
-                                 :terms_agreement,
                                  :gdpr_agreement,
                                  :job_email_agreement,
                                  :marketing_email_agreement,
+                                 :website_terms_agreement,
+                                 :contractor_terms_agreement,
                                  :verified)
   end
 end
