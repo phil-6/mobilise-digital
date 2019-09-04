@@ -51,11 +51,16 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :emergency_number
       t.string :emergency_email
 
+      t.boolean :terms_agreement
+      t.boolean :gdpr_agreement
+      t.boolean :job_email_agreement
+      t.boolean :marketing_email_agreement
+
       t.boolean :verified,                  default: false
-      t.boolean :cv_uploaded,               default: false
+      t.boolean :cv_uploaded
       t.datetime :cv_uploaded_date
       t.string :cv_url
-      t.boolean :sa_uploaded,  default: false
+      t.boolean :sa_uploaded
       t.datetime :sa_uploaded_date
       t.string :sa_url
 
