@@ -44,7 +44,8 @@ class JobApplicationsController < ApplicationController
   def job_application_params
     # whitelist params
     params.require(:job_application).permit(:job_id,
-                                            :cover)
+                                            :cover,
+                                            :project_terms_agreement)
   end
 
 end
