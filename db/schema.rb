@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 3) do
     t.text "cover"
     t.string "status", default: "open"
     t.text "status_reason"
+    t.boolean "project_terms_agreement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["job_id"], name: "index_job_applications_on_job_id"
@@ -79,11 +80,16 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "emergency_relationship"
     t.string "emergency_number"
     t.string "emergency_email"
+    t.boolean "gdpr_agreement"
+    t.boolean "job_email_agreement"
+    t.boolean "marketing_email_agreement"
+    t.boolean "website_terms_agreement"
+    t.boolean "contractor_terms_agreement"
     t.boolean "verified", default: false
-    t.boolean "cv_uploaded", default: false
+    t.boolean "cv_uploaded"
     t.datetime "cv_uploaded_date"
     t.string "cv_url"
-    t.boolean "sa_uploaded", default: false
+    t.boolean "sa_uploaded"
     t.datetime "sa_uploaded_date"
     t.string "sa_url"
     t.string "keywords", array: true
