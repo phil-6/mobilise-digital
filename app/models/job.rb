@@ -9,7 +9,6 @@ class Job < ApplicationRecord
                         :keywords,
                         :published_date,
                         :latest_start_date,
-                        :award_date,
                         :contract_length,
                         :day_rate
 
