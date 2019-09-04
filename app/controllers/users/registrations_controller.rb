@@ -37,6 +37,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
         current_user.emergency_relationship.blank?,
         current_user.emergency_number.blank?,
         current_user.emergency_email.blank?,
+        current_user.terms_agreement.blank?,
+        current_user.gdpr_agreement.blank?,
+        current_user.job_email_agreement.blank?,
+        current_user.marketing_email_agreement.blank?,
         current_user.cv_uploaded.blank?,
         current_user.sa_uploaded.blank?
     ]
@@ -112,6 +116,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                  :emergency_relationship,
                                  :emergency_number,
                                  :emergency_email,
+                                 :terms_agreement,
+                                 :gdpr_agreement,
+                                 :job_email_agreement,
+                                 :marketing_email_agreement,
                                  :verified)
   end
 end
