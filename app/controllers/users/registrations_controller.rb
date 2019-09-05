@@ -37,12 +37,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
         current_user.emergency_relationship.blank?,
         current_user.emergency_number.blank?,
         current_user.emergency_email.blank?,
-        current_user.gdpr_agreement.blank?,
+        current_user.gdpr_agreement,
         current_user.job_email_agreement.blank?,
         current_user.marketing_email_agreement.blank?,
-        current_user.website_terms_agreement.blank?,
-        current_user.cv_uploaded.blank?,
-        current_user.sa_uploaded.blank?
+        current_user.website_terms_agreement,
+        current_user.cv_uploaded,
+        current_user.sa_uploaded
     ]
     current_user.profile_completion = (((fields_array.count(false)).to_f/(fields_array.count).to_f).round(2)) * 100
     current_user.save

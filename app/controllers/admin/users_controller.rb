@@ -13,17 +13,46 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
+
     attributes = account_update_params.clone
     attributes[:keywords] = account_update_params[:keywords].split
+    profile_completion_calc
     if @user.update_attributes(attributes)
       flash[:notice] = 'User Updated Successfully'
     else
       flash[:alert] = ('Something went wrong: ' + @user.errors.full_messages.to_sentence)
     end
+
     redirect_to :admin_user
   end
 
   private
+
+  def profile_completion_calc
+    fields_array = [
+        @user.email.blank?,
+        @user.first_name.blank?,
+        @user.last_name.blank?,
+        @user.contact_phone.blank?,
+        @user.address_company.blank?,
+        @user.address_1.blank?,
+        @user.address_2.blank?,
+        @user.address_town.blank?,
+        @user.address_county.blank?,
+        @user.address_postcode.blank?,
+        @user.emergency_name.blank?,
+        @user.emergency_relationship.blank?,
+        @user.emergency_number.blank?,
+        @user.emergency_email.blank?,
+        @user.gdpr_agreement,
+        @user.job_email_agreement.blank?,
+        @user.marketing_email_agreement.blank?,
+        @user.website_terms_agreement,
+        @user.cv_uploaded,
+        @user.sa_uploaded
+    ]
+    @user.profile_completion = (((fields_array.count(false)).to_f/(fields_array.count).to_f).round(2)) * 100
+  end
 
   def set_user
     @user = User.find(params[:id])
@@ -56,6 +85,7 @@ class Admin::UsersController < ApplicationController
                                  :sa_uploaded,
                                  :cv_uploaded,
                                  :keywords,
-                                 :secondary_keywords)
+                                 :secondary_keywords,
+                                 :profile_completion)
   end
 end
