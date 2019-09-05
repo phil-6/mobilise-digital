@@ -195,9 +195,8 @@
       .form-caption {
         //margin-top: -16px;
       }
-    }
+    } //.floating-label
 
-    //.floating-label
     .checkbox-lg {
       input.form-check-input {
         //transform: scale(2);
@@ -208,6 +207,15 @@
       .form-check-label {
         font-size: 1.2rem;
         color: $whiteink;
+      }
+
+      a {
+        color: $ink;
+        text-decoration: none;
+        font-weight: 200;
+      }
+      a:hover {
+        font-weight:500;
       }
     }
   }

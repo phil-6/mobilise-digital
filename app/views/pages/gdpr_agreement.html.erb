@@ -1,0 +1,42 @@
+<div id="fullpage">
+  <div class="section header agreement-page">
+
+    <% if user_signed_in? %>
+      <div class="global-nav">
+        <div class="row justify-content-end">
+          <%= render partial: 'layouts/nav' %>
+        </div>
+      </div>
+    <% end %>
+    <div class="row full-height full-width">
+      <%= render partial: 'layouts/alerts' %>
+      <%= render partial: 'layouts/brand_half_page' %>
+
+      <div class="col-lg-6 agreement-content text-center">
+        <h2>GDPR Agreement</h2>
+
+        <p>Please note that Mobilise Digital will hold a copy of your resume on our database.</p>
+        <p> Whilst you are an active candidate on Mobilise Digital’s database please note: </p>
+        <ul>
+          <li>Our consent form gives us permission to store your data and use it to help with your search for a new job.
+          </li>
+          <li>You can request to have your details permanently deleted at any time via your database login, or by email.
+          </li>
+          <li>Please be assured that we will not pass your details to any third party without your consent – ie we will
+            tell you to which clients we are sending your CV to. For more information on GDPR regulations and what this
+            means for you, please visit https://www.eugdpr.org/
+          </li>
+        </ul>
+        <p>If you do not wish to remain on Mobilise Digital’s database, please respond via email advising of this and
+          your
+          details will be permanently deleted.</p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <%= render partial: 'layouts/footer' %>
+</div>

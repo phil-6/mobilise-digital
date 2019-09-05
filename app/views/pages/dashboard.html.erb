@@ -5,11 +5,11 @@
         <%= render partial: 'layouts/nav' %>
       </div>
     </div>
-    <div class="row full-height full-width">
+    <div class="row ml-0 full-height full-width">
       <%= render partial: 'layouts/alerts' %>
 
         <div class="col-lg-6 brand blue-grad-2">
-          <div class="mx-auto position-fixed" >
+          <div class="mx-auto pos-fixed" >
             <div class="text-center half-width">
               <h3 class="column-title">Welcome <%= current_user.first_name %></h3>
               <%= link_to "Update Profile", edit_user_registration_path, :class => 'btn btn-secondary' %>
@@ -23,7 +23,7 @@
           </div>
         </div>
 
-        <div class="col-lg-6 pr-0 white-grad">
+        <div class="col-lg-6 white-grad">
           <div class="text-center">
             <h3 id="applications" class="column-title">Your Open Applications</h3>
             <%= link_to "View All Applications", "/applications" , :class => 'btn btn-secondary' %>
@@ -80,6 +80,7 @@
     </div>
   </div>
 </div>
+<%= render partial: 'layouts/footer' %>
 
 <!-- Custom JS -->
 <%= javascript_tag do %>

@@ -14,4 +14,21 @@ class PagesController < ApplicationController
     end
     @job_applications = JobApplication.order(:updated_at).where(:user_id => current_user.id).first(6)
   end
+
+  def welcome_pack
+    render template: "pages/welcome_pack"
+  end
+
+  def gdpr
+    render template: "pages/gdpr_agreement"
+  end
+
+  def email_terms
+    render template: "pages/email_terms"
+  end
+
+  def website_terms
+    render template: "pages/website_terms"
+  end
+
 end

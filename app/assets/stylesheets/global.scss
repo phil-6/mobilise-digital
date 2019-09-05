@@ -11,9 +11,7 @@ body {
 .full-width {
   width: 100vw;
 }
-.half-width{
-  width: 50vw;
-}
+
 
 .white-grad {
   background: $blue-gradient-2-r;
@@ -33,4 +31,31 @@ h3.column-title{
   h5 {
     color: $gray;
   }
+}
+.agreement-page {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.agreement-content {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+}
+@media (min-width: 992px) {
+  .agreement-content {
+    margin-top: 56px;
+  }
+  .pos-fixed {
+    position:fixed;
+  }
+  .half-width{
+    width: 50vw;
+  }
+}
+.pos-fixed {
+
+  text-align: center;
 }

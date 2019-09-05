@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   end
 
   get '/dashboard',               to: 'pages#dashboard'
+  get '/welcome',                 to: 'pages#welcome_pack'
+  get '/gdpr',                    to: 'pages#gdpr'
+  get '/email_terms',             to: 'pages#email_terms'
+  get '/website_terms',           to: 'pages#website_terms'
+
   get '/applications',            to: 'job_applications#index'
   get '/admin/applications',      to: 'admin/job_applications#index'
 
