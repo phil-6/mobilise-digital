@@ -122,6 +122,23 @@
 
         <h3>
           <a data-toggle="collapse"
+             href="#upload-documents"
+             aria-expanded="false"
+             aria-controls="collapseExample"
+             class="collapsed">
+            Documents <i class="fas fa-chevron-up"></i><i class="fas fa-chevron-down"></i>
+          </a>
+        </h3>
+        <div id="upload-documents" class="form-section collapse">
+          <div class="form-group buttons">
+            <a href="mailto:phil.reynolds@mobilise.cloud?subject=CV%20of%20<%= current_user.first_name %>%20<%= current_user.last_name %>&body=Please%20attach%20your%20CV%20to%20this%20email" target="_blank" class="btn btn-secondary">Submit CV</a>
+            <a href="mailto:phil.reynolds@mobilise.cloud?subject=Self%20Assessment%20of%20<%= current_user.first_name %>%20<%= current_user.last_name %>&body=Please%20attach%20your%20self%20assessment%20to%20this%20email" target="_blank" class="btn btn-secondary">Submit Self Assessment</a>
+          </div>
+
+        </div>
+
+        <h3>
+          <a data-toggle="collapse"
              href="#update-password"
              aria-expanded="false"
              aria-controls="collapseExample"
