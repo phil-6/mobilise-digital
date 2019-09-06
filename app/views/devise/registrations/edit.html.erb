@@ -139,6 +139,32 @@
 
         <h3>
           <a data-toggle="collapse"
+             href="#agreements"
+             aria-expanded="false"
+             aria-controls="collapseExample"
+             class="collapsed">
+            Agreements <i class="fas fa-chevron-up"></i><i class="fas fa-chevron-down"></i>
+          </a>
+        </h3>
+        <div id="agreements" class="form-section collapse">
+          <div class="form-group agreements text-left">
+            <div class="row p-0">
+              <div class="col-md-6 form-check checkbox-lg">
+                <%= f.check_box :job_email_agreement, class: "form-check-input" %>
+                <%= f.label :job_email_agreement, "#{link_to 'Job Alert Agreement', email_terms_path}.".html_safe, class: "form-check-label" %>
+              </div>
+
+              <div class="col-md-6 form-check checkbox-lg">
+                <%= f.check_box :marketing_email_agreement, class: "form-check-input" %>
+                <%= f.label :marketing_email_agreement, "#{link_to 'Marketing Agreement', email_terms_path}.".html_safe, class: "form-check-label" %>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <h3>
+          <a data-toggle="collapse"
              href="#update-password"
              aria-expanded="false"
              aria-controls="collapseExample"
