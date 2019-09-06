@@ -95,7 +95,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def sign_up_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name,
+                                 :last_name,
+                                 :email,
+                                 :password,
+                                 :password_confirmation,
+                                 :gdpr_agreement,
+                                 :job_email_agreement,
+                                 :marketing_email_agreement,
+                                 :website_terms_agreement,
+                                 :contractor_terms_agreement)
   end
 
   def account_update_params
@@ -116,10 +125,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                  :emergency_relationship,
                                  :emergency_number,
                                  :emergency_email,
-                                 :gdpr_agreement,
                                  :job_email_agreement,
                                  :marketing_email_agreement,
-                                 :website_terms_agreement,
                                  :contractor_terms_agreement,
                                  :verified)
   end

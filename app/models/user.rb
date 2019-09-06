@@ -7,6 +7,13 @@ class User < ApplicationRecord
 
   has_many :job_applications, foreign_key: :user_id
 
+  # validations
+  validates_presence_of :first_name,
+                        :last_name,
+                        :email
+
+  validates :gdpr_agreement, acceptance: true
+  validates :website_terms_agreement, acceptance: true
 
   VALID_KEYWORDS = %w(agile_coach business_analyst communications_manager content_designer cyber_security data_architect data_engineer data_scientist delivery_manager designer developer performance_analyst portfolio_manager product_manager programme_manager quality_assurance service_manager technical_architect user_researcher web_operations_engineer)
   validate :validate_keywords
