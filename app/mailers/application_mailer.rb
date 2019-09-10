@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'team@mobilise.digital'
+  default from: 'donotreply@mobilise.cloud'
   layout 'mailer'
 end
