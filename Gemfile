@@ -41,7 +41,7 @@ gem 'tzinfo-data', '~> 1.2019', '>= 1.2019.2'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # User authentication and management handled by devise
-gem 'devise'
+gem 'devise', '~> 4.7.1'
 
 # Environment Variable Management
 gem 'figaro'
@@ -74,3 +74,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Security Update
+gem 'nokogiri', '~> 1.10.4'
