@@ -12,12 +12,21 @@ body {
   width: 100vw;
 }
 
+.brand {
+  color: $whiteink;
+}
 
 .white-grad {
-  background: $blue-gradient-2-r;
+  background: $white-gradient;
 }
 .blue-grad-2 {
   background: $blue-gradient-2;
+}
+.blue-grad-2-r {
+  background: $blue-gradient-2-r;
+}
+.blue-grad-3 {
+  background: $blue-gradient-3;
 }
 h3.column-title{
   padding-top: 1rem;

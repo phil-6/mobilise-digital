@@ -5,7 +5,7 @@
     padding: 0.6rem;
     width: 100%;
     margin: 0;
-    background: $purple-gradient;
+    background: $orange-gradient;
   }
 
   .nav-link {
@@ -22,7 +22,7 @@
   }
 
   .admin {
-    color: $ink;
+    color: $brandprimary-darker;
   }
 
   .admin:hover {
@@ -30,7 +30,7 @@
   }
 
   .jobs:hover {
-    color: $purple;
+    color: $brandprimary-darker;
   }
 
   .edit-profile:hover {
@@ -38,7 +38,7 @@
   }
 
   .logout:hover {
-    color: $ink2;
+    color: $brandprimary-darker;
   }
 }
 
