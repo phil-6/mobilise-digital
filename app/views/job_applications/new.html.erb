@@ -10,12 +10,12 @@
 
     <section>
       <div class="row">
-        <div class="col job-application">
+        <div class="col">
           <%= render partial: 'layouts/alerts' %>
           <h2>New Job Application</h2>
           <% if current_user.profile_completion != 100 %>
             <div class="pt-3">
-              <h6 class="alert alert-danger"><strong><em>Please complete your profile
+              <h6 class="alert alert-danger incomplete-profile"><strong><em>Please <%= link_to "complete your profile", edit_user_registration_path %>
                 <% if !current_user.cv_uploaded? %>and upload your cv
                 <% end %>
                 <% if !current_user.sa_uploaded? %>and upload your self-assessment
@@ -75,7 +75,7 @@
           </div>
           <% if current_user.profile_completion != 100 %>
             <div class="pt-3">
-              <h6 class="alert alert-danger"><strong><em>Please complete your profile
+              <h6 class="alert alert-danger incomplete-profile"><strong><em>Please <%= link_to "complete your profile", edit_user_registration_path %>
                 <% if !current_user.cv_uploaded? %>and upload your cv
                 <% end %>
                 <% if !current_user.sa_uploaded? %>and upload your self-assessment
@@ -98,3 +98,5 @@
     </section>
   </div>
 </div>
+
+<%= render partial: 'layouts/footer' %>

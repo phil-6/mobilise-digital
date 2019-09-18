@@ -26,7 +26,7 @@ $card-gradient: linear-gradient(to top left, $aws, $azure, $gcp, $devops, $k8s, 
 
 
 
-.job-card {
+.card.job-card {
   min-width: 300px;
   margin: 15px;
   border: 0;

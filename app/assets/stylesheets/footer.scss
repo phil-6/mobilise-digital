@@ -1,20 +1,36 @@
 @import "variables";
 
-
 .footer {
   min-height: 140px;
   background: $gray-gradient;
-  color: $whiteink;
-  ul{
+  color: $brandprimary;
+  z-index: 2;
+  h4 {
+    margin-bottom: 30px;
+  }
+  .brand-logo {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    a{
-      text-decoration: none;
-      color: $whiteink;
+    li {
+      margin-bottom: 1rem;
     }
-    a:hover{
+    a {
+      text-decoration: none;
+      color: $brandprimary;
+    }
+    a:hover {
       font-weight: 600;
+    }
+  }
+  ul.compact {
+    li {
+      margin-bottom: 0;
     }
   }
 }

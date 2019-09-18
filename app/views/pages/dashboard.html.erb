@@ -9,7 +9,7 @@
       <%= render partial: 'layouts/alerts' %>
 
         <div class="col-lg-6 brand blue-grad-2">
-          <div class="mx-auto pos-fixed" >
+          <div class="mx-auto pos-fixed zindex-fixed" >
             <div class="text-center half-width">
               <h3 class="column-title">Welcome <%= current_user.first_name %></h3>
               <%= link_to "Update Profile", edit_user_registration_path, :class => 'btn btn-secondary' %>
@@ -22,7 +22,7 @@
                 <canvas id="profileCompletionPie"></canvas>
               </div>
               <div class="mx-auto pt-3">
-                <a href="mailto:donotreply@mobilise.cloud?subject=Referral%20from%20<%= current_user.first_name %>%20<%= current_user.last_name %>&body=Please%20enter%20details%20of%20the%20person%20you%20are%20referring%20here" target="_blank" class="btn btn-info">Refer Someone</a>
+                <a href="mailto:donotreply@mobilise.cloud?subject=Referral%20from%20<%= current_user.first_name %>%20<%= current_user.last_name %>&body=Please%20enter%20details%20of%20the%20person%20you%20are%20referring%20here" target="_blank" class="btn btn-primary">Refer Someone</a>
               </div>
             </div>
           </div>

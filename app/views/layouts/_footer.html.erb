@@ -1,19 +1,31 @@
-<footer class="footer mt-auto p-2">
+<footer class="footer mt-auto p-2 blue-grad-3 zindex-popover">
   <div class="row">
-    <div class="col-md-4">
-      <h4>
-        <span class="brand-0">mobilise</span>
-        <span class="small brand-1">Digital</span>
-      </h4>
-      <h4 class="brand-0">Your 'non-agency' people</h4>
+    <div class="col-md-3 text-center">
+      <%= image_tag("mobilise-digital-logo.png", :alt => "Mobilise Digital Logo", :class => "brand-logo" ) %>
+      <h4 class="brand brand-0">Your 'non-agency' people</h4>
     </div>
-    <div class="col-md-4">
-      Footer
-    </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
+      <h4>Contact</h4>
       <ul>
-        <li>!About Us!</li>
-        <li>!FAQ!</li>
+        <li><i class="fas fa-phone-alt"></i> 0345 054 2560</li>
+        <li><a href="mailto:info@mobilise.digital"><i class="fas fa-envelope"></i> info@mobilise.digital</a></li>
+        <li>1a Axis Court, Swansea, SA7 0AJ</li>
+        <li>71-75 Shelton Street, London, WC2H 9JQ</li>
+      </ul>
+    </div>
+    <div class="col-md-3">
+      <h4>Mobilise Family</h4>
+      <ul>
+        <li><a href="https://mobilise.cloud"><i class="fas fa-chevron-right"></i> Mobilise Cloud <i class="fas fa-external-link-alt"></i></a></li>
+        <li><a href="https://mobilise.digital"><i class="fas fa-chevron-right"></i> Mobilise Digital <i class="fas fa-external-link-alt"></i></a></li>
+        <li><a href="https://mobilise.ai"><i class="fas fa-chevron-right"></i> Mobilise AI <i class="fas fa-external-link-alt"></i></a></li>
+      </ul>
+    </div>
+    <div class="col-md-3">
+      <h4>Associates Network</h4>
+      <ul class="compact">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">FAQ</a></li>
         <li><%= link_to 'Email Terms', email_terms_path%></li>
         <li><%= link_to 'Website Terms', website_terms_path %></li>
         <li><%= link_to 'GDPR', gdpr_path %></li>

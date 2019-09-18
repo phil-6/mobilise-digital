@@ -15,6 +15,9 @@ body {
 .brand {
   color: $whiteink;
 }
+.brand-logo {
+  max-width: 250px;
+}
 
 .white-grad {
   background: $white-gradient;

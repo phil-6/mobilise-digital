@@ -271,3 +271,14 @@
     font-size: 0.8rem;
   }
 }
+
+h6.alert-danger.incomplete-profile {
+  a {
+    text-decoration: underline;
+    color: inherit;
+  }
+  a:hover {
+    text-decoration: none;
+    color: $brandprimary;
+  }
+}

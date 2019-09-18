@@ -8,13 +8,23 @@ $theme-colors: (
 
 .btn-primary {
    background-color: $brandprimary;
-   border-color: $brandprimary
+   border-color: $brandprimary;
  }
 
 .btn-primary:hover{
   background-color: $brandprimary-darker;
   border-color: $brandprimary-darker;
   color: $brandhighlight;
+}
+
+.btn-info {
+  background-color: $brandhighlight;
+  border-color: $brandhighlight;
+}
+
+.btn-info:hover {
+  background-color: $blue;
+  border-color: $blue;
 }
 
 .btn-secondary {
