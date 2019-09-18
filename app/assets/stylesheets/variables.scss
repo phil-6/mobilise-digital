@@ -9,9 +9,26 @@ $heading-font: "Neris-Black", sans-serif;
 $brand-font: "Neris-Black";
 $brand-font-1: "Press Start 2P";
 
+$whiteink: #fdfbfb;
+$ink: #000011;
+$ink2: #070D20;
+$black: #000000;
+$gray: #85929E;
+
 $blue:#1f419b;
+$blue-brand: #092c74;
 $blue-darker:#0b2361;
-$blue-highlight:#1CB5E0;
+$blue-darker-2: #000046;
+$blue-highlight: #1fc2de;
+
+$brandprimary: $blue-brand;
+$brandprimary-darker: $blue-darker-2;
+$brandhighlight: $blue-highlight;
+
+$blue-gradient: linear-gradient(to top left, $brandhighlight, $brandprimary, $brandprimary-darker);
+$blue-gradient-2: linear-gradient(to bottom left, $blue-highlight 20%, $blue 60%, $blue-darker 80%, $blue-darker-2);
+$blue-gradient-2-r: linear-gradient(to bottom right, $blue-highlight 20%, $blue 60%, $blue-darker 80%, $blue-darker-2);
+$blue-gradient-3: linear-gradient(to top left, $brandhighlight, $whiteink);
 
 $orange:#F28123;
 $orange-darker:#D34E24;
@@ -20,23 +37,10 @@ $purple: #7261A3;
 $purple-medium: #712F79;
 $purple-darker: #330867;
 
-$whiteink: #fdfbfb;
-$ink: #000011;
-$ink2: #070D20;
-$black: #000000;
-$gray: #85929E;
-
-$brandprimary: $blue;
-$brandprimary-darker: $blue-darker;
-$brandhighlight: $blue-highlight;
-
 $brandsecondary: $orange;
 $brandsecondary-darker: $orange-darker;
 
 $purple-gradient: linear-gradient(to top left, $purple, $purple-medium, $purple-darker);
-$blue-gradient: linear-gradient(to top left, $brandhighlight, $brandprimary, $brandprimary-darker);
-$blue-gradient-2: linear-gradient(to bottom left, $brandhighlight, $brandprimary, $blue-darker, #000046);
-$blue-gradient-2-r: linear-gradient(to bottom right, $brandhighlight, $brandprimary, $blue-darker, #000046);
 $white-gradient: linear-gradient(to top left, $brandhighlight, $whiteink);
 $orange-gradient: linear-gradient(to top left, $brandsecondary, $brandsecondary-darker);
 $gray-gradient: linear-gradient(to top left, #485563, #29323c);

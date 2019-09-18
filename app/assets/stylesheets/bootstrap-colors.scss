@@ -10,9 +10,11 @@ $theme-colors: (
    background-color: $brandprimary;
    border-color: $brandprimary
  }
+
 .btn-primary:hover{
   background-color: $brandprimary-darker;
   border-color: $brandprimary-darker;
+  color: $brandhighlight;
 }
 
 .btn-secondary {
