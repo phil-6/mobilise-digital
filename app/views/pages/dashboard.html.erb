@@ -32,7 +32,49 @@
           </div>
         </div>
 
-        <div class="col-lg-6 blue-grad-2-r">
+        <div class="col-lg-6 blue-grad-2-r text-center">
+
+            <div class="row key-info-row">
+
+              <div class="col-lg key-info-card purple-card">
+                <h4>Profile Completion</h4>
+                <div id="key_totalCalls" class="key-number">
+                  <%= current_user.profile_completion %>%
+                </div>
+              </div>
+
+              <div class="col-lg key-info-card blue-card">
+                <h4>New Jobs Listed</h4>
+                <div id="key_callsThisMonth" class="key-number">+ 10</div>
+              </div>
+
+              <div class="col-lg key-info-card green-card">
+                <h4>Key Stat</h4>
+                <div class="row mh-100 no-gutters">
+                  <div class="col">
+                    <div id="key_collectionsBooked" class="key-number"></div>
+                  </div>
+                  <div class="col align-self-center">
+                    <span id="key_symbol_collectionsBooked" class="key-change-symbol"></span>
+                    <span id="key_change_collectionsBooked" class="key-change-number"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg key-info-card red-card">
+                <h4>Key Stat</h4>
+                <div class="row mh-100 no-gutters">
+                  <div class="col">
+                    <div id="key_droppedCalls" class="key-number"></div>
+                  </div>
+                  <div class="col align-self-center">
+                    <span id="key_symbol_droppedCalls" class="key-change-symbol"></span>
+                    <span id="key_change_droppedCalls" class="key-change-number "></span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           <div class="text-center">
             <h3 id="applications" class="column-title">Your Open Applications</h3>
             <%= link_to "View All Applications", "/applications" , :class => 'btn btn-secondary' %>

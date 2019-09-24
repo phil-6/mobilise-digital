@@ -12,26 +12,28 @@
   }
 }
 
-
-.key-info-row{
-  margin-bottom: 15px;
-  max-width: 100%;
-  margin: 0;
+.row.key-info-row {
+  max-width: 110%;
+  margin: 0 -15px 15px -15px;
   padding: 0 !important;
+
 }
-.key-info-card {
-  height: 150px;
-  padding: 15px 50px 15px 50px;
-  h4 {
-    font-size: 1.1rem;
-    margin: 0;
-    font-weight: 600;
+  .key-info-card {
+    height: 150px;
+    padding: 15px 50px 15px 50px;
+
+    h4 {
+      font-size: 1.1rem;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .key-number {
+      font-size: 4rem;
+      font-weight: 800;
+    }
   }
-  .key-number {
-    font-size: 4rem;
-    font-weight: 800;
-  }
-}
+
 .blue-card {
   background: #76c4e2;
   background: linear-gradient(to bottom left,#76c4e2,#8176b5);
