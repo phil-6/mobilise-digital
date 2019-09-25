@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 
   # skip_before_action :authenticate_user!, only: [:main, :map]
   def main
+    @jobs = Job.all.order(:updated_at).first(4)
     render template: "pages/main"
   end
 

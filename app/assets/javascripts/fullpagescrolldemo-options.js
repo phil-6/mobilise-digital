@@ -5,10 +5,10 @@ new fullpage('#fullpage', {
     //Navigation
     menu: '#menu',
     lockAnchors: false,
-    anchors:['yourJourney', 'isItForUs', 'nervous', 'sortOf', 'containers', 'serverless'],
+    anchors:['home', 'transparency', 'opportunity', 'respect', 'community', 'honesty', 'dashboard', 'latestjobs'],
     navigation: true,
     navigationPosition: 'right',
-    navigationTooltips: ['Your Journey', 'Is it for us?', 'We\'re Nervous', 'Sort Of There', 'We Want Containers', 'Let\'s Go Serverless'],
+    navigationTooltips: ['Home', 'Transparency', 'Opportunity', 'Respect', 'Community', 'Honesty', 'Dashboard', 'Latest Jobs'],
     showActiveTooltip: false,
     slidesNavigation: false,
     slidesNavPosition: 'bottom',

@@ -1,4 +1,4 @@
-<div id="fullpage" >
+<div id="fullpage">
   <div class="section header">
     <div class="row full-height">
       <div class="col-lg-6 brand blue-grad-2 text-center">
@@ -9,92 +9,54 @@
             </div>
           </div>
         <% end %>
-        <%= image_tag("mobilise-digital-logo.png", :alt => "Mobilise Digital Logo", :class => "brand-logo" ) %>
+        <%= image_tag("mobilise-digital-logo.png", :alt => "Mobilise Digital Logo", :class => "brand-logo") %>
         <h4 class="brand-0">Your 'non-agency' people</h4>
 
       </div>
       <div class="col-lg-6 welcome text-center">
         <%= render partial: 'layouts/alerts' %>
-        <h2>Welcome <% if user_signed_in? %>Back <%= current_user.first_name %><% end %></h2>
-        <h4><strong>TO BE UPDATED</strong> Here at Mobilise Digital, we want to cut all the agency rubbish out of contractating. Our Core values are transparency, we'll give you all the information you've always wanted about the contacts you're working on.</h4>
-        <h4>Pellentesque efficitur sed nisl vel ornare. Vestibulum placerat dolor et felis venenatis, et laoreet urna pretium. Etiam vel velit quis nisi fringilla maximus. Fusce eu eros at nunc placerat efficitur nec in erat. Quisque dictum leo at volutpat pulvinar. Fusce tempus orci in est finibus placerat. Nunc id luctus enim, id consequat ipsum. Cras tincidunt augue tortor, quis fringilla ex sagittis vitae.</h4>
+        <h2>Welcome
+          <% if user_signed_in? %>Back <%= current_user.first_name %>
+          <% end %></h2>
+        <h4>Mobilise Digital is a members network, created to establish a home for I.T. professionals working in the UK
+          on a contractual basis. Our mission is to partner with I.T contractors throughout the country to ensure they
+          receive a <strong>respectful, balanced and transparent service.</strong></h4>
+
+        <h4>There is a <strong>fast-growing demand</strong> for suitably qualified individuals and whilst that is certainly an overall
+          positive, the mechanisms by which people are being hired are skewed considerably in favour of the recruitment
+          agencies, much to our dismay and confusion.</h4>
+
+        <h4>The entire ethos of a recruitment agency is to take as high of a percentage of the workers as possible,
+          whilst maintaining the supply to their client. Whilst we understand the need for this service, we felt there
+          was a <strong>much fairer way</strong> to achieve the same goals but with a well-balanced relationship between contractor and
+          client, hence Mobilise Digital was born.</h4>
         <div class="buttons">
-          <% if not user_signed_in? %>
+          <% unless user_signed_in? %>
             <%= link_to "Login", new_user_session_path, :class => 'btn btn-primary' %>
             <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-secondary' %>
           <% end %>
         </div>
         <h3 class="brand-0">Scroll down to find out more</h3>
-        <a href="#isItForUs"><i class="fas fa-angle-down fa-9x"></i></a>
+        <a <% if user_signed_in? %>href="#dashboard" <% else %> href="#transparency" <% end %> ><i class="fas fa-angle-down fa-9x"></i></a>
       </div>
     </div>
   </div>
-  <div class="section background-orange">
-    <div class="row text-center">
-      <div class="col-md-6">Image here</div>
-      <div class="col-md-6">
-        <h1>The Cloud...</h1>
-        <h2>is it for us?</h2>
-        <br />
-        <br />
-        <h4>How can Mobilise help?</h4>
-        <br />
-        <p>We can write you a Cloud Strategy and help you understand how Cloud Adoption can help your business.</p>
-        <br />
-        <h4><button type="button" class="btn btn-info btn-lg">Let's Get Started</button></h4>
-      </div>
-    </div>
-  </div>
-  <div class="section background-purple">
-    <div class="text-center">
-      <div class="row text-center">
-        <div class="col-md-6 d-sm-none d-md-block">Image Here</div>
-        <div class="col-md-6">
-          <h1>We want to get into The Cloud</h1>
-          <h2>but we're a bit nervous</h2>
-          <br />
-          <br />
-          <h4>How can Mobilise help?</h4>
-          <br />
-          <p>We can seamlessly migrate your existing servers and data to the Cloud and integrate them with any legacy applications and services. We can help you run these services which are migrated.</p>
-          <br />
-          <h4><button type="button" class="btn btn-info btn-lg">Let's Get Started</button></h4>
-        </div>
-      </div>
-    </div>
-  </div>
+
   <div class="section background-black">
     <div class="text-center">
       <div class="row text-center">
-        <div class="col-md-6 d-sm-none d-md-block">Image Here</div>
+        <div class="col-md-6 d-sm-none d-md-block"><img src="../assets/transparency.svg"></div>
         <div class="col-md-6">
-          <h1>We're Already in The Cloud...</h1>
-          <h2>(sort of)​</h2>
-          <br />
-          <br />
-          <h4>How can Mobilise help?</h4>
-          <br />
-          <p>We will review what you've put in place and advise on best practice and security.  We can convert your infrastructure to code, and help you run those services 24/7.</p>
-          <br />
-          <h4><button type="button" class="btn btn-info btn-lg">Let's Get Started</button></h4>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section background-tomato">
-    <div class="text-center">
-      <div class="row text-center">
-        <div class="col-md-6 d-sm-none d-md-block">Image Here</div>
-        <div class="col-md-6">
-          <h1>We love The Cloud</h1>
-          <h2>and want to get into containers.</h2>
-          <br />
-          <br />
-          <h4>How can Mobilise help?</h4>
-          <br />
-          <p>We can take exisitng applications and convert them so they run in containers. We can then use Kubernetes to orchestrate container deployments and integrate container deployment with Ci/CD pipeline tooling. We can help you run this 24/7.</p>
-          <br />
-          <h4><button type="button" class="btn btn-info btn-lg">Let's Get Started</button></h4>
+          <h2>Transparency</h2>
+          <br/>
+          <p>When you work on a project with Mobilise Digital, <strong>we will tell you</strong> exactly how much the
+            <strong>charge rate</strong> is to our clients, what our <strong>profit margin</strong> is and
+            <strong>how much you will be paid</strong> as the contractor.</p>
+          <p> We guarantee you we will never make more money from a project than you do. If you’re currently working
+            through a recruitment agency, feel free to ask them how much their margin is every day you work through
+            them……<em>they won’t tell you.</em></p>
+          <br/>
+          <h4><%= link_to "Let's Get Started", new_user_registration_path, :class => 'btn btn-lg btn-info' %></h4>
         </div>
       </div>
     </div>
@@ -102,21 +64,130 @@
   <div class="section background-cyan">
     <div class="text-center">
       <div class="row text-center">
-        <div class="col-md-6 d-sm-none d-md-block">Image Here</div>
+        <div class="col-md-6 d-sm-none d-md-block"><img src="../assets/opportunity.svg"></div>
         <div class="col-md-6">
-          <h1>The Cloud is Fantastic</h1>
-          <h2>let's go SERVERLESS!</h2>
-          <br />
-          <br />
-          <h4>How can Mobilise help?</h4>
-          <br />
-          <p>Let's redesign your applications so they use cloud-based functions so your code runs on demand without worrying about pesky servers! We can integrate deployments with CI/CD Pipeline Tooling. We can help you run this 24/7.</p>
-          <br />
-          <h4><button type="button" class="btn btn-info btn-lg">Let's Get Started</button></h4>
+          <h2>Opportunity</h2>
+          <br/>
+          <p>We believe in giving every one of our members the same opportunities. To ensure this, we decided to
+            <strong>remove as many barriers as possible</strong> between contractors and the Digital Marketplace.</p>
+          <p>We let our members know the <strong>full details of every upcoming project/bid when we know them.</strong>
+            Every UK public sector I.T. contract will be shared with all of our members, not just the one’s we want to
+            work on.</p>
+          <br/>
+          <h4><%= link_to "Sign up now", new_user_registration_path, :class => 'btn btn-lg btn-secondary' %></h4>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="section background-tomato">
+    <div class="text-center">
+      <div class="row text-center">
+        <div class="col-md-6 d-sm-none d-md-block"><img src="../assets/respect.svg"></div>
+        <div class="col-md-6">
+          <h2>Respect</h2>
+          <br/>
+          <p>Any successful relationship is always <strong>built on respect</strong>, whether it’s your relationship
+            with your significant other or the person you report into at work.</p>
+          <p>We do not believe that a relationship can be built on respect unless we are
+            <strong>completely transparent</strong> in all of our commercial dealings together. In order to ensure this,
+            we let you know <strong>exactly how much money we will make</strong> when you work on a Mobilise Digital
+            contract.</p>
+          <br/>
+          <h4><%= link_to "Join the movement", new_user_registration_path, :class => 'btn btn-lg btn-info' %></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section background-white">
+    <div class="text-center">
+      <div class="row text-center">
+        <div class="col-md-6 d-sm-none d-md-block"><img src="../assets/respect.svg"></div>
+        <div class="col-md-6">
+          <h2>Community</h2>
+          <br/>
+          <p>When we formed Mobilise Digital, part of our process was to speak to as many contractors as we can. What we
+            understood was that <strong>life as a contractor can sometimes be a solitary one</strong> and if we could,
+            we should try and change that.</p>
+          <p>With this is mind, we want Mobilise Digital to not only be the place you come to look for work, but also
+            for your work mates. Check out the community section of our website for the full details on Working Out Loud
+            circles and the incredible value it can bring inside and outside work.</p>
+          <br/>
+          <h4><a href="https://workingoutloud.com/" class="btn-secondary btn-lg btn">Working Out Loud</a></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section background-purple">
+    <div class="text-center">
+      <div class="row text-center">
+        <div class="col-md-6 d-sm-none d-md-block"><img src="../assets/respect.svg"></div>
+        <div class="col-md-6">
+          <h2>Honesty</h2>
+          <br/>
+          <p>Nobody likes to be misled, and nobody wants to be lied to. We designed our work flow in such a way that
+            it’s actually very difficult for us to be dishonest with you.</p>
+          <p>We try to <strong>remove as many barriers as possible</strong> at the start of the process, so that by the
+            time we have the important commercial conversations, it’s an honest balanced conversation in which both
+            parties know as much as each other. For us, being honest isn’t just about giving truthful answers to a
+            question.</p>
+          <br/>
+          <h4><%= link_to "Sign Up Now", new_user_registration_path, :class => 'btn btn-lg btn-secondary' %></h4>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <% if user_signed_in? %>
+    <div class="section background-orange">
+      <div class="row text-center">
+        <div class="col-md-6"><img src="../assets/man-on-rocket.png"></div>
+        <div class="col-md-6">
+          <h1></h1>
+          <h2>Dashboard</h2>
+          <br/>
+          <br/>
+          <h4>Your central place for finding jobs and checking applications.</h4>
+          <br/>
+          <p>Designed so you have everything you need at your finger tips should you be coming to the end of your
+            current contract or already looking for a new one.</p>
+          <br/>
+          <%= link_to "Go to Dashboard", dashboard_path, :class => 'btn btn-lg btn-info' %>
+        </div>
+      </div>
+    </div>
+    <div class="section background-purple">
+      <div class="text-center">
+        <div class="row text-center">
+          <div class="col">
+            <h2>Latest Jobs</h2>
+            <div class="card-deck">
+              <% @jobs.each do |job| %>
+                <div class="card job-card">
+                  <div class="card-body">
+                    <h3 class="card-title"><%= job.title %></h3>
+                    <p class="card-text"><%= job.description %></p>
+                    <hr/>
+                    <div class="key-info text-left">
+                      <p><strong>Company: </strong><%= job.address_company %></p>
+                      <p><strong>Location: </strong><%= job.address_town %>, <%= job.address_county %></p>
+                      <p><strong>Duration: </strong><%= job.contract_length %></p>
+                      <p><strong>Published Date: </strong><%= job.published_date %></p>
+                    </div>
+                  </div>
+                  <div class="card-footer text-center">
+                    <%= link_to "More Info", job_path(job), :class => 'btn btn-info' %>
+                    <%= link_to "Apply Now", job_path(job), :class => 'btn btn-secondary' %>
+                    <p><small class="text-muted">Last updated <%= time_ago_in_words(job.updated_at) %></p></small>
+                  </div>
+                </div> <!--End Card-->
+              <% end %>
+            </div> <!--End Deck-->
+            <%= link_to "View All Jobs", "/jobs", :class => 'btn btn-lg btn-primary' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
 <script src="/assets/fullpagescrolldemo-options"></script>

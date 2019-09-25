@@ -94,7 +94,7 @@ h3 {
         margin-top: 50px;
       }
       h2 {
-        padding-top: 160px;
+        padding-top: 140px;
       }
       h4 {
         font-size: 1.1rem;
@@ -107,6 +107,17 @@ h3 {
       h3 {
         margin-top: 20px;
         margin-bottom: -40px;
+      }
+    }
+  }
+}
+
+.section {
+  .row {
+    .col-md-6 {
+      img {
+        max-width: 24rem;
+
       }
     }
   }
