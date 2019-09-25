@@ -2,38 +2,29 @@
 
 .btn-primary {
    background-color: $brandprimary;
-   border-color: $brandprimary;
  }
-
 .btn-primary:hover{
   background-color: $brandprimary-darker;
-  border-color: $brandprimary-darker;
   color: $brandhighlight;
 }
 
 .btn-info {
   background-color: $brandhighlight;
-  border-color: $brandhighlight;
 }
-
 .btn-info:hover {
   background-color: $blue;
-  border-color: $blue;
 }
 
 .btn-secondary {
   background: $orange-gradient;
-  //border-color: $brandsecondary;
-  border: 0;
 }
 .btn-secondary:hover{
   background: linear-gradient($brandsecondary-darker, $brandsecondary-darker);
-  border: 0;
-  //border-color: $brandsecondary-darker;
 }
 
 .btn {
   box-shadow: 6px 4px 8px 0px rgba(0,0,0,0.4);
+  border: 0;
 }
 .btn:hover{
   box-shadow: none;
