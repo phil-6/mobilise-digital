@@ -1,4 +1,4 @@
-<div id="fullpage" >
+<div id="fullpage">
   <div class="section header">
     <div class="global-nav">
       <div class="row justify-content-end">
@@ -8,119 +8,147 @@
     <div class="row ml-0 full-height full-width">
       <%= render partial: 'layouts/alerts' %>
 
-        <div class="col-lg-6 brand blue-grad-2">
-          <div class="mx-auto sticky" >
-            <div class="text-center ">
-              <h3 class="column-title">Welcome <%= current_user.first_name %></h3>
-              <%= link_to "Update Profile", edit_user_registration_path, :class => 'btn btn-secondary' %>
-              <%= link_to "View Your Jobs", "#jobs" , :class => 'btn btn-secondary' %>
-              <%= link_to "View Your Applications", "#applications" , :class => 'btn btn-secondary' %>
-            </div>
+      <div class="col-lg-6 brand blue-grad-2">
+        <div class="mx-auto sticky">
+          <div class="text-center ">
+            <h3 class="column-title">Welcome <%= current_user.first_name %></h3>
+            <%= link_to "Update Profile", edit_user_registration_path, :class => 'btn btn-secondary' %>
+            <%= link_to "View Your Jobs", "#jobs", :class => 'btn btn-secondary' %>
+            <%= link_to "View Your Applications", "#applications", :class => 'btn btn-secondary' %>
+          </div>
 
-            <div class="row p-0">
-              <div class="col p-0">
-                <div class="profile-pie">
-                  <canvas id="profileCompletionPie"></canvas>
-                </div>
+          <div class="row p-0">
+            <% unless current_user.profile_completion == 100 %>
+              <div class="col p-0 profile-pie">
+                <canvas id="profileCompletionPie"></canvas>
               </div>
-              <div class="col p-0 text-center">
-                <div class="mx-auto pt-3">
-                  <a href="mailto:donotreply@mobilise.cloud?subject=Referral%20from%20<%= current_user.first_name %>%20<%= current_user.last_name %>&body=Please%20enter%20details%20of%20the%20person%20you%20are%20referring%20here" target="_blank" class="btn btn-primary">Refer Someone</a>
+            <% end %>
+            <div class="col p-0 text-center">
+              <div class="mx-auto pt-3">
+                <h4>Referrals</h4>
+                <div class="p-3 text-justify">
+                  <p>We want our professional members to earn a fee on as many candidates as possible and as such, we
+                    offer an unlimited number of referrals to the network, with uncapped fees payable monthly.</p>
+                  <p>Any professional member that refers another member, shall earn a day rate of £10 for each day that
+                    member spends on a Mobilise Digital project. There is no cap to this referral fee, which allows our
+                    professional members to earn a passive income, simply by referring other members to our network and
+                    those members working on a project.</p>
+                  <p>We have a full breakdown of our referral policy on our website, which we encourage all of our
+                    members to read.</p>
                 </div>
+                <a href="mailto:donotreply@mobilise.cloud?subject=Referral%20from%20<%= current_user.first_name %>%20<%= current_user.last_name %>&body=Please%20enter%20details%20of%20the%20person%20you%20are%20referring%20here" target="_blank" class="btn btn-primary">
+                  Refer Someone
+                </a>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="col-lg-6 blue-grad-2-r text-center">
+      <div class="col-lg-6 blue-grad-2-r text-center">
 
-            <div class="row key-info-row">
-
-              <div class="col-lg key-info-card purple-card">
-                <h4>Profile Completion</h4>
-                <div class="key-number">
-                  <%= current_user.profile_completion %>%
-                </div>
+        <div class="row key-info-row background-orange">
+          <% unless current_user.profile_completion == 100 %>
+            <div class="col-lg key-info-card ">
+              <h4>Profile Completion</h4>
+              <div class="key-number">
+                <%= current_user.profile_completion %>%
               </div>
-
-              <div class="col-lg key-info-card blue-card">
-                <h4>New Jobs This Week</h4>
-                <div class="key-number"><%= @new_jobs %></div>
-              </div>
-
-              <div class="col-lg key-info-card red-card">
-                <h4>Job Application Updates</h4>
-                  <div class="col">
-                    <div class="key-number"><%= @application_updates %></div>
-                  </div>
-              </div>
-
-              <!--<div class="col-lg key-info-card green-card">
-                <h4>Key Stat</h4>
-                <div class="row mh-100 no-gutters">
-                  <div class="col">
-                    <div id="key_droppedCalls" class="key-number"></div>
-                  </div>
-                  <div class="col align-self-center">
-                    <span id="key_symbol_droppedCalls" class="key-change-symbol"></span>
-                    <span id="key_change_droppedCalls" class="key-change-number "></span>
-                  </div>
-                </div>
-              </div>-->
-
             </div>
-          <div class="text-center">
-            <h3 id="applications" class="column-title">Your Open Applications</h3>
-            <%= link_to "View All Applications", "/applications" , :class => 'btn btn-secondary' %>
-          </div>
-          <div class="card-deck">
-            <% @job_applications.each do |ja| %>
-              <div class="card job-card">
-                <div class="card-body">
-                  <h3 class="card-title"><%= ja.job.title %></h3>
-                  <p class="card-text"><%= ja.cover %></p>
-                  <hr />
-                  <div class="key-info text-left">
-                    <p><strong>Status: </strong><%= ja.status %></p>
-                    <p><strong>Status Reason: </strong><%= ja.status_reason ? ja.status_reason : 'No status updates yet, please check again later' %></p>
-                    <p><strong>Created At: </strong><%= ja.created_at %></p>
-                  </div>
-                </div>
-                <div class="card-footer text-center">
-                  <%= link_to "View Job",  job_path(ja.job), :class => 'btn btn-secondary' %>
-                  <p><small class="text-muted">Last updated <%= time_ago_in_words(ja.updated_at) %></p></small>
-                </div>
-              </div> <!--End Card-->
-            <% end %>
-          </div> <!--End Deck-->
+          <% end %>
 
-          <div class="text-center">
-            <h3 id="jobs" class="column-title">Your Open Jobs</h3>
-            <%= link_to "View All Jobs", "/jobs" , :class => 'btn btn-secondary' %>
+          <div class="col-lg key-info-card">
+            <h4>New Jobs This Week</h4>
+            <div class="key-number"><%= @new_jobs %></div>
           </div>
-          <div class="card-deck">
-            <% @jobs.each do |job| %>
-                <div class="card job-card">
-                  <div class="card-body">
-                    <h3 class="card-title"><%= job.title %></h3>
-                    <p class="card-text"><%= job.description %></p>
-                    <hr />
-                    <div class="key-info text-left">
-                      <p><strong>Company: </strong><%= job.address_company %></p>
-                      <p><strong>Location: </strong><%= job.address_town %>, <%= job.address_county %></p>
-                      <p><strong>Duration: </strong><%= job.contract_length %></p>
-                      <p><strong>Published Date: </strong><%= job.published_date %></p>
-                    </div>
-                  </div>
-                  <div class="card-footer text-center">
-                    <%= link_to "More Info",  job_path(job), :class => 'btn btn-secondary' %>
-                    <%= link_to "Apply Now",  job_path(job), :class => 'btn btn-success' %>
-                    <p><small class="text-muted">Last updated <%= time_ago_in_words(job.updated_at) %></p></small>
-                  </div>
-                </div> <!--End Card-->
-            <% end %>
-          </div> <!--End Deck-->
+
+          <div class="col-lg key-info-card ">
+            <h4>Job Application Updates</h4>
+            <div class="col">
+              <div class="key-number"><%= @application_updates %></div>
+            </div>
+          </div>
+
+          <!--<div class="col-lg key-info-card green-card">
+            <h4>Key Stat</h4>
+            <div class="row mh-100 no-gutters">
+              <div class="col">
+                <div id="key_droppedCalls" class="key-number"></div>
+              </div>
+              <div class="col align-self-center">
+                <span id="key_symbol_droppedCalls" class="key-change-symbol"></span>
+                <span id="key_change_droppedCalls" class="key-change-number "></span>
+              </div>
+            </div>
+          </div>-->
         </div>
+
+        <div class="wol-info">
+          <h4>Working Out Loud</h4>
+          <div class="p-3 text-justify">
+            <p>When we formed Mobilise Digital, part of our process was to speak to as many contractors as we
+              can. What we understood was that life as a contractor can sometimes be a solitary one and if we
+              could, we should try and change that.</p>
+            <p>With this is mind, we want Mobilise Digital to not only be the place you come to look for work,
+              but also for your work mates. Check out the community page of our website for the full details
+              on Working Out Loud circles and the incredible value it can bring inside and outside work.</p>
+          </div>
+        </div>
+        <div class="text-center">
+          <h3 id="applications" class="column-title">Your Open Applications</h3>
+          <%= link_to "View All Applications", "/applications", :class => 'btn btn-secondary' %>
+        </div>
+        <div class="card-deck">
+          <% @job_applications.each do |ja| %>
+            <div class="card job-card">
+              <div class="card-body">
+                <h3 class="card-title"><%= ja.job.title %></h3>
+                <p class="card-text"><%= ja.cover %></p>
+                <hr/>
+                <div class="key-info text-left">
+                  <p><strong>Status: </strong><%= ja.status %></p>
+                  <p><strong>Status
+                    Reason: </strong><%= ja.status_reason ? ja.status_reason : 'No status updates yet, please check again later' %>
+                  </p>
+                  <p><strong>Created At: </strong><%= ja.created_at %></p>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+                <%= link_to "View Job", job_path(ja.job), :class => 'btn btn-primary' %>
+                <%= link_to "View Application", job_job_applications_path(ja.job), :class => 'btn btn-info' %>
+                <p><small class="text-muted">Last updated <%= time_ago_in_words(ja.updated_at) %></p></small>
+              </div>
+            </div> <!--End Card-->
+          <% end %>
+        </div> <!--End Deck-->
+
+        <div class="text-center">
+          <h3 id="jobs" class="column-title">Your Open Jobs</h3>
+          <%= link_to "View All Jobs", "/jobs", :class => 'btn btn-secondary' %>
+        </div>
+        <div class="card-deck">
+          <% @jobs.each do |job| %>
+            <div class="card job-card">
+              <div class="card-body">
+                <h3 class="card-title"><%= job.title %></h3>
+                <p class="card-text"><%= job.description %></p>
+                <hr/>
+                <div class="key-info text-left">
+                  <p><strong>Company: </strong><%= job.address_company %></p>
+                  <p><strong>Location: </strong><%= job.address_town %>, <%= job.address_county %></p>
+                  <p><strong>Duration: </strong><%= job.contract_length %></p>
+                  <p><strong>Published Date: </strong><%= job.published_date %></p>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+                <%= link_to "More Info", job_path(job), :class => 'btn btn-info' %>
+                <%= link_to "Apply Now", job_path(job), :class => 'btn btn-secondary' %>
+                <p><small class="text-muted">Last updated <%= time_ago_in_words(job.updated_at) %></p></small>
+              </div>
+            </div> <!--End Card-->
+          <% end %>
+        </div> <!--End Deck-->
+      </div>
 
     </div>
   </div>
@@ -132,3 +160,11 @@
   window.profile_completion = "<%= current_user.profile_completion %>";
 <% end %>
 <%= javascript_include_tag 'chart-dashboard-settings' %>
+<script>
+    $('a').click(function(){
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 500);
+        return false;
+    });
+</script>

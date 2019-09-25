@@ -1,57 +1,53 @@
+@import "variables";
+
 .sticky {
-  position: -webkit-sticky; /* Safari */
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
-
-  .profile-pie {
-    overflow: hidden;
-
-    width: 400px;
-    height: 400px;
-
-  }
 }
-
 .row.key-info-row {
   max-width: 110%;
   margin: 0 -15px 15px -15px;
   padding: 0 !important;
 
 }
-  .key-info-card {
-    height: 150px;
-    padding: 15px 50px 15px 50px;
+.key-info-card {
+  height: 150px;
+  padding: 15px 50px 15px 50px;
 
-    h4 {
-      font-size: 1.1rem;
-      margin: 0;
-      font-weight: 600;
-    }
-
-    .key-number {
-      font-size: 4rem;
-      font-weight: 800;
-    }
+  h4 {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 600;
   }
 
-.blue-card {
-  background: #76c4e2;
-  background: linear-gradient(to bottom left,#76c4e2,#8176b5);
+  .key-number {
+    font-size: 4rem;
+    font-weight: 800;
+  }
 }
-.green-card {
-  background: #85cba8;
-  background: linear-gradient(to bottom left,#85cba8,#76c4e2);
+.wol-info {
+  color: $whiteink;
 }
-.orange-card {
-  background: #ffdb6f;
-  background: linear-gradient(to bottom left,#ffdb6f,#f69259);
-}
-.purple-card {
-  background: #ba77b1;
-  background: linear-gradient(to bottom left,#ba77b1,#8176b5);
-}
-.red-card {
-  background: #fc6076e6;
-  background: linear-gradient(to bottom left,#fc6076e6,#ff9a44e6);
-}
+
+//.blue-card {
+//  background: #76c4e2;
+//  background: linear-gradient(to bottom left,#76c4e2,#8176b5);
+//}
+//.green-card {
+//  background: #85cba8;
+//  background: linear-gradient(to bottom left,#85cba8,#76c4e2);
+//}
+//.orange-card {
+//  background: #ffdb6f;
+//  background: linear-gradient(to bottom left,#ffdb6f,#f69259);
+//}
+//.purple-card {
+//  background: #ba77b1;
+//  background: linear-gradient(to bottom left,#ba77b1,#8176b5);
+//}
+//.red-card {
+//  background: #fc6076e6;
+//  background: linear-gradient(to bottom left,#fc6076e6,#ff9a44e6);
+//}
 
