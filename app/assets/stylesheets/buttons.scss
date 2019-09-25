@@ -1,11 +1,5 @@
 @import "variables";
 
-$theme-colors: (
-        "primary": $brandprimary,
-        "secondary": $brandsecondary,
-        "dark": $ink
-);
-
 .btn-primary {
    background-color: $brandprimary;
    border-color: $brandprimary;
@@ -28,10 +22,20 @@ $theme-colors: (
 }
 
 .btn-secondary {
-  background-color: $brandsecondary;
-  border-color: $brandsecondary
+  background: $orange-gradient;
+  //border-color: $brandsecondary;
+  border: 0;
 }
 .btn-secondary:hover{
-  background-color: $brandsecondary-darker;
-  border-color: $brandsecondary-darker;
+  background: linear-gradient($brandsecondary-darker, $brandsecondary-darker);
+  border: 0;
+  //border-color: $brandsecondary-darker;
+}
+
+.btn {
+  box-shadow: 6px 4px 8px 0px rgba(0,0,0,0.4);
+}
+.btn:hover{
+  box-shadow: none;
+  transition: all 0.2s;
 }

@@ -47,3 +47,9 @@ $orange-gradient: linear-gradient(to top left, $brandsecondary, $brandsecondary-
 $gray-gradient: linear-gradient(to top left, #485563, #29323c);
 $black-gradient: linear-gradient(to top left, $ink2, $ink, $black);
 $black-gradient-2: linear-gradient(to top left, $ink2, #29323c);
+
+$theme-colors: (
+        "primary": $brandprimary,
+        "secondary": $brandsecondary,
+        "dark": $ink
+);
