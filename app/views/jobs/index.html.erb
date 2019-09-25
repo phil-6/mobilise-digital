@@ -6,9 +6,9 @@
     </div>
   </div>
 
-  <section class="brand blue-grad-2 text-center">
+  <section class="brand card-index text-center">
     <%= render partial: 'layouts/alerts' %>
-    <div class="row pb-0">
+    <div class="row pb-0 pt-1">
       <div class="col">
         <h2>All Open Jobs</h2>
       </div>
@@ -22,7 +22,7 @@
               <div class="card-body">
                 <h3 class="card-title"><%= job.title %></h3>
                 <p class="card-text"><%= job.description %></p>
-                <hr />
+                <br />
                 <div class="key-info text-left">
                   <p><strong>Company: </strong><%= job.address_company %></p>
                   <p><strong>Location: </strong><%= job.address_town %>, <%= job.address_county %></p>

@@ -25,33 +25,61 @@ $terraform:null;
 $card-gradient: linear-gradient(to top left, $aws, $azure, $gcp, $devops, $k8s, $python, $ruby, $ansible, $terraform );*/
 
 
+.card-index {
+  background: $blue-gradient-2;;
 
-.card.job-card {
-  min-width: 300px;
-  margin: 15px;
-  border: 0;
-  border-radius: 25px;
-  background: $black-gradient-2;
-  color: $whiteink;
-
-  .card-header {
-    border:0;
+  .row {
+    padding: 0;
   }
+}
+  .card.job-card {
+    margin: 15px;
+    max-width: 100%;
+    border: 0;
+    border-radius: 15px;
+    background: $gray-gradient;
+    color: $whiteink;
 
-  .card-body {
-    .card-title {
-      text-align: center;
+    .card-header {
+      border: 0;
+    }
+
+    .card-body {
+      .card-title {
+        text-align: center;
+      }
+    }
+
+    .card-footer {
+      background: rgba(0, 0, 0, 0);
+      border: 0;
+      color: $whiteink;
+      border-radius: 25px;
+
+      small.text-muted {
+        color: $gray !important;
+      }
+    }
+
+    p {
+      margin: 0;
     }
   }
 
-  .card-footer {
-    //background-color: $ink2;
-    border:0;
-    color: $whiteink;
-    border-radius: 25px;
-  }
-
-  p {
-    margin: 0;
+@media (min-width: 576px){
+  .card-index {
+    .row {
+      margin-left: 5px;
+      margin-right: 5px;
+      padding: 0 2.5rem 2.5rem 2.5rem;
+        .card.job-card{
+          min-width: 360px;
+        }
+      }
+    }
+  .dashboard-cards {
+    .card.job-card {
+      min-width: 300px;
+    }
   }
 }

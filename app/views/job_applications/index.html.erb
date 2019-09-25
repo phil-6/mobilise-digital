@@ -6,9 +6,9 @@
     </div>
   </div>
 
-  <section class="brand-background text-center">
+  <section class="brand card-index text-center">
     <%= render partial: 'layouts/alerts' %>
-    <div class="row pb-0">
+    <div class="row pb-0 pt-1">
       <div class="col">
         <% if @job_applications.count == 1 %>
           <h3>Your Application for <%= @job_applications.first.job.title %></h3>
@@ -40,7 +40,7 @@
               <div class="card-body">
                 <h3 class="card-title"> <%= application.job.title %></h3>
                 <p class="card-text"><%= application.status %></p>
-                <hr/>
+                <br/>
                 <div class="key-info text-left">
                   <p><strong>Your Cover: </strong><%= application.cover %></p>
                   <p><strong>Created Date: </strong><%= application.created_at %></p>
