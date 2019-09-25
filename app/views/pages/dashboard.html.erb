@@ -38,30 +38,24 @@
 
               <div class="col-lg key-info-card purple-card">
                 <h4>Profile Completion</h4>
-                <div id="key_totalCalls" class="key-number">
+                <div class="key-number">
                   <%= current_user.profile_completion %>%
                 </div>
               </div>
 
               <div class="col-lg key-info-card blue-card">
-                <h4>New Jobs Listed</h4>
-                <div id="key_callsThisMonth" class="key-number">+ 10</div>
-              </div>
-
-              <div class="col-lg key-info-card green-card">
-                <h4>Key Stat</h4>
-                <div class="row mh-100 no-gutters">
-                  <div class="col">
-                    <div id="key_collectionsBooked" class="key-number"></div>
-                  </div>
-                  <div class="col align-self-center">
-                    <span id="key_symbol_collectionsBooked" class="key-change-symbol"></span>
-                    <span id="key_change_collectionsBooked" class="key-change-number"></span>
-                  </div>
-                </div>
+                <h4>New Jobs This Week</h4>
+                <div class="key-number"><%= @new_jobs %></div>
               </div>
 
               <div class="col-lg key-info-card red-card">
+                <h4>Job Application Updates</h4>
+                  <div class="col">
+                    <div class="key-number"><%= @application_updates %></div>
+                  </div>
+              </div>
+
+              <!--<div class="col-lg key-info-card green-card">
                 <h4>Key Stat</h4>
                 <div class="row mh-100 no-gutters">
                   <div class="col">
@@ -72,7 +66,7 @@
                     <span id="key_change_droppedCalls" class="key-change-number "></span>
                   </div>
                 </div>
-              </div>
+              </div>-->
 
             </div>
           <div class="text-center">
