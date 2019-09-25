@@ -8,12 +8,12 @@
 
   <div class="admin-content brand-background text-center">
     <section class="row full-height full-width container-fluid">
-      <div class="col">
+      <div class="col pb-2">
         <%= render partial: 'layouts/alerts' %>
         <h2>Job Details</h2>
 
         <% if JobApplication.where(:user_id => current_user.id, :job_id => @job).exists? %>
-          <%= link_to "View your application",  job_job_applications_path(@job), :class => 'btn btn-success' %>
+          <%= link_to "View your application",  job_job_applications_path(@job), :class => 'btn btn-info' %>
         <% else %>
           <%= link_to "Apply Now",  new_job_job_application_path(@job), :class => 'btn btn-secondary' %>
         <% end %>
