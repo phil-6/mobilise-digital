@@ -14,8 +14,7 @@ variables:
   IMAGE_NAME: $REGISTRY_URL/$REPOSITORY_NAME
 
 before_script:
-  - VERSION=`git rev-parse HEAD`
-  - echo $VERSION
+  - install git
   - docker login -u $HARBOR_USER -p $HARBOR_PASSWORD $REGISTRY_URL
 
 
@@ -24,6 +23,7 @@ build:
   tags:
     - docker
   script:
+    - VERSION=`git rev-parse HEAD`
     - echo $VERSION
     # - docker build -t $REGISTRY_BASE_PATH/mobilise-digital:latest .
     # - docker push $REGISTRY_BASE_PATH/mobilise-digital:latest
