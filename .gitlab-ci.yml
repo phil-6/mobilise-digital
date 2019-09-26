@@ -16,7 +16,6 @@ variables:
 before_script:
   - docker login -u $HARBOR_USER -p $HARBOR_PASSWORD $REGISTRY_URL
 
-
 build:
   stage: build
   tags:
@@ -26,6 +25,5 @@ build:
   script:
     - SHA_TAG_PATH=`echo $CI_COMMIT_REF_NAME`
     - VERSION=`cat ./.git/refs/remotes/origin/$SHA_TAG_PATH | cut -c1-8`
-    # - echo $VERSION
     - docker build -t $REGISTRY_BASE_PATH/mobilise-digital:$VERSION .
     - docker push $REGISTRY_BASE_PATH/mobilise-digital:$VERSION
