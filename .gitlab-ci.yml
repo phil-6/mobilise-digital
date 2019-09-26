@@ -22,8 +22,7 @@ build:
   tags:
     - docker
   script:
-    - SHA_PATH=`echo $CI_COMMIT_REF_NAME`
-    - VERSION=`cat .git/refs/heads/$SHA_PATH`
-    - echo $VERSION
+    - SHA_TAG_PATH=`echo $CI_COMMIT_REF_NAME`
+    - cat origin/$SHA_TAG_PATH
     # - docker build -t $REGISTRY_BASE_PATH/mobilise-digital:latest .
     # - docker push $REGISTRY_BASE_PATH/mobilise-digital:latest
