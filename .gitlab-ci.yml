@@ -21,7 +21,7 @@ build:
   stage: build
   tags:
     - docker
-    only:
+  only:
     - master
   script:
     - SHA_TAG_PATH=`echo $CI_COMMIT_REF_NAME`
