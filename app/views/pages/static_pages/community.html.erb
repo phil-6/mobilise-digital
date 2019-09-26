@@ -1,0 +1,26 @@
+<div id="fullpage">
+  <div class="section header agreement-page">
+
+    <% if user_signed_in? %>
+      <div class="global-nav">
+        <div class="row justify-content-end">
+          <%= render partial: 'layouts/nav' %>
+        </div>
+      </div>
+    <% end %>
+    <div class="row full-height full-width">
+      <%= render partial: 'layouts/alerts' %>
+      <%= render partial: 'layouts/brand_half_page' %>
+
+      <div class="col-lg-6 agreement-content text-center">
+        <h2>Community</h2>
+
+        <p>Coming Soon...</p>
+
+      </div>
+
+
+    </div>
+  </div>
+  <%= render partial: 'layouts/footer' %>
+</div>
