@@ -12,6 +12,7 @@ variables:
   REGISTRY_URL: harbor.mgmt.mobilise.cloud
   REPOSITORY_NAME: mobilise-digital/mobilise-digital
   IMAGE_NAME: $REGISTRY_URL/$REPOSITORY_NAME
+  VERSION: 'git rev-parse HEAD'
 
 before_script:
   - docker login -u $HARBOR_USER -p $HARBOR_PASSWORD $REGISTRY_URL
@@ -21,6 +22,7 @@ build:
   tags:
     - docker
   script:
-    - docker build -t $REGISTRY_BASE_PATH/mobilise-digital:latest .
-    - docker push $REGISTRY_BASE_PATH/mobilise-digital:latest
+    - echo $VERSION
+    # - docker build -t $REGISTRY_BASE_PATH/mobilise-digital:latest .
+    # - docker push $REGISTRY_BASE_PATH/mobilise-digital:latest
 
