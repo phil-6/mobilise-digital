@@ -23,6 +23,7 @@ build:
     - docker
   script:
     - SHA_TAG_PATH=`echo $CI_COMMIT_REF_NAME`
-    - find -name "sha-tag"
+    - VERSION=`cat ./.git/refs/remotes/origin/$SHA_TAG_PATH`
+    - echo $VERSION
     # - docker build -t $REGISTRY_BASE_PATH/mobilise-digital:latest .
     # - docker push $REGISTRY_BASE_PATH/mobilise-digital:latest
