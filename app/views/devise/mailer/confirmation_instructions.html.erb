@@ -1,5 +1,10 @@
 <p>Welcome <%= @email %>!</p>
 
+<p>Thank you for registering your interest in Mobilise Digital. You will now need to confirm your account and will then be able to access the full website along with your own personal dashboard.</p>
 <p>You can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>If you have any questions or would like to get in contact, please <a href="mailto:careers@mobilise.cloud">click here.</a></p>
+<p>Yours Sincerely,</p>
+<p>Mobilise Digital</p>

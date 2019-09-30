@@ -100,7 +100,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => "mobilise-digital.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "mobilise.digital" }
   config.action_mailer.smtp_settings = {
       user_name:      ENV["AWS_SMTP_USERNAME"],
       password:       ENV["AWS_SMTP_PASSWORD"],
