@@ -1,6 +1,7 @@
 class UserMailer < ApplicationMailer
 
   default from: 'Mobilise Digital <members@mobilise.digital>'
+  layout 'mailer'
 
   def welcome_email
     @user = params[:user]
