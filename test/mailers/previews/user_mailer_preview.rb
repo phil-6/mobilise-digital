@@ -6,10 +6,19 @@ class DeviseMailerPreview < ActionMailer::Preview
   # end
 
   def confirmation_instructions
-    Devise::Mailer.confirmation_instructions(User.first, "faketoken")
+    UserMailer.confirmation_instructions(User.first, "faketoken",)
   end
 
   def reset_password_instructions
-    MyMailer.reset_password_instructions(User.first, "faketoken", {})
+    UserMailer.reset_password_instructions(User.first, "faketoken", {})
   end
+
+  def password_change
+    UserMailer.password_change(User.first, {})
+  end
+
+  def email_changed
+    UserMailer.email_changed(User.first, {})
+  end
+
 end
