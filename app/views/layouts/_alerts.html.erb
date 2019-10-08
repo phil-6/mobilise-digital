@@ -1,6 +1,6 @@
 <% if flash[:notice] %>
-  <div class="alerts text-center">
-    <p class="notice">
+  <div class="flash alerts text-center">
+    <p class="notice alert alert-light">
       <%= flash[:notice] %>
     </p>
   </div>
@@ -8,8 +8,8 @@
 
 
 <% if flash[:alert] %>
-  <div class="alerts text-center">
-    <p class="alert text-danger">
+  <div class="flash alerts text-center">
+    <p class="alert alert-danger">
       <%= flash[:alert] %>
     </p>
   </div>
