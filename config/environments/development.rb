@@ -65,11 +65,11 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'mob-md-ecs-alb-12083454.eu-west-2.elb.amazonaws.com', port: 80 }
+  config.action_mailer.default_url_options = { host: '10.169.100.40:3000'}
   config.action_mailer.smtp_settings = {
       user_name:      ENV["AWS_SMTP_USERNAME"],
       password:       ENV["AWS_SMTP_PASSWORD"],
-      domain:         'mobilise.digital',
+      domain:         'members.mobilise.digital',
       address:        'email-smtp.eu-west-1.amazonaws.com',
       port:            '587',
       authentication: :login,

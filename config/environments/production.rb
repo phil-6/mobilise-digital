@@ -100,11 +100,11 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => "mobilise.digital" }
+  config.action_mailer.default_url_options = { :host => "members.mobilise.digital" }
   config.action_mailer.smtp_settings = {
       user_name:      ENV["AWS_SMTP_USERNAME"],
       password:       ENV["AWS_SMTP_PASSWORD"],
-      domain:         'mobilise.digital',
+      domain:         'members.mobilise.digital',
       address:        'email-smtp.eu-west-1.amazonaws.com',
       port:            '587',
       authentication: :login,
