@@ -1,9 +1,11 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!
   skip_before_action :authenticate_user!, only: [:main]
+
   def main
-    @jobs = Job.all.order(:updated_at).first(4)
-    render template: "pages/main"
+    if user_signed_in?
+      redirect_to dashboard_path
+    end
   end
 
   def dashboard
