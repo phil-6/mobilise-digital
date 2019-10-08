@@ -1,0 +1,85 @@
+<div id="fullpage">
+  <div class="section header agreement-page">
+
+    <% if user_signed_in? %>
+      <div class="global-nav">
+        <div class="row justify-content-end">
+          <%= render partial: 'layouts/nav' %>
+        </div>
+      </div>
+    <% end %>
+    <div class="row full-height full-width">
+      <%= render partial: 'layouts/alerts' %>
+      <%= render partial: 'layouts/brand_half_page' %>
+
+      <div class="col-lg-6 agreement-content text-justify">
+        <h2 class="text-center">About Us</h2>
+
+        <p>Mobilise Digital is a members network, created to establish a home for I.T. professionals working in the UK
+          on a contractual basis. Our mission is to partner with I.T contractors throughout the country to ensure they
+          receive a respectful, balanced and transparent service.</p>
+
+        <p>There is a fast-growing demand for suitably qualified individuals and whilst that is certainly an overall
+          positive, the mechanisms by which people are being hired are skewed considerably in favour of the recruitment
+          agencies, much to our dismay and confusion.</p>
+
+        <p>The entire ethos of a recruitment agency is to take as high of a percentage of the workers as possible,
+          whilst maintaining the supply to their client. Whilst we understand the need for this service, we felt there
+          was a much fairer way to achieve the same goals but with a well-balanced relationship between contractor and
+          client, hence Mobilise Digital was born.</p>
+
+        <p>We accomplish our goals by ensuring our behaviour is deliberately ‘non-agency’ and these are enshrined in our
+          core values:</p>
+        <ul>
+          <li>
+            <h4>Transparancy</h4>
+
+            <p>When you work on a project with Mobilise Digital, we will tell you exactly how much the charge rate is to
+              our clients, what our profit margin is and how much you as the contractor will be paid. We guarantee you
+              we will never make more money from a project than you do. If you’re currently working through a
+              recruitment agency, feel free to ask them how much their margin is every day you work through them……they
+              won’t tell you.</p>
+          </li>
+          <li>
+            <h4>Opportunity</h4>
+
+            <p>We believe in giving every one of our members the same opportunities. To ensure this, we decided to
+              remove as many barriers as possible between contractors and the Digital Marketplace. We let our members
+              know the full details of every upcoming project/bid when we know them. Every UK public sector I.T.
+              contract will be shared with all of our members, not just the one’s we want to work on.</p>
+          </li>
+          <li>
+            <h4> Respect</h4>
+
+            <p>Any successful relationship is always built on respect, whether it’s your relationship with your
+              significant other or the person you report into at work. We do not believe that a relationship can be
+              built on respect unless we are completely transparent in all of our commercial dealings together. In order
+              to ensure this, we let you know exactly how much money we will make when you work on a Mobilise Digital
+              contract.</p>
+          </li>
+          <li>
+            <h4>Community</h4>
+
+            <p>When we formed Mobilise Digital, part of our process was to speak to as many contractors as we can. What
+              we understood was that life as a contractor can sometimes be a solitary one and if we could, we should try
+              and change that. With this is mind, we want Mobilise Digital to not only be the place you come to look for
+              work, but also for your work mates. Check out the community section of our website for the full details on
+              Working Out Loud circles and the incredible value it can bring inside and outside work.</p>
+          </li>
+          <li>
+            <h4>Honesty</h4>
+
+            <p>Nobody likes to be misled, and nobody wants to be lied to. We designed our work flow in such a way that
+              it’s actually very difficult for us to be dishonest with you. We try to remove as many barriers as
+              possible at the start of the process, so that by the time we have the important commercial conversations,
+              it’s an honest balanced conversation in which both parties know as much as each other. For us, being
+              honest isn’t just about giving truthful answers to a question.</p>
+          </li>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+  <%= render partial: 'layouts/footer' %>
+</div>

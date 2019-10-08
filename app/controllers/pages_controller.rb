@@ -18,20 +18,16 @@ class PagesController < ApplicationController
     @application_updates = JobApplication.where("updated_at > ?", @user.last_sign_in_at).count
   end
 
-  def welcome_pack
-    render template: "pages/welcome_pack"
+  def show
+    if valid_page?
+      render template: "pages/static_pages/#{params[:page]}"
+    else
+      render file: "public/404.html", status: :not_found
+    end
   end
 
-  def gdpr
-    render template: "pages/gdpr_agreement"
+  private
+  def valid_page?
+    File.exist?(Pathname.new(Rails.root + "app/views/pages/static_pages/#{params[:page]}.html.erb"))
   end
-
-  def email_terms
-    render template: "pages/email_terms"
-  end
-
-  def website_terms
-    render template: "pages/website_terms"
-  end
-
 end

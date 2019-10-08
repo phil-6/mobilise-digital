@@ -33,10 +33,10 @@
                     member spends on a Mobilise Digital project. There is no cap to this referral fee, which allows our
                     professional members to earn a passive income, simply by referring other members to our network and
                     those members working on a project.</p>
-                  <p>We have a full breakdown of our referral policy on our website, which we encourage all of our
+                  <p>We have a full breakdown of our <a href="/referral_policy">referral policy</a>, which we encourage all of our
                     members to read.</p>
                 </div>
-                <a href="mailto:donotreply@mobilise.cloud?subject=Referral%20from%20<%= current_user.first_name %>%20<%= current_user.last_name %>&body=Please%20enter%20details%20of%20the%20person%20you%20are%20referring%20here" target="_blank" class="btn btn-primary">
+                <a href="mailto:members@mobilise.digital?subject=Referral%20from%20<%= current_user.first_name %>%20<%= current_user.last_name %>&body=Please%20enter%20details%20of%20the%20person%20you%20are%20referring%20here" target="_blank" class="btn btn-primary">
                   Refer Someone
                 </a>
               </div>
@@ -90,7 +90,7 @@
               can. What we understood was that life as a contractor can sometimes be a solitary one and if we
               could, we should try and change that.</p>
             <p>With this is mind, we want Mobilise Digital to not only be the place you come to look for work,
-              but also for your work mates. Check out the community page of our website for the full details
+              but also for your work mates. Check out the <a href="/community">community page</a> for the full details
               on Working Out Loud circles and the incredible value it can bring inside and outside work.</p>
           </div>
         </div>
@@ -126,7 +126,7 @@
           <h3 id="jobs" class="column-title">Your Open Jobs</h3>
           <%= link_to "View All Jobs", "/jobs", :class => 'btn btn-secondary' %>
         </div>
-        <div class="card-deck">
+        <div class="dashboard-cards card-deck">
           <% @jobs.each do |job| %>
             <div class="card job-card">
               <div class="card-body">

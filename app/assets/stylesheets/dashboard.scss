@@ -29,6 +29,13 @@
 .wol-info {
   color: $whiteink;
 }
+p a {
+  color:inherit;
+  font-weight: 700;
+}
+p a:hover{
+  color: $ink;
+}
 
 //.blue-card {
 //  background: #76c4e2;
