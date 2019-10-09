@@ -1,12 +1,12 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!
-  skip_before_action :authenticate_user!, only: [:main]
+  skip_before_action :authenticate_user!, only: [:show]
 
   def main
-    unless user_signed_in?
-      redirect_to new_user_session_path
-    else
+    if !user_signed_in?
       redirect_to dashboard_path
+    else
+      redirect_to new_user_session_path
     end
   end
 
@@ -24,7 +24,16 @@ class PagesController < ApplicationController
 
   def show
     if valid_page?
-      render template: "pages/static_pages/#{params[:page]}"
+      if %w(gdpr_agreement email_terms website_terms).include?(params[:page])
+        render template: "pages/static_pages/#{params[:page]}"
+      else
+        if !user_signed_in?
+          flash[:alert] = 'You need to sign in or sign up before continuing'
+          redirect_to new_user_session_path
+        else
+          render template: "pages/static_pages/#{params[:page]}"
+        end
+      end
     else
       render file: "public/404.html", status: :not_found
     end
