@@ -14,5 +14,4 @@ development:
 production:
   <<: *default
   database: mobilise-digital_production
-  username: mobilise-digital
-  password: <%= ENV['MOBILISE-DIGITAL_DATABASE_PASSWORD'] %>
+
