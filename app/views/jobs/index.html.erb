@@ -21,16 +21,21 @@
 <!--              <div class="card-header"></div>-->
               <div class="card-body">
                 <h3 class="card-title"><%= job.title %></h3>
-                <p class="card-text"><%= job.description %></p>
-                <br />
                 <div class="key-info text-left">
                   <p><strong>Company: </strong><%= job.address_company %></p>
                   <p><strong>Location: </strong><%= job.address_town %>, <%= job.address_county %></p>
                   <p><strong>Duration: </strong><%= job.contract_length %></p>
                   <p><strong>Day Rate: </strong>£<%= job.day_rate %></p>
-                  <p><strong>Requirements: </strong><%= job.requirements.truncate(160) %></p>
+<!--                  <p><strong>Requirements: </strong><%#= job.requirements.truncate(160) %></p>-->
                   <p><strong>Published Date: </strong><%= job.published_date %></p>
                 </div>
+                <br />
+                <p><strong><em>Job Description</em></strong></p>
+                <p class="card-text"><%= simple_format(job.description) %></p>
+                <br />
+                <p><strong><em>Job Requirements</em></strong></p>
+                <p class="card-text"><%= simple_format(job.requirements) %></p>
+
               </div>
               <div class="card-footer">
                 <%= link_to "More Info",  job_path(job), :class => 'btn btn-info' %>
