@@ -95,60 +95,77 @@
               on Working Out Loud circles and the incredible value it can bring inside and outside work.</p>
           </div>
         </div>
-        <div class="text-center">
-          <h3 id="applications" class="column-title">Your Open Applications</h3>
-          <%= link_to "View All Applications", "/applications", :class => 'btn btn-secondary' %>
-        </div>
-        <div class="dashboard-cards card-deck">
-          <% @job_applications.each do |ja| %>
-            <div class="card job-card">
-              <div class="card-body">
-                <h3 class="card-title"><%= ja.job.title %></h3>
-                <p class="card-text"><%= ja.cover %></p>
-                <br/>
-                <div class="key-info text-left">
-                  <p><strong>Status: </strong><%= ja.status %></p>
-                  <p><strong>Status
-                    Reason: </strong><%= ja.status_reason ? ja.status_reason : 'No status updates yet, please check again later' %>
-                  </p>
-                  <p><strong>Created At: </strong><%= ja.created_at %></p>
-                </div>
-              </div>
-              <div class="card-footer text-center">
-                <%= link_to "View Job", job_path(ja.job), :class => 'btn btn-primary' %>
-                <%= link_to "View Application", job_job_applications_path(ja.job), :class => 'btn btn-info' %>
-                <p><small class="text-muted">Last updated <%= time_ago_in_words(ja.updated_at) %></p></small>
-              </div>
-            </div> <!--End Card-->
-          <% end %>
-        </div> <!--End Deck-->
 
-        <div class="text-center">
-          <h3 id="jobs" class="column-title">Your Open Jobs</h3>
-          <%= link_to "View All Jobs", "/jobs", :class => 'btn btn-secondary' %>
-        </div>
-        <div class="dashboard-cards card-deck">
-          <% @jobs.each do |job| %>
-            <div class="card job-card">
-              <div class="card-body">
-                <h3 class="card-title"><%= job.title %></h3>
-                <p class="card-text"><%= job.description %></p>
-                <br/>
-                <div class="key-info text-left">
-                  <p><strong>Company: </strong><%= job.address_company %></p>
-                  <p><strong>Location: </strong><%= job.address_town %>, <%= job.address_county %></p>
-                  <p><strong>Duration: </strong><%= job.contract_length %></p>
-                  <p><strong>Published Date: </strong><%= job.published_date %></p>
+        <% if @job_applications.count > 0 %>
+          <div class="text-center">
+            <h3 id="applications" class="column-title">Your Open Applications</h3>
+            <%= link_to "View All Applications", "/applications", :class => 'btn btn-secondary' %>
+          </div>
+          <div class="dashboard-cards card-deck">
+            <% @job_applications.each do |ja| %>
+              <div class="card job-card">
+                <div class="card-body">
+                  <h3 class="card-title"><%= ja.job.title %></h3>
+                  <p class="card-text"><%= ja.cover %></p>
+                  <br/>
+                  <div class="key-info text-left">
+                    <p><strong>Status: </strong><%= ja.status %></p>
+                    <p><strong>Status
+                      Reason: </strong><%= ja.status_reason ? ja.status_reason : 'No status updates yet, please check again later' %>
+                    </p>
+                    <p><strong>Created At: </strong><%= ja.created_at %></p>
+                  </div>
                 </div>
-              </div>
-              <div class="card-footer text-center">
-                <%= link_to "More Info", job_path(job), :class => 'btn btn-info' %>
-                <%= link_to "Apply Now", job_path(job), :class => 'btn btn-secondary' %>
-                <p><small class="text-muted">Last updated <%= time_ago_in_words(job.updated_at) %></p></small>
-              </div>
-            </div> <!--End Card-->
-          <% end %>
-        </div> <!--End Deck-->
+                <div class="card-footer text-center">
+                  <%= link_to "View Job", job_path(ja.job), :class => 'btn btn-primary' %>
+                  <%= link_to "View Application", job_job_applications_path(ja.job), :class => 'btn btn-info' %>
+                  <p><small class="text-muted">Last updated <%= time_ago_in_words(ja.updated_at) %></p></small>
+                </div>
+              </div> <!--End Card-->
+            <% end %>
+          </div> <!--End Deck-->
+        <% else %>
+          <div class="text-center">
+            <h3 id="applications" class="column-title">You don't have any open applications</h3>
+            <%= link_to "View All Applications", "/applications", :class => 'btn btn-secondary' %>
+          </div>
+        <% end %>
+
+        <% if @jobs.count > 0 %>
+          <div class="text-center">
+            <h3 id="jobs" class="column-title">Your Open Jobs</h3>
+            <%= link_to "View All Jobs", "/jobs", :class => 'btn btn-secondary' %>
+          </div>
+          <div class="dashboard-cards card-deck">
+            <% @jobs.each do |job| %>
+              <div class="card job-card">
+                <div class="card-body">
+                  <h3 class="card-title"><%= job.title %></h3>
+                  <p class="card-text"><%= job.description %></p>
+                  <br/>
+                  <div class="key-info text-left">
+                    <p><strong>Company: </strong><%= job.address_company %></p>
+                    <p><strong>Location: </strong><%= job.address_town %>, <%= job.address_county %></p>
+                    <p><strong>Duration: </strong><%= job.contract_length %></p>
+                    <p><strong>Published Date: </strong><%= job.published_date %></p>
+                  </div>
+                </div>
+                <div class="card-footer text-center">
+                  <%= link_to "More Info", job_path(job), :class => 'btn btn-info' %>
+                  <%= link_to "Apply Now", job_path(job), :class => 'btn btn-secondary' %>
+                  <p><small class="text-muted">Last updated <%= time_ago_in_words(job.updated_at) %></p></small>
+                </div>
+              </div> <!--End Card-->
+            <% end %>
+          </div> <!--End Deck-->
+        <% else %>
+          <div class="text-center">
+            <h3 id="jobs" class="column-title">You don't have any matching jobs.</h3>
+            <%= link_to "View All Jobs", "/jobs", :class => 'btn btn-secondary' %>
+          </div>
+        <% end %>
+
+
       </div>
 
     </div>

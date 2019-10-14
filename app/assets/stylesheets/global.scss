@@ -36,13 +36,21 @@ h3.column-title{
 }
 
 .detail-section {
-  h6 {
-    margin-bottom: 0;
-    margin-top: 0.5em;
+  .detail-inner{
+    background-color: $blue-transparent;
+    border-radius: 25px;
+    h6 {
+      margin-bottom: 0;
+      margin-top: 0.5em;
+    }
+    h5 {
+      color: $ink2;
+    }
+    h4 {
+    }
   }
-  h5 {
-    color: $gray;
-  }
+
+
 }
 .agreement-page {
   .row {

@@ -10,7 +10,9 @@
     <%= render partial: 'layouts/alerts' %>
     <div class="row pb-0 pt-1">
       <div class="col">
-        <% if @job_applications.count == 1 %>
+        <% if @job_applications.count == 0 %>
+          <h2>You have not applied for any jobs</h2>
+        <% elsif @job_applications.count == 1 %>
           <h3>Your Application for <%= @job_applications.first.job.title %></h3>
           <%= link_to "View Job", job_path(@job_applications.first.job), :class => 'btn btn-secondary' %>
         <% else %>
@@ -18,19 +20,22 @@
         <% end %>
       </div>
     </div>
-    <div class="row pt-0">
-      <% if @job_applications.count == 1 %>
-        <div class="col detail-section text-center full-height pt-3">
-          <h5><strong><em>Application Cover</em></strong></h5>
-          <h4> <%= @job_applications.first.cover %> </h4>
-          <h5><strong><em>Application Status</em></strong></h5>
-          <h4> <%= @job_applications.first.status %> </h4>
-          <h5><strong><em>Status Reason</em></strong></h5>
-          <h4> <%= @job_applications.first.status_reason ? @job_applications.first.status_reason : 'No status updates yet, please check again later' %> </h4>
-          <h5><strong><em>Created at</em></strong></h5>
-          <h4> <%= @job_applications.first.created_at %> </h4>
-          <h5><strong><em>Last Updated</em></strong></h5>
-          <h4> <%= time_ago_in_words(@job_applications.first.updated_at) %> </h4>
+    <div class="row pt-0 full-height">
+      <% if @job_applications.count == 0 %>
+      <% elsif @job_applications.count == 1 %>
+        <div class="col detail-section text-center pt-3">
+          <div class="detail-inner">
+            <h5><strong><em>Application Cover</em></strong></h5>
+            <h4> <%= @job_applications.first.cover %> </h4>
+            <h5><strong><em>Application Status</em></strong></h5>
+            <h4> <%= @job_applications.first.status %> </h4>
+            <h5><strong><em>Status Reason</em></strong></h5>
+            <h4> <%= @job_applications.first.status_reason ? @job_applications.first.status_reason : 'No status updates yet, please check again later' %> </h4>
+            <h5><strong><em>Created at</em></strong></h5>
+            <h4> <%= @job_applications.first.created_at %> </h4>
+            <h5><strong><em>Last Updated</em></strong></h5>
+            <h4> <%= time_ago_in_words(@job_applications.first.updated_at) %> </h4>
+          </div>
         </div>
 
       <% else %>
