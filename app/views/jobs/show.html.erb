@@ -66,21 +66,23 @@
       </div>
 
       <div class="row full-width my-4">
-        <div class="col-md-3">
+        <div class="col-md-6">
           <h3>Description</h3>
-          <%= @job.description %>
+          <div class="text-left"><%= simple_format(@job.description) %></div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
           <h3>Requirements</h3>
-          <%= @job.requirements %>
+          <div class="text-left"><%= simple_format(@job.requirements) %></div>
         </div>
-        <div class="col-md-3">
+      </div>
+
+      <div class="row full-width my-4">
+        <div class="col-md-6">
           <h3>Further Details</h3>
           <p><strong>Working Arrangements: </strong><%= @job.working_arrangements %></p>
           <p><strong>Team: </strong><%= @job.team %></p>
-
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
           <h3>Full Address</h3>
           <div class="">
             <p><%= @job.address_company %></p>
@@ -90,9 +92,9 @@
             <p><%= @job.address_county %></p>
             <p><%= @job.address_postcode %></p>
           </div>
-
         </div>
       </div>
+
     </section>
   </div>
 </div>
