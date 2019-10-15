@@ -104,6 +104,8 @@
     <section class="row">
       <div class="col user-profile">
         <h2>Edit Job</h2>
+        <%= button_to "Delete Job", admin_job_path(@job), data: { confirm: "Are you sure? Any applications for this job will also be deleted." }, method: :delete, class: 'btn btn-sm btn-danger' %>
+
         <div class="md-form">
           <%= form_for(@job, url: admin_job_path, html: {method: :put}) do |f| %>
             <%= render "devise/shared/error_messages", resource: @job %>

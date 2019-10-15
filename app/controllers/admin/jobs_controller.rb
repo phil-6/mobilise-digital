@@ -40,6 +40,11 @@ class Admin::JobsController < ApplicationController
     redirect_to :admin_job
   end
 
+  def destroy
+    @job.destroy
+    redirect_to :admin_jobs
+  end
+
   private
 
   def set_job
