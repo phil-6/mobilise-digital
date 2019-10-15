@@ -44,23 +44,23 @@
           <div class="row p-0">
             <div class="col-md-6 form-check checkbox-lg">
               <%= f.check_box :gdpr_agreement %>
-              <%= f.label :gdpr_agreement, "#{link_to 'GDPR Agreement', "/gdpr_agreement"}.".html_safe, class: "form-check-label" %>
+              <%= f.label :gdpr_agreement, "#{link_to 'GDPR Agreement', "/gdpr_agreement", target: "_blank"}.".html_safe, class: "form-check-label" %>
             </div>
 
             <div class="col-md-6 form-check checkbox-lg">
               <%= f.check_box :website_terms_agreement%>
-              <%= f.label :website_terms_agreement, "#{link_to 'Website Terms', "/website_terms"}.".html_safe, class: "form-check-label" %>
+              <%= f.label :website_terms_agreement, "#{link_to 'Website Terms', "/website_terms", target: "_blank"}.".html_safe, class: "form-check-label" %>
             </div>
           </div>
           <div class="row p-0">
             <div class="col-md-6 form-check checkbox-lg">
               <%= f.check_box :job_email_agreement %>
-              <%= f.label :job_email_agreement, "#{link_to 'Job Alert Agreement', "/email_terms"}.".html_safe, class: "form-check-label" %>
+              <%= f.label :job_email_agreement, "#{link_to 'Job Alert Agreement', "/email_terms", target: "_blank"}.".html_safe, class: "form-check-label" %>
             </div>
 
             <div class="col-md-6 form-check checkbox-lg">
               <%= f.check_box :marketing_email_agreement %>
-              <%= f.label :marketing_email_agreement, "#{link_to 'Marketing Agreement', "/email_terms"}.".html_safe, class: "form-check-label" %>
+              <%= f.label :marketing_email_agreement, "#{link_to 'Marketing Agreement', "/email_terms", target: "_blank"}.".html_safe, class: "form-check-label" %>
             </div>
           </div>
         </div>
