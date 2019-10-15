@@ -48,6 +48,14 @@
   a.btn-secondary:hover {
     color: $whiteink;
   }
+  a.btn-primary {
+    background-color: $brandprimary;
+    color: $whiteink;
+  }
+  a.btn-primary:hover{
+    background-color: $brandprimary-darker;
+    color: $brandhighlight;
+  }
 
   i.fa-chevron-down {
     display: none;
