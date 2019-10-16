@@ -32,4 +32,6 @@ Rails.application.routes.draw do
 
   get '/:page',                   to: 'pages#show'
 
+  get '/profile/download_self_assessment_form', to:  'files#download_self_assessment_form'
+
 end

@@ -32,7 +32,7 @@
             <h5><strong><em>Status Reason</em></strong></h5>
             <h4> <%= @job_applications.first.status_reason ? @job_applications.first.status_reason : 'No status updates yet, please check again later' %> </h4>
             <h5><strong><em>Created at</em></strong></h5>
-            <h4> <%= @job_applications.first.created_at %> </h4>
+            <h4> <%= @job_applications.first.created_at.to_date %> </h4>
             <h5><strong><em>Last Updated</em></strong></h5>
             <h4> <%= time_ago_in_words(@job_applications.first.updated_at) %> </h4>
           </div>
@@ -48,7 +48,7 @@
                 <br/>
                 <div class="key-info text-left">
                   <p><strong>Your Cover: </strong><%= application.cover %></p>
-                  <p><strong>Created Date: </strong><%= application.created_at %></p>
+                  <p><strong>Created Date: </strong><%= application.created_at.to_date %></p>
                   <p><strong>Status: </strong><%= application.status %></p>
                   <p><strong>Status Reason: </strong><%= @job_applications.first.status_reason ? @job_applications.first.status_reason : 'No status updates yet, please check again later' %></p>
                   <p><strong>Last Updated: </strong><%= time_ago_in_words(application.updated_at) %></p>

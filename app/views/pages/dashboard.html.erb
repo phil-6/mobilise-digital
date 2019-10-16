@@ -113,7 +113,7 @@
                     <p><strong>Status
                       Reason: </strong><%= ja.status_reason ? ja.status_reason : 'No status updates yet, please check again later' %>
                     </p>
-                    <p><strong>Created At: </strong><%= ja.created_at %></p>
+                    <p><strong>Created At: </strong><%= ja.created_at.to_date %></p>
                   </div>
                 </div>
                 <div class="card-footer text-center">
