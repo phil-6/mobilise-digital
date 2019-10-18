@@ -27,6 +27,7 @@
           <th scope="col">Contract Length</th>
           <th scope="col">Day Rate</th>
           <th scope="col">Open</th>
+          <th scope="col">Apps</th>
           <th scope="col">Manage</th>
         </tr>
         </thead>
@@ -46,6 +47,9 @@
               <% if job.open %><i class="fas fa-check text-success"></i>
               <% else %><i class="fas fa-times text-danger"></i>
               <% end %>
+            </td>
+            <td>
+              <%= JobApplication.where(:job_id => job.id).count %>
             </td>
             <td><a href="/admin/jobs/<%= job.id %>"><i class="fas fa-pen"></i></a></td>
           </tr>
