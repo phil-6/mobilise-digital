@@ -73,7 +73,30 @@
                 <td>
                   <% if @user.admin %><i class="fas fa-check"></i>
                   <% else %><i class="fas fa-times"></i>
-                  <% end %></td>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Agreements: Website | GDPR</th>
+                <td>
+                  <% if @user.website_terms_agreement %><i class="fas fa-check"></i>
+                  <% else %><i class="fas fa-times"></i>
+                  <% end %> |
+                  <% if @user.gdpr_agreement %><i class="fas fa-check"></i>
+                  <% else %><i class="fas fa-times"></i>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Emails: Jobs | Marketing</th>
+                <td>
+                  <% if @user.job_email_agreement %><i class="fas fa-check"></i>
+                  <% else %><i class="fas fa-times"></i>
+                  <% end %> |
+                  <% if @user.marketing_email_agreement %><i class="fas fa-check"></i>
+                  <% else %><i class="fas fa-times"></i>
+                  <% end %>
+                </td>
               </tr>
             </table>
           </div>
@@ -227,34 +250,33 @@
             </h3>
             <div id="update-key" class="form-section collapse">
 
-
-                <div class="form-group floating-label">
-                  <%= f.text_field :keywords, placeholder: " Keywords", class: "form-control", autocomplete:  "off", list: "keywords" %>
-                  <%= f.label :keywords %>
-                  <datalist id="keywords">
-                    <option>agile_coach</option>
-                    <option>business_analyst</option>
-                    <option>communications_manager</option>
-                    <option>content_designer</option>
-                    <option>cyber_security</option>
-                    <option>data_architect</option>
-                    <option>data_engineer</option>
-                    <option>data_scientist</option>
-                    <option>delivery_manager</option>
-                    <option>designer</option>
-                    <option>developer</option>
-                    <option>devops_engineer</option>
-                    <option>performance_analyst</option>
-                    <option>portfolio_manager</option>
-                    <option>product_manager</option>
-                    <option>programme_manager</option>
-                    <option>quality_assurance</option>
-                    <option>service_manager</option>
-                    <option>technical_architect</option>
-                    <option>user_researcher</option>
-                    <option>web_operations_engineer</option>
-                  </datalist>
-                </div>
+              <div class="form-group floating-label">
+                <%= f.text_field :keywords, placeholder: " Keywords", class: "form-control", autocomplete:  "off", list: "keywords" %>
+                <%= f.label :keywords %>
+                <datalist id="keywords">
+                  <option>agile_coach</option>
+                  <option>business_analyst</option>
+                  <option>communications_manager</option>
+                  <option>content_designer</option>
+                  <option>cyber_security</option>
+                  <option>data_architect</option>
+                  <option>data_engineer</option>
+                  <option>data_scientist</option>
+                  <option>delivery_manager</option>
+                  <option>designer</option>
+                  <option>developer</option>
+                  <option>devops_engineer</option>
+                  <option>performance_analyst</option>
+                  <option>portfolio_manager</option>
+                  <option>product_manager</option>
+                  <option>programme_manager</option>
+                  <option>quality_assurance</option>
+                  <option>service_manager</option>
+                  <option>technical_architect</option>
+                  <option>user_researcher</option>
+                  <option>web_operations_engineer</option>
+                </datalist>
+              </div>
 
               <div class="form-group floating-label">
                 <%= f.text_field :secondary_keywords, placeholder: " Secondary Keywords", class: "form-control" %>
@@ -265,13 +287,6 @@
                 <div class="form-check checkbox-lg">
                   <%= f.check_box :verified, class: "form-check-input" %>
                   <%= f.label :verified, "Verified", class: "form-check-label" %>
-                </div>
-              </div>
-
-              <div class="form-group row justify-content-center">
-                <div class="form-check checkbox-lg">
-                  <%= f.check_box :admin, class: "form-check-input" %>
-                  <%= f.label :admin, "Admin", class: "form-check-label" %>
                 </div>
               </div>
 
@@ -288,7 +303,6 @@
                   <%= f.label :sa_uploaded, "SA Checked", class: "form-check-label" %>
                 </div>
               </div>
-
 
             </div>
 
@@ -396,6 +410,26 @@
             <div class="actions form-group">
               <%= f.submit "Update", class: "btn btn-secondary" %>
             </div>
+
+            <h3 class="pt-3">
+              <a data-toggle="collapse"
+                 href="#update-admin"
+                 aria-expanded="false"
+                 aria-controls="collapseExample"
+                 class="collapsed">
+                Make User Admin <i class="fas fa-chevron-up"></i><i class="fas fa-chevron-down"></i>
+              </a>
+            </h3>
+            <div id="update-admin" class="form-section collapse">
+
+              <div class="form-group row justify-content-center">
+                <div class="form-check checkbox-lg">
+                  <%= f.check_box :admin, class: "form-check-input", data: { confirm: "Are you REALLY sure you want to make this user an admin?" } %>
+                  <%= f.label :admin, "Admin", class: "form-check-label" %>
+                </div>
+              </div>
+
+          </div>
           <% end %>
         </div>
       </div>

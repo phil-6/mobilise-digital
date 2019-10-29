@@ -30,28 +30,24 @@ class Admin::UsersController < ApplicationController
 
   def profile_completion_calc
     fields_array = [
-        @user.email.blank?,
-        @user.first_name.blank?,
-        @user.last_name.blank?,
-        @user.contact_phone.blank?,
-        @user.address_company.blank?,
-        @user.address_1.blank?,
-        @user.address_2.blank?,
-        @user.address_town.blank?,
-        @user.address_county.blank?,
-        @user.address_postcode.blank?,
-        @user.emergency_name.blank?,
-        @user.emergency_relationship.blank?,
-        @user.emergency_number.blank?,
-        @user.emergency_email.blank?,
-        @user.gdpr_agreement,
-        @user.job_email_agreement.blank?,
-        @user.marketing_email_agreement.blank?,
-        @user.website_terms_agreement,
+        @user.email.present?,
+        @user.first_name.present?,
+        @user.last_name.present?,
+        @user.contact_phone.present?,
+        @user.address_company.present?,
+        @user.address_1.present?,
+        @user.address_2.present?,
+        @user.address_town.present?,
+        @user.address_county.present?,
+        @user.address_postcode.present?,
+        @user.emergency_name.present?,
+        @user.emergency_relationship.present?,
+        @user.emergency_number.present?,
+        @user.emergency_email.present?,
         @user.cv_uploaded,
         @user.sa_uploaded
     ]
-    @user.profile_completion = (((fields_array.count(false)).to_f/(fields_array.count).to_f).round(2)) * 100
+    @user.profile_completion = (((fields_array.count(true)).to_f/(fields_array.count).to_f).round(2)) * 100
   end
 
   def set_user

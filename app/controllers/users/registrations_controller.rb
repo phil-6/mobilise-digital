@@ -23,28 +23,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
     super
     fields_array = [
-        current_user.email.blank?,
-        current_user.first_name.blank?,
-        current_user.last_name.blank?,
-        current_user.contact_phone.blank?,
-        current_user.address_company.blank?,
-        current_user.address_1.blank?,
-        current_user.address_2.blank?,
-        current_user.address_town.blank?,
-        current_user.address_county.blank?,
-        current_user.address_postcode.blank?,
-        current_user.emergency_name.blank?,
-        current_user.emergency_relationship.blank?,
-        current_user.emergency_number.blank?,
-        current_user.emergency_email.blank?,
-        current_user.gdpr_agreement,
-        current_user.job_email_agreement.blank?,
-        current_user.marketing_email_agreement.blank?,
-        current_user.website_terms_agreement,
+        current_user.email.present?,
+        current_user.first_name.present?,
+        current_user.last_name.present?,
+        current_user.contact_phone.present?,
+        current_user.address_company.present?,
+        current_user.address_1.present?,
+        current_user.address_2.present?,
+        current_user.address_town.present?,
+        current_user.address_county.present?,
+        current_user.address_postcode.present?,
+        current_user.emergency_name.present?,
+        current_user.emergency_relationship.present?,
+        current_user.emergency_number.present?,
+        current_user.emergency_email.present?,
         current_user.cv_uploaded,
         current_user.sa_uploaded
     ]
-    current_user.profile_completion = (((fields_array.count(false)).to_f/(fields_array.count).to_f).round(2)) * 100
+    current_user.profile_completion = (((fields_array.count(true)).to_f/(fields_array.count).to_f).round(2)) * 100
     current_user.save
   end
 
