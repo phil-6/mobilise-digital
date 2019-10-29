@@ -73,7 +73,30 @@
                 <td>
                   <% if @user.admin %><i class="fas fa-check"></i>
                   <% else %><i class="fas fa-times"></i>
-                  <% end %></td>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Agreements: Website | GDPR</th>
+                <td>
+                  <% if @user.website_terms_agreement %><i class="fas fa-check"></i>
+                  <% else %><i class="fas fa-times"></i>
+                  <% end %> |
+                  <% if @user.gdpr_agreement %><i class="fas fa-check"></i>
+                  <% else %><i class="fas fa-times"></i>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Emails: Jobs | Marketing</th>
+                <td>
+                  <% if @user.job_email_agreement %><i class="fas fa-check"></i>
+                  <% else %><i class="fas fa-times"></i>
+                  <% end %> |
+                  <% if @user.marketing_email_agreement %><i class="fas fa-check"></i>
+                  <% else %><i class="fas fa-times"></i>
+                  <% end %>
+                </td>
               </tr>
             </table>
           </div>
