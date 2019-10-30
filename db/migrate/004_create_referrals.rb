@@ -4,7 +4,7 @@ class CreateReferrals < ActiveRecord::Migration[5.2]
       t.belongs_to :user
       t.text :email
       t.string :status,       default: 'referred'
-      t.int :referred_user_id
+      t.integer :referred_user_id
       t.timestamps
     end
   end
