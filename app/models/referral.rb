@@ -6,5 +6,5 @@ class Referral < ApplicationRecord
 
   # validations
   validates_presence_of :user_id,
-                        :email
+                        :email, uniqueness: true
 end
