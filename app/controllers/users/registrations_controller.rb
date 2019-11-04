@@ -10,9 +10,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    Referral.where(email: @user.email).update_all({status: "Member", referred_user_id: @user.id})
+  end
 
   # GET /resource/edit
   # def edit
