@@ -25,6 +25,9 @@ class Admin::JobApplicationsController < ApplicationController
 
   def update
     if @application.update(job_application_params)
+      if @application.status == "On Site"
+        Referral.where(referred_user_id: @application.user.id).update_all({status: "Earning"})
+      end
       flash[:notice] = 'Application Updated Successfully'
     else
       flash[:alert] = 'Something Broke'
