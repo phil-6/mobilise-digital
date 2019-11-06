@@ -9,7 +9,8 @@ class ReferralsController < ApplicationController
       flash[:alert] = 'This member already exists.'
     elsif Referral.exists?(email: params[:referral][:email])
       flash[:alert] = 'This member has already been referred.'
-    elsif current_user.referrals.create!(referral_params)
+    elsif @user.referrals.create!(referral_params)
+      ApplicationMailer.referral_email(referral_params, @user).deliver_now
       flash[:notice] = 'Congratulations! We\'ll send them an email with an invitation'
     end
     redirect_to '/dashboard'
