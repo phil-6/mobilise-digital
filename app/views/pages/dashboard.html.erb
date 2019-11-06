@@ -188,7 +188,7 @@
               <div class="card job-card">
                 <div class="card-body">
                   <h3 class="card-title"><%= job.title %></h3>
-                  <p class="card-text"><%= job.description %></p>
+                  <p class="card-text"><%= simple_format(job.description) %></p>
                   <br/>
                   <div class="key-info text-left">
                     <p><strong>Company: </strong><%= job.address_company %></p>
