@@ -18,8 +18,8 @@ class PagesController < ApplicationController
       @jobs = Job.all.order('updated_at DESC').where(:open => true).first(6)
     end
     @job_applications = JobApplication.order('updated_at DESC').where(:user_id => @user.id).where.not(:status => ["On Site", "Closed", "Failed"]).first(6)
-    @new_jobs = Job.where("created_at > ?", 1.week.ago).count
-    @application_updates = JobApplication.where("updated_at > ?", @user.last_sign_in_at).count
+    @new_jobs = Job.where("created_at > ?", 1.week.ago).size
+    @application_updates = JobApplication.where("updated_at > ?", @user.last_sign_in_at).size
     @referrals = Referral.where(:user_id => @user.id).order('updated_at DESC').first(6)
     @referral_count = Referral.where(:user_id => @user.id).size
   end
