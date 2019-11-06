@@ -10,9 +10,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    if (referral = Referral.find_by(email: @user.email))
+      referral.update({status: "Member", referred_user_id: @user.id})
+      ApplicationMailer.referral_success_email(referral).deliver_now
+    end
+  end
 
   # GET /resource/edit
   # def edit

@@ -30,6 +30,8 @@ Rails.application.routes.draw do
     resources :job_applications, :path => 'applications'
   end
 
+  resources :referrals, :path => 'referrals'
+
   get '/:page',                   to: 'pages#show'
 
   get '/profile/download_self_assessment_form',       to:  'files#download_self_assessment_form'

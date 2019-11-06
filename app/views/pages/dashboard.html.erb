@@ -27,19 +27,63 @@
             <div class="col p-0 text-center">
               <div class="mx-auto pt-3">
                 <h4>Referrals</h4>
-                <div class="p-3 text-justify">
-                  <p>We want our professional members to earn a fee on as many candidates as possible and as such, we
-                    offer an unlimited number of referrals to the network, with uncapped fees payable monthly.</p>
-                  <p>Any professional member that refers another member, shall earn a day rate of £10 for each day that
-                    member spends on a Mobilise Digital project. There is no cap to this referral fee, which allows our
-                    professional members to earn a passive income, simply by referring other members to our network and
-                    those members working on a project.</p>
-                  <p>We have a full breakdown of our <a href="/referral_policy">referral policy</a>, which we encourage all of our
-                    members to read.</p>
+                <% if @referral_count == 0 %>
+                  <div class="p-3 text-justify">
+                    <p>We want our members to earn a fee on as many candidates as possible and as such, we
+                      offer an unlimited number of referrals to the network, with uncapped fees payable quarterly.</p>
+                    <p>Any member that refers another member, shall earn a day rate of £10 for each day that
+                      member spends on a Mobilise Digital project. There is no cap to this referral fee, which allows our
+                      members to earn a passive income, simply by referring other members to our network and
+                      those members working on a project.</p>
+                    <p>We have a full breakdown of our <a href="/referral_policy">referral policy</a>, which we encourage
+                      all of our members to read.</p>
+                  </div>
+                <% end %>
+
+                <% if @referral_count > 0 %>
+                  <div class="p-3 text-justify">
+                    <p>We want our members to earn a fee on as many candidates as possible and as such, we
+                      offer an unlimited number of referrals to the network, with uncapped fees payable quarterly.</p>
+                    <h5 class="text-center"><em>You have referred <strong><%= @referral_count %></strong> members</em></h5>
+                    <p>The 6 most recently updated referrals are shown below.</p>
+                  </div>
+
+                  <table class="table table-striped table-dark table-sm">
+                    <thead>
+                    <tr>
+                      <th scope="col">User Email</th>
+                      <th scope="col">Referral Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% @referrals.each do |r| %>
+                      <tr>
+                        <td><%= r.email %></td>
+                        <td><%= r.status %></td>
+                      </tr>
+                    <% end %>
+                    </tbody>
+                  </table>
+
+                  <p> Check something in the <a href="/referral_policy">referral policy</a>.</p>
+                <% end %>
+
+                <div class="md-form mt-0">
+                  <%= form_for(:referral, url: referrals_path, html: {method: :post}) do |f| %>
+
+                    <div class="form-group floating-label">
+                      <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "  Their Email Address" %>
+                      <%= f.label :email, 'Their email' %>
+                    </div>
+
+
+                    <div class="actions form-group">
+                      <%= f.submit "Refer Them", class: "btn btn-primary" %>
+                    </div>
+
+
+                  <% end %>
                 </div>
-                <a href="mailto:members@mobilise.digital?subject=Referral%20from%20<%= current_user.first_name %>%20<%= current_user.last_name %>&body=Please%20enter%20details%20of%20the%20person%20you%20are%20referring%20here" target="_blank" class="btn btn-primary">
-                  Refer Someone
-                </a>
               </div>
             </div>
           </div>
@@ -53,7 +97,10 @@
             <div class="col-lg key-info-card ">
               <h4>Profile Completion</h4>
               <div class="key-number">
-                <%= current_user.profile_completion %><% if current_user.profile_completion? %>%<% else %>0%<% end %>
+                <%= current_user.profile_completion %>
+                <% if current_user.profile_completion? %>%
+                <% else %>0%
+                <% end %>
               </div>
             </div>
           <% end %>
@@ -141,7 +188,7 @@
               <div class="card job-card">
                 <div class="card-body">
                   <h3 class="card-title"><%= job.title %></h3>
-                  <p class="card-text"><%= job.description %></p>
+                  <p class="card-text"><%= simple_format(job.description) %></p>
                   <br/>
                   <div class="key-info text-left">
                     <p><strong>Company: </strong><%= job.address_company %></p>
@@ -179,9 +226,9 @@
 <% end %>
 <%= javascript_include_tag 'chart-dashboard-settings' %>
 <script>
-    $('a').click(function(){
+    $('a').click(function () {
         $('html, body').animate({
-            scrollTop: $( $.attr(this, 'href') ).offset().top
+            scrollTop: $($.attr(this, 'href')).offset().top
         }, 500);
         return false;
     });

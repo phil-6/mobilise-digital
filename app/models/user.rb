@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :confirmable, :trackable
 
   has_many :job_applications, foreign_key: :user_id
+  has_many :referrals, foreign_key: :user_id
 
   # validations
   validates_presence_of :first_name,
