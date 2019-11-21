@@ -74,7 +74,8 @@ class Admin::JobsController < ApplicationController
                                 :team,
                                 :requirements,
                                 :open,
-                                :keywords)
+                                :keywords,
+                                :web_address)
   end
 
 end

@@ -60,6 +60,12 @@
                 <th scope="row">Location:</th>
                 <td><%= @job.address_town %>, <%= @job.address_county %></td>
               </tr>
+              <% if @job.web_address.present? %>
+                <tr>
+                  <th><a href="<%= @job.web_address %>">Web Link</a></th>
+                  <td></td>
+                </tr>
+              <% end %>
             </table>
           </div>
         </div>
