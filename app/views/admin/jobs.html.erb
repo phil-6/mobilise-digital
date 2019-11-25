@@ -28,6 +28,7 @@
           <th scope="col">Day Rate</th>
           <th scope="col">Open</th>
           <th scope="col">Apps</th>
+          <th scope="col">Web Link</th>
           <th scope="col">Manage</th>
         </tr>
         </thead>
@@ -51,6 +52,7 @@
             <td>
               <%= JobApplication.where(:job_id => job.id).count %>
             </td>
+            <td><a href="<%= job.web_address %>"><i class="fas fa-link"></i></a></td>
             <td><a href="/admin/jobs/<%= job.id %>"><i class="fas fa-pen"></i></a></td>
           </tr>
         <% end %>

@@ -64,6 +64,14 @@
                 <th scope="row">Location:</th>
                 <td><%= @job.address_town %>, <%= @job.address_county %></td>
               </tr>
+              <tr>
+                <th scope="row">Web Address:</th>
+                <% if @job.web_address.present? %>
+                  <td><%= @job.web_address %></td>
+                <% else %>
+                  <td> None </td>
+                <% end %>
+              </tr>
             </table>
           </div>
         </div>
@@ -223,6 +231,11 @@
             <div class="form-group floating-label">
               <%= f.text_field :address_postcode, class: "form-control", placeholder: " Post Code" %>
               <%= f.label :address_postcode, 'Post Code' %>
+            </div>
+
+            <div class="form-group floating-label">
+              <%= f.text_field :web_address, placeholder: " Web Address", class: "form-control" %>
+              <%= f.label :web_address %>
             </div>
 
 
